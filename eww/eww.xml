@@ -1,0 +1,234 @@
+<eww>
+    <definitions>
+          <!-- Put your <def>'s in here -->
+        <def name="m1-right-package">
+            <box class="invis-container" orientation="v" space-evenly="false">
+                <clock/>
+                <coding-box/>
+                <entertain-box/>
+                <config-box/>
+                <util-box/>
+                <hack-box/>
+            </box>
+        </def>
+        <def name="m1-right-buttons">
+            <box class="invis-container" orientation="v" space-evenly="true">
+                <box class="invis-container" orientation="v" space-evenly="true">
+                    <box class="invis-container" orientation="h" space-evenly="true">
+                        <vscode/>
+                        <nvim/>
+                    </box>
+                    <box class="invis-container" orientation="h" space-evenly="true">
+                        <github/>
+                        <clion/>
+                    </box>
+                </box>
+                <box class="invis-container" orientation="h" space-evenly="true">
+                    <spotify/>
+                    <youtube/>
+                    <instagram/>
+                    <reddit/>
+                </box>
+                <box class="invis-container" orientation="h" space-evenly="true">
+                    <chess/>
+                    <foliate/>
+                </box>
+            </box>
+        </def>
+        <def name="calendar_full">
+            <box orientation="v" halign="center" space-evenly="false">
+                <box class="calendar_title">     {{day}}, {{number_day}} {{month_full}} {{year_full}}</box>
+                <box class="calendar">
+                    <calendar show-details="true"/>
+                </box>
+            </box>
+        </def>
+        <def name="coding-box">
+            <box class="invis-container" orientation="v" space-evenly="false">
+                <!-- <label class="box-label" text="Coding" halign="end"/> -->
+                <box class="v-label-container" orientation="v" space-evenly="true">
+                    <box class="h-label-container RtL" orientation="h" space-evenly="false" halign="end">
+                        <nvim/>
+                        <vscode/>
+                        <clion/>
+                        <github/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="entertain-box">
+            <box class="invis-container" orientation="v" space-evenly="false">
+                <!-- <label class="box-label" text="Entertainment" halign="end"/> -->
+                <box class="v-label-container" orientation="v" space-evenly="true">
+                    <box class="h-label-container RtL" orientation="h" space-evenly="false" halign="end">
+                        <spotify/>
+                        <youtube/>
+                        <instagram/>
+                        <reddit/>
+                        <discord/>
+                        <chess/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="config-box">
+            <box class="invis-container" orientation="v" space-evenly="false">
+                <!-- <label class="box-label" text="Configurations" halign="end"/> -->
+                <box class="v-label-container" orientation="v" space-evenly="true">
+                    <box class="h-label-container RtL" orientation="h" space-evenly="false" halign="end">
+                        <configs/>
+                        <bspwm-config/>
+                        <sxhkd-config/>
+                        <eww-config/>
+                        <polybar-config/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="util-box">
+            <box class="invis-container" orientation="v" space-evenly="false">
+                <!-- <label class="box-label" text="Utilities" halign="end"/> -->
+                <box class="v-label-container" orientation="v" space-evenly="true">
+                    <box class="h-label-container RtL" orientation="h" space-evenly="false" halign="end">
+                        <screenshot/>
+                        <gimp/>
+                        <nextcloud/>
+                        <zoom/>
+                        <foliate/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="hack-box">
+            <box class="invis-container" orientation="v" space-evenly="false">
+                <!-- <label class="box-label" text="Hacking" halign="end"/> -->
+                <box class="v-label-container" orientation="v" space-evenly="true">
+                    <box class="h-label-container RtL" orientation="h" space-evenly="false" halign="end">
+                        <crypto/>
+                        <hack-the-box/>
+                        <network/>
+                        <anom/>
+                        <iptorrent/>
+                    </box>
+                </box>
+            </box>
+        </def>
+        <def name="clock">
+            <box class="container clk" orientation="h" space-evenly="false">
+                <label class="clock-hour" text="{{hour}}"/>
+                <label class="clock-colon" text=":"/>
+                <label class="clock-min" text="{{min}}"/>
+                <label class="clock-sep" text=""/>
+                <label class="clock-day" halign="center" text="{{day}} "/>
+                <label class="clock-day-n" text="{{number_day}}"/>
+            </box>
+        </def>
+        <def name="window-container">
+            <box class="window-container"></box>
+          </def>
+
+     <!-- Put your <script-var> and <var>'s in here -->
+ 
+ <def name="screenshot">
+          <button class="icon-large" tooltip="screenshot" onclick="(scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/')"></button>
+        </def>
+        <def name="vscode">
+            <button class="icon-large" tooltip="vs code" onclick="code">﬏</button>
+        </def>
+        <def name="gimp">
+            <button class="icon-large" tooltip="gimp" onclick="(gimp)"></button>
+        </def>
+        <def name="spotify">
+            <button class="icon-large" tooltip="spotify" onclick="(spotify)">阮</button>
+        </def>
+        <def name="nvim">
+            <button class="icon-large" tooltip="nvim" onclick="(nvim)"></button>
+        </def>
+        <def name="clion">
+            <button class="icon-large" tooltip="clion" onclick="(clion)"></button>
+        </def>
+        <def name="chess">
+            <button class="icon-large" tooltip="lichess" onclick="(lichess)"></button>
+        </def>
+        <def name="github">
+            <button class="icon-large" tooltip="github" onclick="(firefox-developer-edition -new-tab 'https://www.github.com/DeeDob')"></button>
+        </def>
+        <def name="instagram">
+            <button class="icon-large" tooltip="instagram" onclick="(firefox-developer-edition -new-tab 'https://www.instagram.com')"></button>
+        </def>
+        <def name="youtube">
+            <button class="icon-large" tooltip="youtube" onclick="(firefox-developer-edition -new-tab 'https://www.youtube.com')"></button>
+        </def>
+        <def name="reddit">
+            <button class="icon-large" tooltip="reddit" onclick="(firefox-developer-edition -new-tab 'https://www.reddit.com')"></button>
+        </def>
+        <def name="configs">
+            <button class="icon-large" tooltip="configs" onclick="(nautilus ~/.config)"></button>
+        </def>
+        <def name="bspwm-config">
+            <button class="icon-large" tooltip="bspwm" onclick="(code ~/.config/bspwm/)">侀</button>
+        </def>
+        <def name="sxhkd-config">
+            <button class="icon-large" tooltip="sxhkd" onclick="(code ~/.config/sxhkd/)"></button>
+        </def>
+        <def name="polybar-config">
+          <button class="icon-large" tooltip="polybar" onclick="code ~/.config/polybar/"></button>
+        </def>
+        <def name="foliate">
+            <button class="icon-large" tooltip="foliate" onclick="(foliate)"></button>
+        </def>
+        <def name="eww-config">
+            <button class="icon-large" tooltip="eww" onclick="(code ~/.config/eww/)">冀</button>
+        </def>
+        <def name="zoom">
+            <button class="icon-large" tooltip="zoom" onclick="(zoom)"></button>
+        </def>
+        <def name="hack-the-box">
+            <button class="icon-large" tooltip="hack-the-box" onclick="(firefox-developer-edition -new-tab 'https://app.hackthebox.eu/home')"></button>
+        </def>
+        <def name="iptorrent">
+            <button class="icon-large" tooltip="iptorrent" onclick="(firefox-developer-edition -new-tab 'https://iptorrents.com/login.php')"></button>
+        </def>
+        <def name="nextcloud">
+            <button class="icon-large" tooltip="nextcloud" onclick="(firefox-developer-edition -new-tab 'https://nx18178.your-storageshare.de/apps/dashboard/')"></button>
+        </def>
+        <def name="anom">
+            <button class="icon-large" tooltip="anom" onclick="()"></button>
+        </def>
+        <def name="network">
+            <button class="icon-large" tooltip="network" onclick="()"></button>
+        </def>
+        <def name="crypto">
+            <button class="icon-large" tooltip="crypto" onclick="()">ﴑ</button>
+        </def>
+        <def name="archive">
+            <button class="icon-large" tooltip="archive" onclick="()"></button>
+        </def>
+        <def name="discord">
+            <button class="icon-large" tooltip="discord" onclick="(discord)">ﭮ</button>
+        </def>
+
+
+    </definitions>
+
+    <variables>
+          <!-- Put your <script-var> and <var>'s in here -->
+        <script-var name="number_day" interval="5h">date "+%d"</script-var>
+        <script-var name="month" interval="10h">date "+%b"</script-var>
+        <script-var name="min" interval="10s">date "+%M"</script-var>
+        <script-var name="hour" interval="5s">./scripts/gethour</script-var>
+        <script-var name="day" interval="15h">date "+%a"</script-var>
+        <script-var name="month_full" interval="15h">date "+%B"</script-var>
+        <script-var name="year_full" interval="15h">date "+%Y"</script-var>
+    </variables>
+
+    <windows>
+      <!-- Put your window blocks here -->
+      <window name="m1-right" exclusive="false" focusable="false" stacking="bg">
+            <geometry x="1435px" y="67px" width="25%" height="500px"/>
+            <widget>
+                <m1-right-package/>
+            </widget>
+      </window>
+    </windows>
+</eww>

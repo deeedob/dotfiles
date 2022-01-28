@@ -1,0 +1,29 @@
+!The steps to remove a mod keys are :
+!       0. xev -event keyboard;  get the desired keypress from xkeysystem
+!       1. remove/clear assignments to groups and keys
+!       2. Assign Keyssim to desired Keycode
+!       3. Add Keysym to the appropriate group
+!       Print the Current Settings via: xmodmap -pke
+
+remove control = Control_L 
+remove mod5 = ISO_Level3_Shift
+remove mod1 = Alt_L Meta_L
+remove mod4 = Super_L
+
+keycode 66 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+keycode 133 = Super_L NoSymbol Super_L
+keycode 64 = Alt_L Meta_L Alt_L Meta_L
+
+! swap "r-ctrl" and "r-alt"
+keycode 108 = Super_R NoSymbol Super_R NoSymbol Super_R
+keycode 134 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+
+! swap "^" and "<>"
+keycode  94 = dead_circumflex degree dead_circumflex degree U2032 U2033 U2032
+keycode  49 = less greater less greater bar dead_belowmacron bar
+
+
+add control = Control_L
+add mod5 = ISO_Level3_Shift
+add mod1 = Alt_L Meta_L
+add mod4 = Super_L

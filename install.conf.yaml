@@ -1,0 +1,35 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/bin : bin
+    ~/.xinitrc: xinitrc
+    ~/.Xmodmap: Xmodmap
+    ~/.Xresources: Xresources
+    ~/.xprofile: xprofile
+    ~/.zshrc: zshrc
+    ~/.ideavimrc: ideavimrc
+    ~/.p10k.zsh: p10k.zsh
+    ~/.config/nvim: nvim
+    ~/.config/bspwm: bspwm
+    ~/.config/alacritty: alacritty
+    ~/.config/gtk-3.0: gtk-3.0
+    ~/.config/picom: picom
+    ~/.config/polybar: polybar
+    ~/.config/eww: eww
+    ~/.config/rofi: rofi
+    ~/.config/sxhkd: sxhkd
+    ~/Pictures/Wallpaper/nordic-wallpapers: Wallpaper
+    /etc/profile: profile
+
+
+
+- create:
+    - ~/downloads
+    - ~/.vim/undo-history
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
