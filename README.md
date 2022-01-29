@@ -3,7 +3,7 @@
 </div>
 Hello there and welcome to my dotfiles. 
 I use these for all my [**Arch Linux**](https://archlinux.org/) Desktop Environments.
-![]( Screenshots/screen_1.png )
+![plot]( ./Screenshots/screen_1.png )
 
 ## Prerequisite 
 
