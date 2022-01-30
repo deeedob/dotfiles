@@ -1,8 +1,8 @@
 #!/bin/sh
 
 #global vars
-userresources=$HOME/.Xresources_d
-usermodmap=$HOME/.Xmodmap_d
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
 mycomputer="ddobs_desktop"
 wallpaper_main_monitor="ign_leafHelmet.png"
 wallpaper_second_monitor="archlinux.png"

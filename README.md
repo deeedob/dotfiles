@@ -26,7 +26,7 @@ $ cd ddob-dotfiles; ./install
 **Official:**
 This will get you up and running with my dotfiles. If you want to get an understanding of what's going on I highly recommend to have a short read about these application.
 ```
-# pacman -S git openssh xorg-server xorg-xinit xorg-xrandr bspwm sxhkd xwallpaper rofi dunst alacritty slop scrot jack2 qjackctl pulseaudio pulseaudio-jack alsa-utils refind neovim nautilus ranger calcurse htop termdown zsh ufw
+# pacman -S git openssh xorg-server xorg-xinit xorg-xrandr bspwm sxhkd xwallpaper rofi dunst alacritty slop scrot jack2 qjackctl pulseaudio pulseaudio-jack alsa-utils refind neovim nautilus ranger calcurse htop termdown zsh ufw mpd
 ```
 **AUR:** \
 [picom (git) *](https://aur.archlinux.org/packages/picom-git/) \
@@ -41,7 +41,7 @@ This will get you up and running with my dotfiles. If you want to get an underst
 
 Install with yay:
 ```
-# yay -S picom-git polybar spotify nerd-fonts-complete ttf-material-design-icons tdrop-git flameshot
+# yay -S picom-git polybar spotify nerd-fonts-complete ttf-all-the-icons tdrop-git flameshot 
 ```
 **GIT:** \
 [widgets: eww](https://github.com/elkowar/eww) \

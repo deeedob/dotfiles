@@ -5,3 +5,4 @@ export USER_FILEMANAGER="ranger"
 export QT_QPA_PLATFORMTHEME=gtk3 #fix weird QT behaviour on System UX Shemes
 export npm_config_prefix="$HOME/.local"
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix weird bahaviour with Java UI's (clion)
+

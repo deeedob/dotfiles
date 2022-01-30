@@ -6,7 +6,7 @@
 ##################
 
 # Screenshots
-alt + s
+ctrl + p
     flameshot gui
 
 # Volume control
