@@ -1,0 +1,9 @@
+usermodmap=$HOME/.Xmodmap
+
+if [[ -s $usermodmap ]]; then
+  setxkbmap -option shift:both_shiftlock
+  setxkbmap -option ctrl:nocaps
+  xmodmap ~/.Xmodmap
+fi
+
+
