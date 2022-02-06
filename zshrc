@@ -34,7 +34,7 @@ export EDITOR="nvim"
 #############################
 ######## plugins ############
 plugins=(
-  zsh-history-substring-search
+  #zsh-history-substring-search
   zsh-autosuggestions 
   zsh-syntax-highlighting 
   zsh-autocomplete
@@ -52,6 +52,11 @@ plugins=(
 # use zoxide as cd command
 eval "$(zoxide init zsh)"
 
+source $ZSH/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
 
 #_________________KEYS___________________
 #autoload -U history-search-end
@@ -59,11 +64,13 @@ eval "$(zoxide init zsh)"
 #zle -N history-beginning-search-forward-end history-search-end
 #bindkey "^[[A" history-beginning-search-backward-end
 #bindkey "^[[B" history-beginning-search-forward-end
-#
-source $ZSH/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $ZSH/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#zsh autocomplete
+bindkey '\e[A' up-line-or-search
+bindkey '\eOA' up-line-or-search
+bindkey '\e[B' down-line-or-select
+bindkey '\eOB' down-line-or-select
+bindkey '\0' list-expand
+bindkey -M menuselect '\r' .accept-line
 
 
 #autoload -U history-search-end
@@ -97,14 +104,14 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=#98c379
 ZSH_HIGHLIGHT_STYLES[assign]=none
 #::::::::::::::::zsh-autosuggestions::::::::::::::::::::
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
 bindkey '^ ' autosuggest-accept # ctrl + space to accept suggestion
 #::::::::::::::::zsh-autocomplete::::::::::::::::::::
 # Wait until this many characters have been typed, before showing completions.
 zstyle ':autocomplete:*' min-input 1  # int
 
-zstyle ':autocomplete:*' recent-dirs zoxide
+zstyle ':autocomplete:*' recent-dirs cdr
 # cdr:  Use Zsh's `cdr` function to show recent directories as completions.
 # no:   Don't show recent directories.
 # zsh-z|zoxide|z.lua|z.sh|autojump|fasd: Use this instead (if installed).
@@ -114,7 +121,7 @@ zstyle ':autocomplete:*' widget-style menu-complete
 # menu-complete: Press again to cycle to next (previous) completion.
 # menu-select:   Same as `menu-complete`, but updates selection in menu.
 
-zstyle ':autocomplete:*' fzf-completion yes
+zstyle ':autocomplete:*' fzf-completion no
 # no:  Tab uses Zsh's completion system only.
 # yes: Tab first tries Fzf's completion, then falls back to Zsh's.
 # have installed Fzf's shell extensions.

@@ -26,11 +26,11 @@
     ~/.config/ncmpcpp: ncmpcpp
     ~/.config/mpd: mpd
     ~/.config/tabs.conf: tabs.conf
+
     ~/Pictures/Wallpaper: Wallpaper
 
 - create:
-    - ~/downloads
-    - ~/.vim/undo-history
+    - ~/Downloads
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

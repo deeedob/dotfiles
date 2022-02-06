@@ -1,17 +1,25 @@
-require("default_config")
-require("plugins/setup")
-require("plugins/configs/lsp")
-require("plugins/configs/style")
-require("plugins/configs/nvim-tree")
-require("keymapping")
+local utils = require "core.utils"
 
+utils.disabled_builtins()
 
--- auto update 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins/setup.lua source <afile> | PackerCompile
-  augroup end
-]])
+utils.bootstrap()
 
+utils.impatient()
 
+local sources = {
+  "core.options",
+  "core.autocmds",
+  "core.plugins",
+  "core.mappings",
+}
+
+for _, source in ipairs(sources) do
+  local status_ok, fault = pcall(require, source)
+  if not status_ok then
+    error("Failed to load " .. source .. "\n\n" .. fault)
+  end
+end
+
+utils.user_settings()
+
+utils.compiled()

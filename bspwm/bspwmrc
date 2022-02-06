@@ -4,8 +4,8 @@
 main_monitor=""
 
 #crappy polybar tabs gets removed soon ...
-#touch /dev/shm/polybar-tabs 
-#termtabs -i 4 &
+touch /dev/shm/polybar-tabs 
+termtabs -i 4 &
 
 bspc config merge_overlapping_monitors false 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10

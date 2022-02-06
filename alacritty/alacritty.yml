@@ -11,16 +11,16 @@ scrolling:
   history: 10000
 font:
   normal:
-    family: MonoLisa
+    family: Cartograph Mono CF
     style: Medium
   bold:
-    family: MonoLisa
+    family: Cartograph Mono CF
     style: Bold
   italic:
-    family: MonoLisa
+    family: Cartograph Mono CF
     style: Medium Italic
   bold_italic:
-    family: MonoLisa
+    family: Cartograph Mono CF
     style: Bold Italic
   size: 12
 
