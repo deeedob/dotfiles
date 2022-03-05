@@ -12,10 +12,10 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 # History
 export HISTFILE=~/.oh-my-zsh/histfile
-export HISTFILESIZE=1000000000 #store 1 billion commands
-export HISTSIZE=1000000000 
+export HISTFILESIZE=10000 #store 1 billion commands
+export HISTSIZE=1000 
 # immediate append
-setopt INC_APPEND_HISTORY
+# setopt INC_APPEND_HISTORY
 export HISTTIMEFORMAT="[%F %T] "
 setopt EXTENDED_HISTORY #timestamp history
 setopt HIST_IGNORE_ALL_DUPS #ignore dups
@@ -24,12 +24,12 @@ setopt COMPLETE_ALIASES
 unsetopt correct_all
 unsetopt correct
 DISABLE_CORRECTION="true" 
-export TERM="alacritty"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 # Export
 export ZSH=/usr/share/oh-my-zsh
 export EDITOR="nvim"
+export TERM="alacritty"
 
 #############################
 ######## plugins ############
@@ -38,6 +38,7 @@ plugins=(
   zsh-autosuggestions 
   zsh-syntax-highlighting 
   zsh-autocomplete
+  colored-man-pages
   sudo
   web-search # <context> <term>
   copydir #copydir to buffer
@@ -59,49 +60,41 @@ source $ZSH/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 
 #_________________KEYS___________________
-#autoload -U history-search-end
-#zle -N history-beginning-search-backward-end history-search-end
-#zle -N history-beginning-search-forward-end history-search-end
-#bindkey "^[[A" history-beginning-search-backward-end
-#bindkey "^[[B" history-beginning-search-forward-end
 #zsh autocomplete
-bindkey '\e[A' up-line-or-search
-bindkey '\eOA' up-line-or-search
-bindkey '\e[B' down-line-or-select
-bindkey '\eOB' down-line-or-select
-bindkey '\0' list-expand
-bindkey -M menuselect '\r' .accept-line
-
-
-#autoload -U history-search-end
-#zle -N history-beginning-search-backward-end history-search-end
-#zle -N history-beginning-search-forward-end history-search-end
-#bindkey "^[[A" history-beginning-search-backward-end
-#bindkey "^[[B" history-beginning-search-forward-end
+#bindkey '\e[A' up-line-or-search
+#bindkey '\eOA' up-line-or-search
+#bindkey '\e[B' down-line-or-select
+##bindkey '\eOB' down-line-or-select
+#bindkey '\0' list-expand
+#bindkey -M menuselect '\r' .accept-line
+# set Keys 
+[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"         up-line-or-history
+[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"       down-line-or-history
 
 #::::::::::::::::zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-ZSH_HIGHLIGHT_STYLES[default]=#8E94A3
-ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=#e06c75
-ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
-ZSH_HIGHLIGHT_STYLES[alias]=fg=#A463BF,bold
-ZSH_HIGHLIGHT_STYLES[builtin]=fg=#A463BF,bold
-ZSH_HIGHLIGHT_STYLES[function]=fg=#A463BF,bold
-ZSH_HIGHLIGHT_STYLES[command]=fg=#7EA566,bold
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
-ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
-ZSH_HIGHLIGHT_STYLES[path]=fg=#C09E64,bold
-ZSH_HIGHLIGHT_STYLES[globbing]=fg=#A463BF
-ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=#C09E64,underline
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=#98c379
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=#98c379
-ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=#98c379
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=#98c379
-ZSH_HIGHLIGHT_STYLES[assign]=none
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=#cc626a
+ZSH_HIGHLIGHT_STYLES[path]=fg=#afb2bb
+ZSH_HIGHLIGHT_STYLES[alias]=fg=#c678dd,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=#d1b071,standout
+ZSH_HIGHLIGHT_STYLES[command]=fg=#61afef,bold
+ZSH_HIGHLIGHT_STYLES[comment]=fg=#89b06d
+#ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=#00ff00,underline
+#ZSH_HIGHLIGHT_STYLES[default]=#8E94A3
+#ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+#ZSH_HIGHLIGHT_STYLES[builtin]=fg=#A463BF,bold
+#ZSH_HIGHLIGHT_STYLES[function]=fg=#98c379,bold
+#ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+#ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+#ZSH_HIGHLIGHT_STYLES[globbing]=fg=#A463BF
+#ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
+#ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
+#ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+#ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=#98c379
+#ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=#98c379
+#ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=#98c379
+#ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=#98c379
+#ZSH_HIGHLIGHT_STYLES[assign]=none
 #::::::::::::::::zsh-autosuggestions::::::::::::::::::::
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
@@ -131,6 +124,19 @@ zstyle ':autocomplete:*' fzf-completion no
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
 #_________________USER CONFIG _____________________
 export ARCHFLAGS="-arch x86_64"
 
+source $ZSH/oh-my-zsh.sh

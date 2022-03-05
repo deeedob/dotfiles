@@ -26,7 +26,7 @@ $ cd ddob-dotfiles; ./install
 **Official:**
 This will get you up and running with my dotfiles. If you want to get an understanding of what's going on I highly recommend to have a short read about these application.
 ```
-# pacman -S git openssh xorg-server xorg-xinit xorg-xrandr bspwm sxhkd xwallpaper rofi dunst alacritty slop scrot jack2 qjackctl pulseaudio pulseaudio-jack alsa-utils refind neovim nautilus ranger calcurse htop termdown zsh ufw mpd
+# pacman -S git openssh xorg-server xorg-xinit xorg-xrandr bspwm sxhkd xwallpaper rofi dunst alacritty slop scrot jack2 qjackctl pulseaudio pulseaudio-jack alsa-utils refind neovim nautilus ranger calcurse htop termdown zsh ufw mpd nautilus-terminal
 ```
 **AUR:** \
 [picom (git) *](https://aur.archlinux.org/packages/picom-git/) \
@@ -41,8 +41,14 @@ This will get you up and running with my dotfiles. If you want to get an underst
 
 Install with yay:
 ```
-# yay -S picom-git polybar spotify nerd-fonts-complete ttf-all-the-icons tdrop-git flameshot 
+# yay -S picom-git polybar spotify nerd-fonts-complete ttf-all-the-icons tdrop-git flameshot nautilus-metadata-editor nautilus-admin nautilus-open-any-terminal
 ```
+<br>
+For nautilus-open-any-terminal:
+```
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+```
+
 **GIT:** \
 [widgets: eww](https://github.com/elkowar/eww) \
 [PTTabs: Polybar dropdown script](https://github.com/Nikzt/polybar-terminal-tabs) \

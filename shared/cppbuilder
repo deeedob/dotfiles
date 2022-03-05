@@ -10,11 +10,11 @@ then
   #check if build directory exists
   if [ ! -d "builds" ]; then
     mkdir builds
-    cc -Wall -Wextra -pedantic -Werror -O3 $1 -o builds/${BINNAME}
+    cc -Wall -Wextra -pedantic -Werror -Wno-unused-variable -O3 $1 -o builds/${BINNAME}
     else
-      cc -Wall -Wextra -pedantic -Werror -O3 $1 -o builds/${BINNAME}
+      cc -Wall -Wextra -pedantic -Werror Wno-unused-variable -O3 $1 -o builds/${BINNAME}
   fi
-  echo "cc -Wall -Wextra -pedantic -Werror -std=c2x -O3 $1 -o builds/${BINNAME}"
+  echo "cc -Wall -Wextra -pedantic -Werror Wno-unused-variable -std=c2x -O3 $1 -o builds/${BINNAME}"
   ./builds/${BINNAME}
 else
   echo "Please specify correct src files! currently : $FILE"

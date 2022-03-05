@@ -10,6 +10,7 @@
     ~/.Xmodmap: Xmodmap_d
     ~/.Xresources: Xresources_d
     ~/.xprofile: xprofile
+    ~/.themes/Nordic-darker: Nordic-darker
     ~/.zshrc: zshrc
     ~/.ideavimrc: ideavimrc
     ~/.p10k.zsh: p10k.zsh
@@ -31,6 +32,7 @@
 
 - create:
     - ~/Downloads
+    - ~/.themes
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
