@@ -45,8 +45,9 @@ Install with yay:
 ```
 # yay -S picom-git polybar spotify nerd-fonts-complete ttf-all-the-icons tdrop-git flameshot nautilus-metadata-editor nautilus-admin nautilus-open-any-terminal
 ```
-<br>
+
 For nautilus-open-any-terminal:
+
 ```
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 ```
