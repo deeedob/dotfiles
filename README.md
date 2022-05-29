@@ -1,8 +1,10 @@
 <div align="center">
-  <h1>DD0xb's Dotfiles</h1>
+  <h1>DDob Dotfiles</h1>
 </div>
+
+
 Hello there and welcome to my dotfiles. 
-I use these for all my [**Arch Linux**](https://archlinux.org/) Desktop Environments.
+I use these for all my [Arch linux](https://archlinux.org/about) Desktop Environments.
 ![plot]( ./Screenshots/screen_1.png )
 
 ## Prerequisite 
