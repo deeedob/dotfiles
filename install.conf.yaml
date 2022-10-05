@@ -1,0 +1,186 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.icons/default:
+        relink: true
+        create: true
+        path: files/.icons/default
+    ~/.wallpapers:
+        relink: true
+        path: files/.gitconfig
+
+    ~/.gitconfig:
+        relink: true
+        path: files/.gitconfig
+
+    ~/.gtkrc-2.0:
+        relink: true
+        path: files/.gtkrc-2.0
+
+    ~/.xinitrc:
+        relink: true
+        path: files/.xinitrc
+
+    ~/.Xmodmap:
+        relink: true
+        path: files/.xinitrc
+
+    ~/.Xresources:
+        relink: true
+        path: files/.Xresources
+
+    ~/.ideavimrs:
+        relink: true
+        path: files/.ideavimrc
+
+    ~/.config/alacritty:
+        create: true
+        relink: true
+        path: files/.config/alacritty
+
+    ~/.config/bspwm:
+        relink: true
+        path: files/.config/bspwm
+
+    ~/.config/btop:
+        relink: true
+        path: files/.config/btop
+
+    ~/.config/conky:
+        relink: true
+        path: files/.config/conky
+
+    ~/.config/dunst:
+        relink: true
+        path: files/.config/dunst
+
+    ~/.config/eww:
+        relink: true
+        path: files/.config/eww
+
+    ~/.config/flashfocus:
+        relink: true
+        path: files/.config/flashfocus
+
+    ~/.config/gtk-2.0:
+        relink: true
+        path: files/.config/gtk-2.0
+
+    ~/.config/gtk-3.0:
+        relink: true
+        path: files/.config/gtk-3.0
+
+    ~/.config/gtk-4.0:
+        relink: true
+        path: files/.config/gtk-4.0
+
+    ~/.config/jgmenu:
+        relink: true
+        path: files/.config/jgmenu
+
+    ~/.config/neofetch:
+        relink: true
+        path: files/.config/neofetch
+
+    ~/.config/nvim:
+        relink: true
+        path: files/.config/nvim
+
+    ~/.config/picom:
+        relink: true
+        path: files/.config/picom
+
+    ~/.config/polybar:
+        relink: true
+        path: files/.config/polybar
+
+    ~/.config/ranger:
+        relink: true
+        path: files/.config/ranger
+
+    ~/.config/redshift:
+        relink: true
+        path: files/.config/redshift
+
+    ~/.config/rofi:
+        relink: true
+        path: files/.config/rofi
+
+    ~/.config/sxhkd:
+        relink: true
+        path: files/.config/sxhkd
+
+    ~/.config/tint2:
+        relink: true
+        path: files/.config/tint2
+
+    ~/.config/zsh:
+        relink: true
+        path: files/.config/zsh
+
+    ~/.config/starship.toml:
+        relink: true
+        path: files/.config/starship.toml
+
+    ~/.local/share/fonts:
+        create: true
+        relink: true
+        path: files/.local/share/fonts
+
+    ~/.local/share/icons:
+        relink: true
+        path: files/.local/share/icons
+
+    ~/.local/share/rofi:
+        relink: true
+        path: files/.local/share/rofi
+
+    ~/.scripts/dunst:
+        create: true
+        relink: true
+        path: files/.scripts/dunst
+
+    ~/.scripts/customizedKeymap:
+        relink: true
+        path: files/.scripts/customizedKeymap
+
+    ~/.scripts/lock:
+        relink: true
+        path: files/.scripts/lock
+
+    ~/.scripts/logger.zsh:
+        relink: true
+        path: files/.scripts/logger.zsh
+
+    ~/.scripts/music-art:
+        relink: true
+        path: files/.scripts/music-art
+
+    ~/.scripts/music-line:
+        relink: true
+        path: files/.scripts/music-line
+
+    ~/.scripts/screenshot:
+        relink: true
+        path: files/.scripts/screenshot
+
+    ~/.scripts/window-switch:
+        relink: true
+        path: files/.scripts/window-switch
+
+    ~/bin/color-picker:
+        relink: true
+        create: true
+        path: files/bin/color-picker
+
+- create:
+  - ~/bin
+  #- ~/downloads
+  #- ~/.vim/undo-history
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

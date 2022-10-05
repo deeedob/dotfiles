@@ -1,0 +1,59 @@
+window:
+  padding:
+    x: 6
+    y: 6
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+
+size: 14.0
+draw_bold_text_with_bright_colors: true
+
+# Colors (Kanagawa) 
+# https://github.com/rebelot/kanagawa.nvim
+
+colors:
+  # Default colors
+  primary:
+    background: '#1F1F28'
+    foreground: '#DCD7BA'
+
+  # Normal colors
+  normal:
+    black:   '#1e2127'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#abb2bf'
+  # Bright colors
+  bright:
+    black:   '#5c6370'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#ffffff'
+
+selection:
+  save_to_clipboard: false
+
+live_config_reload: true

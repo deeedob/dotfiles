@@ -1,0 +1,44 @@
+alias ls='exa --icons --color=always'
+alias ll='ls --long --tree --level=$0'
+
+alias ll='_ll() { 
+  if [ ! -z "$1" ]
+    then
+      ls --long --tree --level="$1";
+    else
+      ls --long --tree --level=1;
+  fi
+  };
+  _ll'
+
+alias la='_la() { 
+  if [ ! -z "$1" ]
+    then
+      ls --long --tree --all --level="$1";
+    else
+      ls --long --tree --all --level=1;
+  fi
+  };
+  _la'
+
+alias cp='cp -v'
+alias mv='mv -v'
+alias del='rm -i -v'
+
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias r='ranger'
+
+alias c='clear'
+alias h='history'
+alias fh='find . -name'
+alias sc='grep -i -w -n -r -I --color=always'
+alias untar='tar -zxvf'
+alias getpass='openssl rand -base64 20'
+alias sha='shasum -a 256'
+alias www='python3 -m http.server'
+alias ipe=$'echo -n \"0: ext   \";curl ipinfo.io/ip;echo \"\" '
+alias ipi=$'ip -4 -o a | cut -d \'\' -f 2,7 | cut -d \'/\' -f 1'
+alias ipa='ipe;ipi'
+alias ports='nmap localhost'
