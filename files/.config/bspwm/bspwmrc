@@ -29,7 +29,7 @@ $HOME/.config/conky/Auva/start.sh &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 xsetroot -cursor_name left_ptr
 setxkbmap de
-customizedKeymap
+$HOME/.scripts/customizedKeymap
 feh --bg-fill ~/.wallpapers/tokyo.png
 xfce4-power-manager &
 parcellite &
