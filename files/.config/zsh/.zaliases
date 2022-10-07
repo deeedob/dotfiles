@@ -21,6 +21,9 @@ alias la='_la() {
   };
   _la'
 
+lspac() { pacman -Qen | expac --timefmt='%F %T' '%n %v %l' - | sort -k3 }
+
+
 alias cp='cp -v'
 alias mv='mv -v'
 alias del='rm -i -v'
@@ -32,6 +35,8 @@ alias r='ranger'
 
 alias c='clear'
 alias h='history'
+alias fh='find . -name'
+
 alias fh='find . -name'
 alias sc='grep -i -w -n -r -I --color=always'
 alias untar='tar -zxvf'

@@ -5,6 +5,3 @@
 [submodule "NvChad"]
   path = files/.config/nvim
   url = https://github.com/NvChad/NvChad
-[submodule "ohmyzsh"]
-  path = files/.config/zsh/oh-my-zsh
-  url = https://github.com/ohmyzsh/ohmyzsh

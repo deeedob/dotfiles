@@ -5,6 +5,13 @@
 
 - clean: ['~']
 
+- shell:
+  -
+    command: scripts/packages.sh
+    stdin: true
+    stdout: true
+    description: Prerequisite
+
 - link:
     ~/.gitconfig:
         path: files/.gitconfig
@@ -16,7 +23,7 @@
         path: files/.xinitrc
 
     ~/.Xmodmap:
-        path: files/.xinitrc
+        path: files/.Xmodmap
 
     ~/.Xresources:
         path: files/.Xresources
@@ -138,4 +145,10 @@
   #- ~/.vim/undo-history
 
 - shell:
+  -
+    command: scripts/rootfiles.sh
+    stdin: true
+    stdout: true
+    description: Installing root files
+
   - [git submodule update --init --recursive, Installing submodules]
