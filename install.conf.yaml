@@ -37,6 +37,9 @@
     ~/.wallpapers:
         path: files/.wallpapers
 
+    ~/.zshenv:
+        path: files/.zshenv
+
     ~/.config/alacritty:
         path: files/.config/alacritty
 

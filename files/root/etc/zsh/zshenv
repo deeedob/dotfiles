@@ -1,0 +1,8 @@
+export EDITOR="nvim"
+export USER_TERMINAL="alacritty"
+export USER_FILEMANAGER="ranger"
+
+#fix java awt bug related to intellij bug
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export QT_QPA_PLATFORMTHEME=qt5ct
