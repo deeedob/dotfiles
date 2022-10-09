@@ -2,8 +2,6 @@
 
 
 sudo usermod -aG adm $USER
-sudo usermod -aG wheel $USER
-sudo usermod -aG audio $USER
 
 sudo plymouth-set-default-theme -R lone
 
