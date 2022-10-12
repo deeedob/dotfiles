@@ -3,8 +3,6 @@
 
 sudo usermod -aG adm $USER
 
-sudo plymouth-set-default-theme -R lone
-
 sudo systemctl enable --now com.system76.PowerDaemon
 sudo systemctl enable bluetooth
 sudo systemctl enable lightdm-plymouth.service
