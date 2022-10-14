@@ -106,7 +106,7 @@
     ~/.config/starship.toml:
         path: files/.config/starship.toml
 
-    ~/.local/share/fonts:
+    ~/.config/local/share/fonts:
         path: files/.local/share/fonts
 
     ~/.local/share/icons:
@@ -153,5 +153,13 @@
     stdin: true
     stdout: true
     description: Installing root files
+
+- shell:
+  -
+    command: scripts/configuration.sh
+    stdin: true
+    stdout: true
+    description: Configuring the system
+
 
   - [git submodule update --init --recursive, Installing submodules]
