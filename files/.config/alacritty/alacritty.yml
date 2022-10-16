@@ -8,16 +8,16 @@ window:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: MonoLisa
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: MonoLisa
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: MonoLisa
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: MonoLisa
     style: Bold Italic
 
 size: 14.0
