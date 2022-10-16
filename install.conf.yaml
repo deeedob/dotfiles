@@ -28,6 +28,9 @@
     ~/.Xresources:
         path: files/.Xresources
 
+    ~/.xprofile:
+        path: files/.xprofile
+
     ~/.ideavimrs:
         path: files/.ideavimrc
 
