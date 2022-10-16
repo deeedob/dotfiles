@@ -127,6 +127,9 @@
     ~/.scripts/lock:
         path: files/.scripts/lock
 
+    ~/.scripts/git_configure:
+        path: files/.scripts/git_configure
+
     ~/.scripts/logger.zsh:
         path: files/.scripts/logger.zsh
 
@@ -147,6 +150,7 @@
 
 - create:
   - ~/bin
+  - ~/.ssh
   #- ~/downloads
   #- ~/.vim/undo-history
 

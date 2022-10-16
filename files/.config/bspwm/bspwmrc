@@ -20,6 +20,9 @@ bspc rule -a Rofi state=floating
 bspc rule -a Org.gnome.Nautilus state=floating center=true
 
 # start programs
+xsetroot -cursor_name left_ptr
+setxkbmap de
+$HOME/.scripts/customizedKeymap
 pgrep -x sxhkd > /dev/null || sxhkd &
 picom &
 unclutter &
@@ -27,9 +30,7 @@ polybar -r &
 eww daemon &
 $HOME/.config/conky/Auva/start.sh &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
-xsetroot -cursor_name left_ptr
-setxkbmap de
-$HOME/.scripts/customizedKeymap
 feh --bg-fill ~/.wallpapers/tokyo.png
 xfce4-power-manager &
 parcellite &
+alacritty &
