@@ -9,7 +9,7 @@ bspc config border_radius		15
 bspc config split_ratio			0.52
 bspc config gapless_monocle		true
 bspc config borderless_monocle		true
-bspc config focus_follows_pointer	false
+bspc config focus_follows_pointer	true
 bspc config pointer_modifier mod5
 
 bspc config normal_border_color '#54546D'
@@ -33,4 +33,3 @@ $HOME/.config/conky/Auva/start.sh &
 feh --bg-fill ~/.wallpapers/tokyo.png
 xfce4-power-manager &
 parcellite &
-alacritty &
