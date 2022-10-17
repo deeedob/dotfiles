@@ -112,7 +112,7 @@
     ~/.config/local/share/fonts:
         path: files/.local/share/fonts
 
-    ~/.local/share/icons:
+    ~/.config/local/share/icons:
         path: files/.local/share/icons
 
     ~/.local/share/rofi:

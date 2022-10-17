@@ -11,7 +11,7 @@ gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacri
 
 # oh-my-zsh
 cd ${BASEDIR}/files/.config/zsh/
-if [ ! -d $HOME/.config/zsh/oh-my-zsh ]; then
+if [ ! -d $HOME/.config/zsh/oh-my-zsh/ ]; then
   echo "Downloading oh-my-zsh"
   ZSH="$HOME/.config/zsh/oh-my-zsh" sh install.sh
 fi
@@ -21,4 +21,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.config/zsh/oh-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # setup user Account Image for LightDM
-echo "[USER]\nXSession=bspwm\nIcon=/var/lib/AccountsService/icons/$(whoami)\nSystemAccount=false" | sudo tee /var/lib/AccountsService/users/$(whoami)
+echo "[USER]\nXSession=bspwm\nIcon=/var/lib/AccountsService/icons/$(whoami).jpg\nSystemAccount=false" | sudo tee /var/lib/AccountsService/users/$(whoami)
