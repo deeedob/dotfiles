@@ -22,3 +22,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.config/zsh
 
 # setup user Account Image for LightDM
 echo "[USER]\nXSession=bspwm\nIcon=/var/lib/AccountsService/icons/$(whoami).jpg\nSystemAccount=false" | sudo tee /var/lib/AccountsService/users/$(whoami)
+
+# update weather hourly
+echo "${BASEDIR}/files/.config/eww/Main/scripts/weather --getdata" | sudo tee /etc/cron.hourly/update_weather.sh
+sudo chmod +x /etc/cron.hourly/update_weather.sh

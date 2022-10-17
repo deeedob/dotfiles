@@ -109,9 +109,6 @@
     ~/.config/starship.toml:
         path: files/.config/starship.toml
 
-    ~/.config/local/share/fonts:
-        path: files/.local/share/fonts
-
     ~/.config/local/share/icons:
         path: files/.local/share/icons
 
