@@ -13,7 +13,7 @@ gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacri
 cd ${BASEDIR}/files/.config/zsh/
 if [ ! -d $HOME/.config/zsh/oh-my-zsh/ ]; then
   echo "Downloading oh-my-zsh"
-  ZSH="$HOME/.config/zsh/oh-my-zsh" sh install.sh
+  ZSH="$HOME/.config/zsh/oh-my-zsh" sh $HOME/.config/zsh/install.sh
 fi
 
 echo "Installing zsh plugins"
@@ -30,3 +30,6 @@ sudo chmod +x /etc/cron.hourly/update_weather.sh
 # set default mimes
 handlr set x-scheme-handler/https firefoxdeveloperedition.desktop
 handlr set x-scheme-handler/http firefoxdeveloperedition.desktop
+
+# set lock screen
+xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock" --create -t string
