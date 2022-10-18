@@ -82,6 +82,9 @@
     ~/.config/nvim:
         path: files/.config/nvim
 
+    ~/.config/nvim/lua/custom:
+        path: files/.config/nv_chad/custom
+
     ~/.config/picom:
         path: files/.config/picom
 
