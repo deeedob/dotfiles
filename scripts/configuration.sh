@@ -26,3 +26,7 @@ echo "[USER]\nXSession=bspwm\nIcon=/var/lib/AccountsService/icons/$(whoami).jpg\
 # update weather hourly
 echo "${BASEDIR}/files/.config/eww/Main/scripts/weather --getdata" | sudo tee /etc/cron.hourly/update_weather.sh
 sudo chmod +x /etc/cron.hourly/update_weather.sh
+
+# set default mimes
+handlr set x-scheme-handler/https firefoxdeveloperedition.desktop
+handlr set x-scheme-handler/http firefoxdeveloperedition.desktop

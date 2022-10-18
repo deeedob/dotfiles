@@ -13,4 +13,4 @@ style = "bg:#1F1F28 fg:#1F1F28"
 
 [git_branch]
 format = "[]($style)[[ ](bg:#1F1F28 fg:#db4b4b)$branch](bg:#1F1F28 fg:#c0caf5)[]($style)"
-style = "bg:#1a1b26 fg:#1F1F28"
+style = "bg:#1F1F28 fg:#1F1F28"
