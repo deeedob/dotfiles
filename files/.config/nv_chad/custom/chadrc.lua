@@ -1,7 +1,7 @@
 -- First read our docs (completely) then check the example_config repo
 
 local M = {}
--- local plugin_conf = require "custom.plugins.configs"
+-- local plugOv = require "custom.plugins.override"
 --
 -- M.options = {
 --   nvChad = {
@@ -17,22 +17,22 @@ M.ui = {
 }
 
 M.plugins = require "custom.plugins"
---
+
 -- M.plugins = {
 --   user = require "custom.plugins.init",
---
---   options = {
---     lspconfig = {
---       setup_lspconf = "custom.plugins.lspconfig",
---     },
---   },
+-- --
+-- --   options = {
+-- --     lspconfig = {
+-- --       setup_lspconf = "custom.plugins.lspconfig",
+-- --     },
+-- --   },
 --
 --   override = {
---     ["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
---     ["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
---     ["NvChad/nvterm"] = plugin_conf.nvterm,
---     ["tzachar/cmp-tabnine"] = plugin_conf.tabnine,
---     ["hrsh7th/nvim-cmp"] = plugin_conf.cmp,
+--     ["nvim-treesitter/nvim-treesitter"] = plugOv.treesitter,
+-- --     ["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
+-- --     ["NvChad/nvterm"] = plugin_conf.nvterm,
+-- --     ["tzachar/cmp-tabnine"] = plugin_conf.tabnine,
+-- --     ["hrsh7th/nvim-cmp"] = plugin_conf.cmp,
 --   }
 -- }
 

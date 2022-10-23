@@ -16,9 +16,6 @@
     ~/.gitconfig:
         path: files/.gitconfig
 
-    ~/.gtkrc-2.0:
-        path: files/.gtkrc-2.0
-
     ~/.xinitrc:
         path: files/.xinitrc
 
@@ -42,6 +39,9 @@
 
     ~/.zshenv:
         path: files/.zshenv
+
+    ~/.config/user-dirs.dirs:
+        path: files/.config/user-dirs.dirs
 
     ~/.config/alacritty:
         path: files/.config/alacritty
@@ -70,6 +70,9 @@
     ~/.config/gtk-3.0:
         path: files/.config/gtk-3.0
 
+    ~/.config/networkmanager-dmenu:
+        path: files/.config/networkmanager-dmenu
+
     ~/.config/gtk-4.0:
         path: files/.config/gtk-4.0
 
@@ -84,6 +87,9 @@
 
     ~/.config/nvim/lua/custom:
         path: files/.config/nv_chad/custom
+
+    ~/.config/nvim/lua/ftdetect:
+        path: files/.config/nv_chad/ftdetect
 
     ~/.config/picom:
         path: files/.config/picom
@@ -139,9 +145,6 @@
     ~/.scripts/music-line:
         path: files/.scripts/music-line
 
-    ~/.scripts/screenshot:
-        path: files/.scripts/screenshot
-
     ~/.scripts/window-switch:
         path: files/.scripts/window-switch
 
@@ -151,8 +154,21 @@
 - create:
   - ~/bin
   - ~/.ssh
-  #- ~/downloads
-  #- ~/.vim/undo-history
+  - ~/User
+  - ~/User/AudioProduction
+  - ~/User/Coding
+  - ~/User/Desktop
+  - ~/User/Downloads
+  - ~/User/Images
+  - ~/User/Images/Screenshots
+  - ~/User/Music
+  - ~/User/Personal
+  - ~/User/Public
+  - ~/User/Temp
+  - ~/User/Templates
+  - ~/User/Testbooth
+  - ~/User/Videos
+  - ~/User/Writings
 
 - shell:
   -

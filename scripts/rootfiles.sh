@@ -14,7 +14,10 @@ if [ -d ${BASEDIR}/files/root ]
     sudo cp -r ${BASEDIR}/files/root/usr/share/fonts/* /usr/share/fonts
     sudo cp -r ${BASEDIR}/files/root/username.jpg /var/lib/AccountsService/icons/$(whoami).jpg
     sudo cp -r ${BASEDIR}/files/root/etc/zsh/zshenv /etc/zsh/
+    sudo cp -r ${BASEDIR}/files/root/var/spool/cron/crons.cron /var/spool/cron/$(whoami)
+    sudo cp -r ${BASEDIR}/files/root/var/spool/cron/root-crons.cron /var/spool/cron/root
 
+    sudo ln -vfs /usr/bin/alacritty /usr/bin/xterm
   else
     echo "AN ERROR OCURRED!"
     exit -1

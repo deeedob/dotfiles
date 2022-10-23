@@ -15,16 +15,8 @@ super + @space
 	  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu_run 
 
 # Save screenshot to file with clipboard
-ctrl + shift + Print
-	$HOME/.scripts/screenshot --full
-
-# Screenshot Area
-Print
-	$HOME/.scripts/screenshot --area-cb
-
-# Screenshot Area and save it
-ctrl + Print
-        $HOME/.scripts/screenshot --full
+ctrl + p
+  flameshot gui
 
 #################
 #   mediakeys   #

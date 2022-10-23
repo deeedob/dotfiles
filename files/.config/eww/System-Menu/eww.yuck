@@ -134,12 +134,12 @@
   :windowtype "normal"
   :wm-ignore true
   :monitor 0
-  :geometry (geometry :x 76 :width 300 :height 300 :y 80 :x 1050)
+  :geometry (geometry :x 76 :width 300 :height 300 :y 80 :x 950)
   (system))
 
 (defwindow tips
   :windowtype "normal"
   :wm-ignore true
   :monitor 0
-  :geometry (geometry :x 76 :width 810 :height 100 :y 580 :x 1050)
+  :geometry (geometry :x 76 :width 810 :height 100 :y 580 :x 950)
   (tips))

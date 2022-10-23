@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+## Get data
+#http://api.openweathermap.org
 
 ## Collect data
 cache_dir="$HOME/.cache/eww/weather"
@@ -8,8 +11,6 @@ cache_weather_hex=${cache_dir}/weather-hex
 cache_weather_icon=${cache_dir}/weather-icon
 
 ## Weather data
-KEY="ff361c656d53b07fa7ab1921cd11ae04"
-ID="2950159"
 UNIT="metric"	# Available options : 'metric' or 'imperial'
 
 ## Make cache dir
@@ -17,10 +18,8 @@ if [[ ! -d "$cache_dir" ]]; then
 	mkdir -p ${cache_dir}
 fi
 
-## Get data
-#http://api.openweathermap.org/data/2.5/weather?id=2950159&units=metric&appid=ff361c656d53b07fa7ab1921cd11ae04
 get_weather_data() {
-	weather=`curl -sf "http://api.openweathermap.org/data/2.5/weather?&id=$ID&units=$UNIT&appid=$KEY"`
+	weather=`curl -sf "http://api.openweathermap.org/data/2.5/weather?&id=$WEATHER_ID&units=$UNIT&appid=$WEATHER_KEY"`
 	echo ${weather}
 
 	if [ ! -z "$weather" ]; then

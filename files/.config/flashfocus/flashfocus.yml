@@ -9,7 +9,7 @@ flash-opacity: 0.5
 default-opacity: 1
 
 # Length of flash in milliseconds.
-time: 500
+time: 300
 
 # If true, flashes are not faded out. This will improve performance but flashes
 # won't be smooth.

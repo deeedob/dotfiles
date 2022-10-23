@@ -1,0 +1,5 @@
+#Mins Hours   Days  Months  Day of the week
+0     *       *     *       *     ~/.dotfiles/files/.config/eww/Main/scripts/weather --getdata
+@reboot                           ~/.dotfiles/files/.config/eww/Main/scripts/weather --getdata
+@reboot                           /usr/bin/rm -f ~/User/Temp/*
+@reboot                           find /home/**/.config/local/share/cache -mtime +7 -exec rm -f {} \;

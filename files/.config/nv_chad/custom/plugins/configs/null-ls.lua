@@ -7,21 +7,37 @@ end
 local b = null_ls.builtins
 
 local sources = {
-
-    -- webdev stuff
-    b.formatting.deno_fmt,
-    b.formatting.prettier,
-
-    -- Lua
-    b.formatting.stylua,
-
-    -- Shell
-    b.formatting.shfmt,
-    b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]",
-    b.formatting.clang_format,
-  },
-
-
+  -- cpp
+  b.diagnostics.cppcheck,
+  b.diagnostics.clang_check,
+  b.formatting.astyle,
+  b.formatting.clang_format,
+  b.formatting.uncrustify,
+  -- cmake
+  b.formatting.cmake_format,
+  b.diagnostics.cmake_lint,
+  -- shell
+  b.formatting.shellharden,
+  b.formatting.shfmt,
+  b.code_actions.shellcheck.with { diagnostics_format = "#{m} [#{c}]",},
+  -- python
+  b.diagnostics.flake8,
+  b.diagnostics.pycodestyle,
+  b.diagnostics.pydocstyle,
+  b.diagnostics.mypy,
+  -- lua
+  b.diagnostics.luacheck,
+  -- text / md
+  b.diagnostics.alex,
+  b.diagnostics.markdownlint,
+  b.diagnostics.misspell,
+  b.diagnostics.proselint,
+  b.diagnostics.write_good,
+  -- other
+  b.diagnostics.qmllint,
+  -- test
+  b.hover.dictionary,
+  b.hover.printenv,
 }
 
 null_ls.setup {

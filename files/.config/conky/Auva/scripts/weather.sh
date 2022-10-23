@@ -5,9 +5,7 @@
 # so that conky will still display the weather when offline even though it doesn't up to date
 
 # you can use this or replace with yours
-api_key=ff361c656d53b07fa7ab1921cd11ae04
 # get your city id at https://openweathermap.org/find and replace
-city_id=2950159
 
-url="api.openweathermap.org/data/2.5/weather?id=${city_id}&appid=${api_key}&cnt=5&units=metric&lang=en"
+url="api.openweathermap.org/data/2.5/weather?id=${WEATHER_ID}&appid=${WEATHER_KEY}&cnt=5&units=metric&lang=en"
 curl ${url} -s -o ~/.cache/weather.json
