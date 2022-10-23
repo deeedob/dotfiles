@@ -30,7 +30,7 @@ This will setup and populate the System with my dotfiles.
 - user login image
   - files/root/username.jpg
 - specify github and weather api
-  - /home/<user>/User/Personal/Private/.glob_env
+  - /home/\<user\>/User/Personal/Private/.glob_env
     - export GH_TOKEN=\"token\"
     - export GH_USER=\"username\"
     - export WEATHER_KEY=\"api_key\"
