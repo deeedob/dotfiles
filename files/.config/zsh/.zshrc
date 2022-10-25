@@ -8,6 +8,7 @@ ENABLE_CORRECTIONS="true"
 plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  ssh-agent
   git
 	sudo
 	colored-man-pages
