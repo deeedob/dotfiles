@@ -24,6 +24,3 @@ export MANPAGER='nvim +Man!'
 
 # System
 export ARCHFLAGS="-arch x86_64"
-
-# export gh token, user, weather key & id
-FILE=~/User/Personal/Private/.glob_env ; [ -f $FILE ] && . $FILE

@@ -1,10 +1,15 @@
 #!/usr/bin/bash
 
 sudo usermod -aG adm "$USER"
+sudo usermod -aG realtime "$USER"
+sudo usermod -aG libvirt "$USER"
 
 sudo systemctl enable --now com.system76.PowerDaemon
 sudo systemctl enable bluetooth
 sudo systemctl enable lightdm-plymouth.service
+sudo systemctl enable firewalld.service
+sudo systemctl enable --now tuned.service
+
 
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 
@@ -42,3 +47,7 @@ handlr set x-scheme-handler/http firefoxdeveloperedition.desktop
 
 # set lock screen
 xfconf-query -c xfce4-session -p /general/LockCommand -s "$HOME/.scripts/lock" --create -t string
+
+# virtualization
+sudo sed -i 's/^#unix_sock_group/unix_sock_group/' /etc/libvirt/libvirtd.conf
+sudo sed -i 's/^#unix_sock_rw_perms/unix_sock_rw_perms/' /etc/libvirt/libvirtd.conf

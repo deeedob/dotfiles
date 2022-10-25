@@ -5,14 +5,10 @@ export ZSH="$ZDOTDIR/oh-my-zsh"
 ZSH_THEME="arrow"
 ENABLE_CORRECTIONS="true"
 
-zstyle :omz:plugins:ssh-agent identities id_gh id_hetzner
-zstyle :omz:plugins:ssh-agent lazy yes
-
 plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	git
-  ssh-agent
+  git
 	sudo
 	colored-man-pages
 )

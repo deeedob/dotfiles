@@ -47,3 +47,6 @@ alias ipe=$'echo -n \"0: ext   \";curl ipinfo.io/ip;echo \"\" '
 alias ipi=$'ip -4 -o a | cut -d \'\' -f 2,7 | cut -d \'/\' -f 1'
 alias ipa='ipe;ipi'
 alias ports='nmap localhost'
+
+alias virton="sudo systemctl start libvirtd.service;sudo systemctl start virtlogd.service"
+alias virtoff="sudo systemctl stop libvirtd.service;sudo systemctl stop virtlogd.service"

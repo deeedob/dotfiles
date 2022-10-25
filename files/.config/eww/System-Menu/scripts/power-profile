@@ -2,9 +2,9 @@ MODE=$(system76-power profile | grep Profile | awk '{print $3}')
 
 toggle() {
     if [[ $MODE == 'Balanced' ]]; then
-        system76-power profile performance
+        tuned-adm profile latency-performance
     else
-        system76-power profile balanced
+        tuned-adm profile laptop-battery-powersave
     fi
 }
 

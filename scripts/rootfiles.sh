@@ -16,6 +16,7 @@ if [ -d ${BASEDIR}/files/root ]
     sudo cp -r ${BASEDIR}/files/root/etc/zsh/zshenv /etc/zsh/
     sudo cp -r ${BASEDIR}/files/root/var/spool/cron/crons.cron /var/spool/cron/$(whoami)
     sudo cp -r ${BASEDIR}/files/root/var/spool/cron/root-crons.cron /var/spool/cron/root
+    sudo cp -r ${BASEDIR}/files/root/etc/sysctl.d/99-sysctl.conf /etc/sysctl.d/
 
     sudo ln -vfs /usr/bin/alacritty /usr/bin/xterm
   else

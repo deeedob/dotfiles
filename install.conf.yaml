@@ -124,6 +124,9 @@
     ~/.local/share/rofi:
         path: files/.local/share/rofi
 
+    ~/.scripts/sys-reboot:
+        path: files/.scripts/sys-reboot
+
     ~/.scripts/dunst:
         path: files/.scripts/dunst
 
