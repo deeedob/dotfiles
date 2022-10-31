@@ -1,6 +1,11 @@
 # Use custom format:
 format="$directory$git_branch$character"
 
+[python]
+symbol = "PYTH"
+pyenv_version_name = true
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+
 # Prompt symbols 
 [character]
 success_symbol = "[](#9ece6a bold)"

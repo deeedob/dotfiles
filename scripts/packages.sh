@@ -19,4 +19,4 @@ if [ -n "$(command -v paru)" ]
     sleep 1
     eval "$parucmd"
 fi
-addcmd="paru --needed -S baobab github-cli git-open keepassxc clion lldb subversion qt6 elementary-planner gnome-keyring gnome-calculator virt-manager qemu-full libvirt iptables-nft dnsmasq dmidecode bridge-utils openbsd-netcat"
+addcmd="paru --needed -S baobab github-cli git-open keepassxc clion lldb subversion qt6 elementary-planner gnome-keyring gnome-calculator virt-manager qemu-full libvirt iptables-nft dnsmasq dmidecode bridge-utils openbsd-netcat ncmpcpp mpd wildmidi timidity++ python-pip"

@@ -9,6 +9,7 @@ sudo systemctl enable bluetooth
 sudo systemctl enable lightdm-plymouth.service
 sudo systemctl enable firewalld.service
 sudo systemctl enable --now tuned.service
+systemctl enable --user mpd
 
 
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty

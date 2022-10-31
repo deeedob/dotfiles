@@ -40,6 +40,9 @@
     ~/.zshenv:
         path: files/.zshenv
 
+    ~/.config/mpd:
+        path: files/.config/mpd
+
     ~/.config/user-dirs.dirs:
         path: files/.config/user-dirs.dirs
 

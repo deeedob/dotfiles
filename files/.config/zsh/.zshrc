@@ -9,6 +9,7 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
   ssh-agent
+  virtualenv
   git
 	sudo
 	colored-man-pages
