@@ -1,6 +1,6 @@
 [user]
-	email = dennis.ob@protonmail.com
-	name = deeedob
+	email = dennis.oberst@qt.io
+	name = Dennis Oberst
 [alias]
 	ci = commit
 	st = status
@@ -9,22 +9,23 @@
 	co = checkout
 	ann = blame
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = input
 	pager = less -FRSX
 [credential]
 	helper = cache --timeout=36000
 # Enforce SSH
-[url "ssh://git@github.com/"]
-  insteadOf = https://github.com/
-[url "ssh://git@gitlab.com/"]
-  insteadOf = https://gitlab.com/
-[url "ssh://git@bitbucket.org/"]
-  insteadOf = https://bitbucket.org/
+#[url "ssh://git@github.com/"]
+#  insteadOf = https://github.com/
+#[url "ssh://git@gitlab.com/"]
+#  insteadOf = https://gitlab.com/
+#[url "ssh://git@bitbucket.org/"]
+#  insteadOf = https://bitbucket.org/
 [commit]
-	template = qt6/.commit-template
+	template = /home/dennis/User/Coding/ReposExt/QtAll/qt6/.commit-template
 [rerere]
 	enabled = true
+	autoupdate = true
 [rebase]
 	stat = true
 [color]

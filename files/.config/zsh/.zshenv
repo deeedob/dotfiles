@@ -1,3 +1,4 @@
+export PATH=$PATH:$HOME/bin/
 export TERMINAL="alacritty"
 # XDG Base Directory
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -8,6 +9,7 @@ export XDG_STATE_HOME="$XDG_DATA_HOME/state"
 export GOPATH="$XDG_DATA_HOME/go"
 # QUICK USER DIR
 export prj="$HOME/User/Coding/Projects"
+export samples="$HOME/User/AudioProduction/RealSamples"
 
 export EDITOR="nvim"
 export VISUAL="nvim"

@@ -18,13 +18,16 @@ super + @space
 ctrl + p
   flameshot gui
 
+ctrl + shift + p 
+  ~/bin/color-picker
+
 #################
 #   mediakeys   #
 #################
 
 # Volume Up
 XF86AudioRaiseVolume
-  amixer sset Master 5%+ && $HOME/.config/eww/Misc/scripts/volume
+  amixer sset Master 5%+ && $HOME/.lripts/volume
 
 # Volume Down
 XF86AudioLowerVolume

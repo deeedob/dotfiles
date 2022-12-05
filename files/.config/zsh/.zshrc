@@ -2,7 +2,8 @@
 # Oh-My-Zsh Configs
 #
 export ZSH="$ZDOTDIR/oh-my-zsh"
-ZSH_THEME="arrow"
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ENABLE_CORRECTIONS="true"
 
 plugins=(
@@ -81,7 +82,10 @@ setopt HIST_IGNORE_ALL_DUPS
 #
 source $ZDOTDIR/.zaliases
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 ## term colors
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
@@ -91,3 +95,6 @@ ZSH_HIGHLIGHT_STYLES[alias]=fg=#c678dd,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=#d1b071,standout
 ZSH_HIGHLIGHT_STYLES[command]=fg=#61afef,bold
 ZSH_HIGHLIGHT_STYLES[comment]=fg=#89b06d
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

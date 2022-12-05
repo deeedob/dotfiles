@@ -50,3 +50,8 @@ alias ports='nmap localhost'
 
 alias virton="sudo systemctl start libvirtd.service;sudo systemctl start virtlogd.service"
 alias virtoff="sudo systemctl stop libvirtd.service;sudo systemctl stop virtlogd.service"
+alias wifioff="sudo ip link set wlo1 down"
+alias wifion="sudo ip link set wlo1 up"
+alias grabwav="yt-dlp "
+alias grabwav='yt-dlp --no-playlist -x --audio-format wav -o "$samples/%(title)s_%(id)s.%(ext)s"'
+alias grabmp3='yt-dlp --no-playlist -x --audio-format mp3 -o "$samples/%(title)s_%(id)s.%(ext)s"'

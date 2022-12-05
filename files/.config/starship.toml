@@ -1,10 +1,8 @@
 # Use custom format:
-format="$directory$git_branch$character"
+format="$python$directory$git_branch$git_status$git_commit$character"
 
 [python]
-symbol = "PYTH"
 pyenv_version_name = true
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 
 # Prompt symbols 
 [character]
@@ -13,7 +11,7 @@ error_symbol = "[](#db4b4b)"
 vicmd_symbol = "[](#9ece6a)"
 
 [directory]
-format = "[]($style)[[ ](bg:#1F1F28 fg:#7aa2f7)$path](bg:#1F1F28 fg:#c0caf5)[ ]($style)"
+format = "[]($style)[[ ](bg:#1F1F28 fg:#7aa2f7)$path](bg:#1F1F28 fg:#c0caf5)[]($style)"
 style = "bg:#1F1F28 fg:#1F1F28"
 
 [git_branch]

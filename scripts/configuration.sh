@@ -11,7 +11,6 @@ sudo systemctl enable firewalld.service
 sudo systemctl enable --now tuned.service
 systemctl enable --user mpd
 
-
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 
 # oh-my-zsh
@@ -23,6 +22,7 @@ fi
 echo "Installing zsh plugins"
 git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME"/.config/zsh/oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting "$HOME"/.config/zsh/oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.config/zsh/oh-my-zsh/custom}"/themes/powerlevel10k
 
 # setup user Account Image for LightDM
 printf "[User]\nXSession=bspwm\nIcon=/var/lib/AccountsService/icons/%s.jpg\nSystemAccount=false" "$(whoami)" | sudo tee /var/lib/AccountsService/users/"$(whoami)"
