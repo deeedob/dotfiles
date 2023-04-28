@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/fish: .config/fish
+
+- create:
+    - ~/.config/fish
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [.config/fish/install.sh, Installing the fish shell]
