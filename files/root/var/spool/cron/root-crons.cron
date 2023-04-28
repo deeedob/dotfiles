@@ -1,3 +1,0 @@
-#Mins Hours   Days  Months  Day of the week
-@reboot                                       /usr/bin/updatedb
-@reboot                                       find /root/.cache -mtime +7 -exec rm -f {} \;

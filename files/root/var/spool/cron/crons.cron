@@ -1,3 +1,0 @@
-#Mins Hours   Days  Months  Day of the week
-0 * * * * ~/.dotfiles/files/.config/eww/Main/scripts/weather --getdata
-0 * * * * ~/.dotfiles/files/.config/conky/Auva/scripts/weather.sh

@@ -1,5 +1,0 @@
-#/bin/bash
-
-~/.dotfiles/files/.config/eww/Main/scripts/weather --getdata
-/usr/bin/rm -rf ~/User/Temp/*
-/usr/bin/find /home/**/.config/local/share/cache -mtime +7 -exec rm -f {} \;
