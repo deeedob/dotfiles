@@ -1,5 +1,6 @@
 - defaults:
     link:
+      force: true
       relink: true
       create: true
 
@@ -7,10 +8,35 @@
 
 - link:
     ~/.config/fish: .config/fish
+    ~/.config/clangd: .config/clangd
+    ~/.config/alacritty: .config/alacritty
     ~/Scripts: scripts
+    ~/.Xmodmap: .Xmodmap
+    ~/.config/xsettingsd: .config/xsettingsd
+    ~/.config/plasma-workspace: .config/plasma-workspace
+    ~/.config/kdedefaults: .config/kdedefaults
+    ~/.config/gtk-4.0: .config/gtk-4.0
+    ~/.config/gtk-3.0: .config/gtk-3.0
+    ~/.config/dconf: .config/dconf
+    ~/.config/user-dirs.locale: .config/user-dirs.locale
+    ~/.config/systemsettingsrc : .config/systemsettingsrc
+    ~/.config/plasmanotifyrc : .config/plasmanotifyrc
+    ~/.config/plasma-localerc : .config/plasma-localerc
+    ~/.config/kwinrulesrc : .config/kwinrulesrc
+    ~/.config/kwinrc : .config/kwinrc
+    ~/.config/ksplashrc : .config/ksplashrc
+    ~/.config/khotkeysrc : .config/khotkeysrc
+    ~/.config/kglobalshortcutsrc : .config/kglobalshortcutsrc
+    ~/.config/plasma-org.kde.plasma.desktop-appletsrc : .config/kglobalshortcutsrc
+    ~/.config/plasmashellrc : .config/plasmashellrc
+    ~/.config/kdeglobals : .config/kdeglobals
+    ~/.config/kcminputrc : .config/kcminputrc
+    ~/.config/dolphinrc : .config/dolphinrc
+    ~/.config/baloofilerc : .config/baloofilerc
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [scripts/install-packages.sh, Installing the fish shell]
-  - [scripts/setup.sh, Setting up the System]
-  - [.config/fish/install.sh, Installing the fish shell]
+
+#- shell:
+#  - [git submodule update --init --recursive, Installing submodules]
+#  - [scripts/install-packages.sh, Installing the fish shell]
+#  - [scripts/setup.sh, Setting up the System]
+#  - [.config/fish/install.sh, Installing the fish shell]

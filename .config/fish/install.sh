@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d $HOME/.config/fish/ ]; then
-  sudo pacman --noconfirm --needed -Syu fish fisher fzf fd bat zoxide exa yt-dlp trash-cli
+  sudo pacman --noconfirm --needed -Syu fish fisher fzf fd bat zoxide exa yt-dlp trash-cli ripgrep
 
   currrent_dir=$PWD
 

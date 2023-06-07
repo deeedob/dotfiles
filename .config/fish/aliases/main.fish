@@ -29,7 +29,16 @@ alias del 'rm -i -v'
 # ---- System ----
 alias c 'clear'
 alias h 'history'
-alias v 'nvim'
+function neovidecloseterminal
+    if count $argv > /dev/null 
+        neovide "$argv" & disown
+        exit
+    else
+        neovide & disown
+        exit
+    end
+end 
+alias nv neovidecloseterminal
 alias r 'ranger'
 alias fh 'find . -name'
 alias sc 'grep -i -w -n -r -I --color=always'
@@ -42,7 +51,7 @@ alias topmem='ps aux | sort -rk 4,4 | head -n 11'
 alias sha 'shasum -a 256'
 alias grep "rg --color=always --smart-case"
 alias find "find . -name"
-alias cmake 'cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+# alias cmake 'cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias make "make -j$(nproc)"
 alias ninja "ninja -j$(nproc)"
 

@@ -1,0 +1,32 @@
+[FileDialogSize]
+2 screens: Height=654
+2 screens: Width=1073
+
+[KFileDialog Settings]
+Recent Files[$e]=finalizer.png,file:$HOME/Images/edit.jpg,file:$HOME/Images/Wallpaper/finalizer.png
+Recent URLs[$e]=file:$HOME/Images/Wallpaper/,file:$HOME/Images/
+detailViewIconSize=16
+iconViewIconSize=256
+listViewIconSize=64
+
+[MainWindow]
+1920x1080 screen: Height=1024
+1920x1080 screen: Width=1902
+1920x1080 screen: XPosition=9
+1920x1080 screen: YPosition=47
+2 screens: Height=1024
+2 screens: Width=945
+2 screens: XPosition=9
+2 screens: YPosition=47
+3840x2160 screen: Height=1575
+3840x2160 screen: Width=3117
+3840x2160 screen: XPosition=185
+3840x2160 screen: YPosition=254
+HDMI-0 eDP-1-1=HDMI-0
+HDMI-1-0=HDMI-1-0
+HDMI-1-0 eDP-1=eDP-1
+HDMI-2=HDMI-2
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB+sAAAJnAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1

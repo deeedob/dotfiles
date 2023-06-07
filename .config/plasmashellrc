@@ -1,0 +1,46 @@
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/Pictures/nordic-wallpapers/nord-balloons.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/fedora.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/elementaryos.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/earth-in-space.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/debian.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/debian-galaxy.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/CRON-Nord.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/cpu_city.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/container_ship.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/chemical_nord.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/BirdNord.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/audio-bunny.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/at_the_coffeshop.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/arctic-landscape.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/archlinux.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/Abstract-Nord.png
+Recent URLs[$e]=file:$HOME/Pictures/nordic-wallpapers/wallpapers/
+detailViewIconSize=16
+
+[PlasmaViews][Panel 2]
+alignment=132
+floating=1
+panelOpacity=0
+panelVisibility=0
+
+[PlasmaViews][Panel 2][Defaults]
+thickness=46
+
+[PlasmaViews][Panel 23]
+alignment=132
+floating=1
+panelVisibility=0
+
+[PlasmaViews][Panel 23][Defaults]
+maxLength=2160
+minLength=2160
+offset=0
+thickness=30
+
+[PlasmaViews][Panel 23][Horizontal1920]
+maxLength=2160
+minLength=2160
+
+[PlasmaViews][Panel 42]
+alignment=132
+panelVisibility=2
+
+[PlasmaViews][Panel 42][Defaults]
+maxLength=1544
+minLength=1330
+offset=0
+thickness=69
+
+[PlasmaViews][Panel 42][Horizontal1920]
+maxLength=1544
+minLength=1330
+offset=0
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_migrate_font_settings.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/keyboardlayout_migrateiconsetting.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/keyboardlayout_remove_shortcut.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/maintain_existing_desktop_icon_sizes.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/mediaframe_migrate_useBackground_setting.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/no_middle_click_paste_on_panels.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_systemmonitor.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js

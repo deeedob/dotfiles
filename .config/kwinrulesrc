@@ -1,0 +1,40 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=NoMinSize
+minsize=1,1
+minsizerule=2
+types=1
+
+[2cb23edc-fb9d-41ce-8130-566dad4ee39f]
+Description=Clean Konsole
+noborder=true
+noborderrule=2
+title=~ : nvim — Konsole
+wmclasscomplete=true
+wmclassmatch=1
+
+[3fd70fbc-374a-4409-98a9-4901a070bd9c]
+Description=vim konsole no border
+noborder=true
+noborderrule=2
+title=~ : nvim — Konsole
+wmclassmatch=1
+
+[6d76092f-7d21-4b0e-a56e-e5c88f32013e]
+Description=NoMinSize
+minsizerule=2
+types=1
+
+[76338a3e-e479-4dfb-95f7-c3e6655a85b9]
+Description=Application settings for konsole
+clientmachine=localhost
+noborder=true
+noborderrule=2
+wmclass=konsole
+wmclassmatch=1
+
+[General]
+count=1
+rules=1
