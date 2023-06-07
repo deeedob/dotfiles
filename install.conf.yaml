@@ -7,10 +7,11 @@
 - clean: ['~']
 
 - link:
+    ~/Scripts: scripts
     ~/.config/fish: .config/fish
     ~/.config/clangd: .config/clangd
     ~/.config/alacritty: .config/alacritty
-    ~/Scripts: scripts
+    ~/.bashrc : .bashrc
     ~/.Xmodmap: .Xmodmap
     ~/.config/xsettingsd: .config/xsettingsd
     ~/.config/plasma-workspace: .config/plasma-workspace
