@@ -1000,6 +1000,9 @@ ColorScheme[$d]
 ColorSchemeHash[$d]
 LastUsedCustomAccentColor[$d]
 UseSystemBell[$d]
+XftHintStyle[$d]
+XftSubPixel[$d]
+font[$d]
 
 [Gestures]
 Disabled=true

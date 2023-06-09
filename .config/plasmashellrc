@@ -3,6 +3,9 @@ Recent Files[$e]=file:$HOME/Pictures/nordic-wallpapers/nord-balloons.png,file:$H
 Recent URLs[$e]=file:$HOME/Pictures/nordic-wallpapers/wallpapers/
 detailViewIconSize=16
 
+[PlasmaTransientsConfig]
+PreloadWeight=34
+
 [PlasmaViews][Panel 2]
 alignment=132
 floating=1
@@ -10,7 +13,7 @@ panelOpacity=0
 panelVisibility=0
 
 [PlasmaViews][Panel 2][Defaults]
-thickness=46
+thickness=34
 
 [PlasmaViews][Panel 23]
 alignment=132

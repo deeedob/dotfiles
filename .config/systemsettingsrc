@@ -10,12 +10,12 @@ iconViewIconSize=256
 listViewIconSize=64
 
 [MainWindow]
-1920x1080 screen: Height=1024
-1920x1080 screen: Width=1902
-1920x1080 screen: XPosition=9
-1920x1080 screen: YPosition=47
+1920x1080 screen: Height=1020
+1920x1080 screen: Width=1100
+1920x1080 screen: XPosition=810
+1920x1080 screen: YPosition=51
 2 screens: Height=1024
-2 screens: Width=945
+2 screens: Width=1902
 2 screens: XPosition=9
 2 screens: YPosition=47
 3840x2160 screen: Height=1575
@@ -27,6 +27,6 @@ HDMI-1-0=HDMI-1-0
 HDMI-1-0 eDP-1=eDP-1
 HDMI-2=HDMI-2
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAB+sAAAJnAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAABVQAAAP8AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 eDP-1=eDP-1

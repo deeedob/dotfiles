@@ -18,4 +18,5 @@ Seen=true
 Seen=true
 
 [Notifications]
-PopupTimeout=3000
+LowPriorityPopups=false
+PopupTimeout=2000
