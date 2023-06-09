@@ -14,6 +14,7 @@ return {
         -- "hls", TODO
         "html",
         "tailwindcss",
+        "jsonls",
       })
     end,
   },
