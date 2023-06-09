@@ -9,6 +9,7 @@
 - link:
     ~/Scripts: scripts
     ~/.config/fish: .config/fish
+    ~/.config/nvim/lua/user: .config/nvim/lua/user
     ~/.config/clangd: .config/clangd
     ~/.config/alacritty: .config/alacritty
     ~/.bashrc : .bashrc
