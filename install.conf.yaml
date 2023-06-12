@@ -7,14 +7,19 @@
 - clean: ['~']
 
 - link:
+    ~/.bashrc : .bashrc
+    ~/.gitconfig : .gitconfig
+    ~/.Xmodmap: .Xmodmap
     ~/Scripts: scripts
     ~/.config/fish: .config/fish
     ~/.config/nvim/lua/user: .config/nvim/lua/user
     ~/.config/clangd: .config/clangd
     ~/.config/alacritty: .config/alacritty
     ~/.config/ranger: .config/ranger
-    ~/.bashrc : .bashrc
-    ~/.Xmodmap: .Xmodmap
+    ~/Qt/.gitconfig: Qt/.gitconfig
+    ~/Qt/qt6/CMakePresets.json: Qt/CMakeMasterPresets.json
+    ~/Qt/qt6/qtbase/CMakePresets.json: Qt/CMakeBasePresets.json
+
     ~/.config/xsettingsd: .config/xsettingsd
     ~/.config/plasma-workspace: .config/plasma-workspace
     ~/.config/kdedefaults: .config/kdedefaults

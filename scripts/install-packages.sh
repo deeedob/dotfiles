@@ -1,6 +1,6 @@
 #!/bin/bash
 
-base="fish ranger neovim-nightly btop"
+base="fish ranger neovim-nightly btop git-revise meld"
 dev="qtcreator clion clang llvm docker git-open"
 sys="alacritty plasma-systemmonitor kdeplasma-addons nextcloud-client keepassxc solaar wine wine-gecko wine-mono teams-for-linux flatpak kwin-bismuth unclutter ksshaskpass"
 media="bitwig-studio renoise-demo supercollider discord-screenaudio"

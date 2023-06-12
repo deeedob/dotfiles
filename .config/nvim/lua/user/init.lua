@@ -22,12 +22,6 @@ return {
   },
 
   lsp = {
-    formatting = {
-      format_on_save = {
-        enabled = false,
-      },
-      timeout_ms = 1000, -- default format timeout
-    },
     servers = {
       "qmlls",
     },
@@ -37,11 +31,24 @@ return {
           offsetEncoding = "utf-8",
         },
       },
-      -- qmlls = {
-      --   cmd = { "/usr/lib/qt6/bin/qmlls" },
-      --   filetypes = { "qml" },
-      --   -- root_dir = "cmake_build_Debug",
-      -- },
+      qmlls = function()
+        return {
+          cmd = {
+            -- "/home/all0xc/Qt/qt6/build/base_declarative/qtbase/bin/qmlls",
+            "/usr/lib/qt6/bin/qmlls",
+            "-l",
+            "/home/all0xc/Temp/qmlls.log"
+        },
+          filetypes = { "qml" },
+          root_dir = require("lspconfig.util").root_pattern "build",
+        }
+      end,
+    },
+    formatting = {
+      format_on_save = {
+        enabled = false,
+      },
+      timeout_ms = 1000, -- default format timeout
     },
   },
   plugins = {
@@ -79,5 +86,25 @@ return {
         ["~/%.config/foo/.*"] = "fooscript",
       },
     }
+    if vim.g.neovide == true then
+      vim.api.nvim_set_keymap(
+        "n",
+        "<C-+>",
+        ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>",
+        { silent = true }
+      )
+      vim.api.nvim_set_keymap(
+        "n",
+        "<C-->",
+        ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>",
+        { silent = true }
+      )
+      vim.api.nvim_set_keymap(
+        "n",
+        "<C-0>",
+        ":lua vim.g.neovide_scale_factor = 1<CR>",
+        { silent = true }
+      )
+    end
   end,
 }

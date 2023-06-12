@@ -1,0 +1,30 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "Development",
+      "description": "Qt Base development build with c++20 support",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/default",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "FEATURE_developer_build": "ON",
+        "FEATURE_cxx20": "ON",
+        "QT_NAMESPACE": "B",
+        "QT_UNITY_BUILD": "OFF",
+        "QT_UNITY_BUILD_BATCH_SIZE": "32",
+        "QT_BUILD_TESTS": "ON",
+        "QT_BUILD_EXAMPLES": "ON",
+        "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
+        "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
+        "QT_HOST_PATH": "/home/all0xc/Qt/precompiled/Qt6.6/6.6.0/gcc_64",
+        "QT_NO_PACKAGE_VERSION_CHECK": "ON",
+        "WARNINGS_ARE_ERRORS": "OFF"
+      },
+      "environment": {
+        "QDOC_SHOW_INTERNAL": "1"
+      }
+    }
+  ]
+}
+

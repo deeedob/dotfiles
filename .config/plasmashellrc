@@ -1,6 +1,6 @@
 [KFileDialog Settings]
-Recent Files[$e]=file:$HOME/Pictures/nordic-wallpapers/nord-balloons.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/fedora.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/elementaryos.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/earth-in-space.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/debian.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/debian-galaxy.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/CRON-Nord.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/cpu_city.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/container_ship.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/chemical_nord.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/BirdNord.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/audio-bunny.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/at_the_coffeshop.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/arctic-landscape.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/archlinux.png,file:$HOME/Pictures/nordic-wallpapers/wallpapers/Abstract-Nord.png
-Recent URLs[$e]=file:$HOME/Pictures/nordic-wallpapers/wallpapers/
+Recent Files[$e]=astronaut_in_space.jpg,file:$HOME/Dotfiles/Wallpaper/tokyo-night.png,file:$HOME/Dotfiles/Wallpaper/swimming_planets.jpg,file:$HOME/Dotfiles/Wallpaper/rings_and_lines.jpg,file:$HOME/Dotfiles/Wallpaper/pixel-girl.png,file:$HOME/Dotfiles/Wallpaper/ninja_port.png,file:$HOME/Dotfiles/Wallpaper/museum_art.jpg,file:$HOME/Dotfiles/Wallpaper/gruv.jpg,file:$HOME/Dotfiles/Wallpaper/firefox.png,file:$HOME/Dotfiles/Wallpaper/earth_in_space.png,file:$HOME/Dotfiles/Wallpaper/dead_eyes.png,file:$HOME/Dotfiles/Wallpaper/cybergirl.png,file:$HOME/Dotfiles/Wallpaper/coffee_charger.png,file:$HOME/Dotfiles/Wallpaper/astronaut_in_space.jpg
+Recent URLs[$e]=file:$HOME/Dotfiles/Wallpaper/
 detailViewIconSize=16
 
 [PlasmaTransientsConfig]
@@ -13,7 +13,7 @@ panelOpacity=0
 panelVisibility=0
 
 [PlasmaViews][Panel 2][Defaults]
-thickness=34
+thickness=30
 
 [PlasmaViews][Panel 23]
 alignment=132
