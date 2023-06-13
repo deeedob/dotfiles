@@ -25,7 +25,6 @@
     ~/.config/kdedefaults: .config/kdedefaults
     ~/.config/gtk-4.0: .config/gtk-4.0
     ~/.config/gtk-3.0: .config/gtk-3.0
-    ~/.config/dconf: .config/dconf
     ~/.config/user-dirs.locale: .config/user-dirs.locale
     ~/.config/systemsettingsrc : .config/systemsettingsrc
     ~/.config/plasmanotifyrc : .config/plasmanotifyrc

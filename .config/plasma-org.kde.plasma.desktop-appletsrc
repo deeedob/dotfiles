@@ -79,8 +79,8 @@ ToolBoxButtonX=444
 ToolBoxButtonY=38
 
 [Containments][22][Wallpaper][org.kde.image][General]
-Image=/home/all0xc/Images/Wallpaper/ALLqk82.png
-SlidePaths=/home/all0xc/.local/share/wallpapers/,/usr/share/wallpapers/
+Image=$HOME/Images/Wallpaper/ALLqk82.png
+SlidePaths=$HOME/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][23]
 activityId=
@@ -375,8 +375,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][77][Wallpaper][org.kde.image][General]
-Image=/home/all0xc/Images/Wallpaper/gruvbox_spac.jpg
-SlidePaths=/home/all0xc/.local/share/wallpapers/,/usr/share/wallpapers/
+Image=$HOME/Images/Wallpaper/gruvbox_spac.jpg
+SlidePaths=$HOME/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [ScreenMapping]
 itemsOnDisabledScreens=

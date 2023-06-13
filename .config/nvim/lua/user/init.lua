@@ -34,10 +34,9 @@ return {
       qmlls = function()
         return {
           cmd = {
-            -- "/home/all0xc/Qt/qt6/build/base_declarative/qtbase/bin/qmlls",
             "/usr/lib/qt6/bin/qmlls",
             "-l",
-            "/home/all0xc/Temp/qmlls.log"
+            "~/Temp/qmlls.log"
         },
           filetypes = { "qml" },
           root_dir = require("lspconfig.util").root_pattern "build",

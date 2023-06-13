@@ -32,12 +32,17 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][1][ConfigDialog]
-DialogHeight=619
-DialogWidth=1029
+DialogHeight=733
+DialogWidth=1106
+
+[Containments][1][General]
+ToolBoxButtonState=topcenter
+ToolBoxButtonX=373
+ToolBoxButtonY=38
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=/home/all0xc/Dotfiles/Wallpaper/cybergirl.png
-SlidePaths=/home/all0xc/.local/share/wallpapers/,/usr/share/wallpapers/
+Image=$HOME/Dotfiles/Wallpaper/swimming_planets.jpg
+SlidePaths=$HOME/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][2]
 activityId=
@@ -78,9 +83,20 @@ global=Alt+F1
 immutability=1
 plugin=org.kde.plasma.pager
 
+[Containments][2][Applets][4][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
+[Containments][2][Applets][4][Configuration][General]
+displayedText=Number
+showOnlyCurrentScreen=true
+
 [Containments][2][Applets][5]
 immutability=1
 plugin=org.kde.plasma.icontasks
+
+[Containments][2][Applets][5][Configuration][General]
+launchers=
 
 [Containments][2][Applets][6]
 immutability=1
@@ -91,7 +107,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=80
+PreloadWeight=65
 SystrayContainmentId=8
 
 [Containments][2][ConfigDialog]
@@ -101,7 +117,7 @@ DialogWidth=1920
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;20;21
 
-[Containments][22]
+[Containments][26]
 activityId=c7dea097-b990-468f-9535-b2e84fb522b7
 formfactor=0
 immutability=1
@@ -110,19 +126,19 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][22][ConfigDialog]
+[Containments][26][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
 
-[Containments][22][Wallpaper][org.kde.image][General]
-Image=/home/all0xc/Images/Wallpaper/gruvbox_spac.jpg
-SlidePaths=/home/all0xc/.local/share/wallpapers/,/usr/share/wallpapers/
+[Containments][26][Wallpaper][org.kde.image][General]
+Image=$HOME/Dotfiles/Wallpaper/earth_in_space.png
+SlidePaths=$HOME/.local/share/wallpapers/,/usr/share/wallpapers/
 
 [Containments][8]
 activityId=
 formfactor=2
 immutability=1
-lastScreen=-1
+lastScreen=0
 location=3
 plugin=org.kde.plasma.private.systemtray
 popupHeight=432
@@ -145,6 +161,9 @@ plugin=org.kde.plasma.manage-inputmethod
 immutability=1
 plugin=org.kde.plasma.notifications
 
+[Containments][8][Applets][13][Configuration]
+PreloadWeight=55
+
 [Containments][8][Applets][14]
 immutability=1
 plugin=org.kde.kscreen
@@ -156,9 +175,6 @@ plugin=org.kde.plasma.keyboardlayout
 [Containments][8][Applets][16]
 immutability=1
 plugin=org.kde.plasma.volume
-
-[Containments][8][Applets][16][Configuration]
-PreloadWeight=75
 
 [Containments][8][Applets][16][Configuration][General]
 migrated=true
@@ -178,19 +194,19 @@ plugin=gr.ictpro.jsalatas.plasma.pstate
 [Containments][8][Applets][19][Configuration][General]
 hasNativeBackend=true
 
-[Containments][8][Applets][23]
+[Containments][8][Applets][22]
 immutability=1
 plugin=org.kde.plasma.nightcolorcontrol
 
-[Containments][8][Applets][24]
+[Containments][8][Applets][23]
 immutability=1
 plugin=org.kde.plasma.battery
 
-[Containments][8][Applets][25]
+[Containments][8][Applets][24]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
-[Containments][8][Applets][26]
+[Containments][8][Applets][25]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
@@ -529,6 +545,7 @@ activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
 activate widget 24=none,none,Activate Application Launcher Widget
 activate widget 3=Alt+F1,none,Activate Application Launcher Widget
 activate widget 45=none,none,Activate Application Launcher Widget
+activate widget 56=none,none,Activate Application Launcher Widget
 activate widget 66=none,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History
 clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
