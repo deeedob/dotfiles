@@ -15,6 +15,7 @@ return {
         "html",
         "tailwindcss",
         "jsonls",
+        "grammarly",
       })
     end,
   },

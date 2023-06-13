@@ -43,7 +43,11 @@ return {
           root_dir = require("lspconfig.util").root_pattern "build",
         }
       end,
+      grammarly = {
+        filetypes = { "markdown", "text", "qdoc" }
+      }
     },
+
     formatting = {
       format_on_save = {
         enabled = false,
@@ -77,13 +81,11 @@ return {
     vim.filetype.add {
       extension = {
         qml = "qml",
-        tial = "tidal",
+        tidal = "tidal",
+        qdoc = "qdoc",
       },
       filename = {
         ["qmldir"] = "qmldir",
-      },
-      pattern = {
-        ["~/%.config/foo/.*"] = "fooscript",
       },
     }
     if vim.g.neovide == true then
