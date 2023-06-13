@@ -65,5 +65,14 @@ return {
         vim.cmd("Cppman " .. escaped_word)
       end,
     },
+    ["<leader>so"] = {
+      function()
+        local current_register = "+"
+        local yanked_text = vim.fn.eval("@" .. current_register)
+        vim.cmd(
+          string.format("OpenBrowser " .. "https://duckduckgo.com/%s", yanked_text)
+        )
+      end,
+    },
   },
 }
