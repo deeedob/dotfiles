@@ -67,6 +67,7 @@ return {
 
   {
     "folke/noice.nvim",
+    enabled = true,
     event = "VeryLazy",
     opts = {
       cmdline = { enabled = true },
@@ -82,7 +83,6 @@ return {
       health = { checker = false },
     },
     dependencies = { "MunifTanjim/nui.nvim" },
-    lazy = true,
   },
 
   {

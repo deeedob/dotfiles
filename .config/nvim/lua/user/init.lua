@@ -36,15 +36,15 @@ return {
           cmd = {
             "/usr/lib/qt6/bin/qmlls",
             "-l",
-            "~/Temp/qmlls.log"
-        },
+            "~/Temp/qmlls.log",
+          },
           filetypes = { "qml" },
           root_dir = require("lspconfig.util").root_pattern "build",
         }
       end,
       grammarly = {
-        filetypes = { "markdown", "text", "qdoc" }
-      }
+        filetypes = { "markdown", "text", "qdoc" },
+      },
     },
 
     formatting = {
