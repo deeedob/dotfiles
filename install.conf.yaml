@@ -18,6 +18,7 @@
     ~/.config/clangd: .config/clangd
     ~/.config/alacritty: .config/alacritty
     ~/.config/ranger: .config/ranger
+    ~/.config/eww: .config/eww
     ~/.config/user-dirs.locale: .config/user-dirs.locale
     ~/.config/user-dirs.dirs: .config/user-dirs.dirs
 
