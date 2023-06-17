@@ -1,13 +1,13 @@
 return {
   -- Configure AstroNvim updates
   updater = {
-    remote = "origin", -- remote to use
-    channel = "stable", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "nightly", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
+    remote = "origin",     -- remote to use
+    channel = "stable",    -- "stable" or "nightly"
+    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "nightly",    -- branch name (NIGHTLY ONLY)
+    commit = nil,          -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false,  -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
     auto_quit = false,
   },
@@ -42,10 +42,10 @@ return {
           root_dir = require("lspconfig.util").root_pattern "build",
         }
       end,
-      glsl = function ()
+      glsl = function()
         return {
-          cmd = {"glsl"},
-          filetypes = {"glsl"}
+          cmd = { "glsl" },
+          filetypes = { "glsl" },
         }
       end,
       grammarly = {
@@ -83,18 +83,20 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- TODO: Vim autocmd VimEnter, VimLeavePre to sed alacritty win padding
     vim.filetype.add {
       extension = {
         qml = "qml",
         tidal = "tidal",
         qdoc = "qdoc",
         vert = "glsl",
-        frag = "glsl"
+        frag = "glsl",
       },
       filename = {
         ["qmldir"] = "qmldir",
       },
     }
+
     vim.api.nvim_create_autocmd({ "BufWritePre" }, {
       pattern = { "*" },
       callback = function(ev)
@@ -103,6 +105,7 @@ return {
         vim.fn.setpos(".", save_cursor)
       end,
     })
+
     if vim.g.neovide == true then
       vim.api.nvim_set_keymap(
         "n",
