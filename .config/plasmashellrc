@@ -6,6 +6,13 @@ detailViewIconSize=16
 [PlasmaTransientsConfig]
 PreloadWeight=0
 
+[PlasmaViews][Panel 10]
+alignment=132
+floating=1
+
+[PlasmaViews][Panel 10][Defaults]
+thickness=30
+
 [PlasmaViews][Panel 2]
 alignment=132
 floating=1
@@ -13,7 +20,7 @@ panelOpacity=0
 panelVisibility=0
 
 [PlasmaViews][Panel 2][Defaults]
-thickness=30
+thickness=44
 
 [PlasmaViews][Panel 23]
 alignment=132
@@ -30,6 +37,13 @@ thickness=30
 maxLength=2160
 minLength=2160
 
+[PlasmaViews][Panel 30]
+alignment=132
+floating=1
+
+[PlasmaViews][Panel 30][Defaults]
+thickness=32
+
 [PlasmaViews][Panel 42]
 alignment=132
 panelVisibility=2
@@ -44,6 +58,12 @@ thickness=69
 maxLength=1544
 minLength=1330
 offset=0
+
+[PlasmaViews][Panel 53][Defaults]
+thickness=44
+
+[PlasmaViews][Panel 54][Defaults]
+thickness=44
 
 [PlasmaViews][Panel 55][Defaults]
 thickness=44

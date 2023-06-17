@@ -21,24 +21,31 @@ BorderActivateAll=9
 
 [Plugins]
 bismuthEnabled=true
+karouselEnabled=false
 kwin4_effect_fadeEnabled=true
 kwin4_effect_scaleEnabled=false
 kwin4_effect_squashEnabled=false
+poloniumEnabled=false
 slideEnabled=false
 zoomEnabled=false
 
 [Script-bismuth]
-screenGapBottom=7
-screenGapLeft=7
-screenGapRight=7
-screenGapTop=7
-tileLayoutGap=7
+floatingClass=dolphin,neovide,systemsettings
+screenGapBottom=10
+screenGapLeft=10
+screenGapRight=10
+screenGapTop=10
+tileLayoutGap=10
+
+[SubSession: c7dea097-b990-468f-9535-b2e84fb522b7]
+active=-1
+count=0
 
 [Tiling]
 padding=4
 
 [Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+tiles={"layoutDirection":"horizontal","tiles":[]}
 
 [Tiling][2802723e-312d-5cf2-b4d1-250abc4b85ca]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
@@ -50,13 +57,14 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][6f50cf25-fea8-5942-baae-fbac7316ce52]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+tiles={"layoutDirection":"horizontal","tiles":[]}
 
 [Tiling][d3e6d6f7-6a4c-5a15-a0a5-d770ba28a537]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Windows]
 ActiveMouseScreen=false
+AutoRaise=true
 DelayFocusInterval=0
 ElectricBorderCornerRatio=0.15
 FocusPolicy=FocusFollowsMouse

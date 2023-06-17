@@ -8,7 +8,7 @@
 !Shift 66::Control_L to AltGr 108::ISO_Level3_Shift
 !Alt 64::Alt_L SWAP WinKey 133::Super_L
 
-!remove control = Control_L 
+!remove control = Control_L
 !remove mod5 = ISO_Level3_Shift
 !remove mod1 = Alt_L Meta_L
 !remove mod4 = Super_L

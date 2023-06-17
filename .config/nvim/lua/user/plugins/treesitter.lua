@@ -36,6 +36,7 @@ return {
       "javascript",
       "bash",
       "rust",
+      "glsl"
     })
   end,
 }

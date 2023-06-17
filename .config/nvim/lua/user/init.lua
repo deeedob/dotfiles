@@ -42,6 +42,12 @@ return {
           root_dir = require("lspconfig.util").root_pattern "build",
         }
       end,
+      glsl = function ()
+        return {
+          cmd = {"glsl"},
+          filetypes = {"glsl"}
+        }
+      end,
       grammarly = {
         filetypes = { "markdown", "text", "qdoc" },
       },
@@ -82,11 +88,21 @@ return {
         qml = "qml",
         tidal = "tidal",
         qdoc = "qdoc",
+        vert = "glsl",
+        frag = "glsl"
       },
       filename = {
         ["qmldir"] = "qmldir",
       },
     }
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      pattern = { "*" },
+      callback = function(ev)
+        local save_cursor = vim.fn.getpos "."
+        vim.cmd [[%s/\s\+$//e]]
+        vim.fn.setpos(".", save_cursor)
+      end,
+    })
     if vim.g.neovide == true then
       vim.api.nvim_set_keymap(
         "n",

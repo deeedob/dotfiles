@@ -11,8 +11,8 @@ RightButton;NoModifier=org.kde.contextmenu
 
 [ActivityManager]
 _k_friendly_name=Activity Manager
+switch-to-activity-854d3321-8d60-47a4-9aa8-1e617cff90e6=none,none,Switch to activity "Test"
 switch-to-activity-a2155c99-a6f8-4e49-a747-0152dc475aff=none,none,Switch to activity "Standard"
-switch-to-activity-c7dea097-b990-468f-9535-b2e84fb522b7=none,none,Switch to activity "Default"
 switch-to-activity-dc72dc00-b87e-4af4-8be3-ef630fb6c856=none,none,Switch to activity "Default"
 
 [Alacritty.desktop]
@@ -23,7 +23,7 @@ _launch=none,none,Alacritty
 [Containments][1]
 ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
-activityId=c7dea097-b990-468f-9535-b2e84fb522b7
+activityId=854d3321-8d60-47a4-9aa8-1e617cff90e6
 formfactor=0
 immutability=1
 lastScreen=0
@@ -31,25 +31,12 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][1][ConfigDialog]
-DialogHeight=733
-DialogWidth=1106
-
-[Containments][1][General]
-ToolBoxButtonState=topcenter
-ToolBoxButtonX=373
-ToolBoxButtonY=38
-
-[Containments][1][Wallpaper][org.kde.image][General]
-Image=$HOME/Dotfiles/Wallpaper/swimming_planets.jpg
-SlidePaths=$HOME/.local/share/wallpapers/,/usr/share/wallpapers/
-
 [Containments][2]
 activityId=
 formfactor=2
 immutability=1
 lastScreen=0
-location=3
+location=4
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
@@ -83,20 +70,9 @@ global=Alt+F1
 immutability=1
 plugin=org.kde.plasma.pager
 
-[Containments][2][Applets][4][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][2][Applets][4][Configuration][General]
-displayedText=Number
-showOnlyCurrentScreen=true
-
 [Containments][2][Applets][5]
 immutability=1
 plugin=org.kde.plasma.icontasks
-
-[Containments][2][Applets][5][Configuration][General]
-launchers=
 
 [Containments][2][Applets][6]
 immutability=1
@@ -107,18 +83,14 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][7][Configuration]
-PreloadWeight=65
+PreloadWeight=55
 SystrayContainmentId=8
-
-[Containments][2][ConfigDialog]
-DialogHeight=84
-DialogWidth=1920
 
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;20;21
 
 [Containments][26]
-activityId=c7dea097-b990-468f-9535-b2e84fb522b7
+activityId=854d3321-8d60-47a4-9aa8-1e617cff90e6
 formfactor=0
 immutability=1
 lastScreen=1
@@ -126,23 +98,13 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
-[Containments][26][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][26][Wallpaper][org.kde.image][General]
-Image=$HOME/Dotfiles/Wallpaper/earth_in_space.png
-SlidePaths=$HOME/.local/share/wallpapers/,/usr/share/wallpapers/
-
 [Containments][8]
 activityId=
 formfactor=2
 immutability=1
 lastScreen=0
-location=3
+location=4
 plugin=org.kde.plasma.private.systemtray
-popupHeight=432
-popupWidth=432
 wallpaperplugin=org.kde.image
 
 [Containments][8][Applets][10]
@@ -160,9 +122,6 @@ plugin=org.kde.plasma.manage-inputmethod
 [Containments][8][Applets][13]
 immutability=1
 plugin=org.kde.plasma.notifications
-
-[Containments][8][Applets][13][Configuration]
-PreloadWeight=55
 
 [Containments][8][Applets][14]
 immutability=1
@@ -196,23 +155,19 @@ hasNativeBackend=true
 
 [Containments][8][Applets][22]
 immutability=1
-plugin=org.kde.plasma.nightcolorcontrol
+plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][23]
 immutability=1
-plugin=org.kde.plasma.battery
+plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][24]
 immutability=1
-plugin=org.kde.plasma.networkmanagement
+plugin=org.kde.plasma.nightcolorcontrol
 
 [Containments][8][Applets][25]
 immutability=1
-plugin=org.kde.plasma.bluetooth
-
-[Containments][8][Applets][27]
-immutability=1
-plugin=org.kde.plasma.mediacontroller
+plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][9]
 immutability=1
@@ -331,6 +286,20 @@ MoveZoomLeft=none,none,Move Zoomed Area to Left
 MoveZoomRight=none,none,Move Zoomed Area to Right
 MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
+PoloniumCycleLayouts=Meta+\\\\,none,Polonium: Cycle layouts
+PoloniumFocusAbove=none,none,Polonium: Focus Above
+PoloniumFocusBelow=none,none,Polonium: Focus Below
+PoloniumFocusLeft=none,none,Polonium: Focus Left
+PoloniumFocusRight=none,none,Polonium: Focus Right
+PoloniumInsertAbove=none,none,Polonium: Insert Above
+PoloniumInsertBelow=none,none,Polonium: Insert Below
+PoloniumInsertLeft=none,none,Polonium: Insert Left
+PoloniumInsertRight=none,none,Polonium: Insert Right
+PoloniumRetileWindow=Meta+Shift+Space,none,Polonium: Untile/Retile Window
+PoloniumSwapAbove=Meta+Ctrl+K,none,Polonium: Swap Above
+PoloniumSwapBelow=Meta+Ctrl+J,none,Polonium: Swap Below
+PoloniumSwapLeft=Meta+Ctrl+H,none,Polonium: Swap Left
+PoloniumSwapRight=Meta+Ctrl+L,none,Polonium: Swap Right
 Setup Window Shortcut=none,,Setup Window Shortcut
 Show Desktop=Meta+D,Meta+D,Peek at Desktop
 ShowDesktopGrid=Meta+F8,Meta+F8,Show Desktop Grid
@@ -469,17 +438,94 @@ Window to Screen 5=none,,Window to Screen 5
 Window to Screen 6=none,,Window to Screen 6
 Window to Screen 7=none,,Window to Screen 7
 _k_friendly_name=KWin
+karousel-column-expand=none,none,Karousel: Expand column
+karousel-column-move-end=Meta+Ctrl+Shift+End,none,Karousel: Move column to end
+karousel-column-move-left=Meta+Ctrl+Shift+A,none,Karousel: Move column left
+karousel-column-move-right=Meta+Ctrl+Shift+D,none,Karousel: Move column right
+karousel-column-move-start=Meta+Ctrl+Shift+Home,none,Karousel: Move column to start
+karousel-column-move-to-column-1=Meta+Ctrl+Shift+1,none,Karousel: Move column to position 1
+karousel-column-move-to-column-2=Meta+Ctrl+Shift+2,none,Karousel: Move column to position 2
+karousel-column-move-to-column-3=Meta+Ctrl+Shift+3,none,Karousel: Move column to position 3
+karousel-column-move-to-column-4=Meta+Ctrl+Shift+4,none,Karousel: Move column to position 4
+karousel-column-move-to-column-5=Meta+Ctrl+Shift+5,none,Karousel: Move column to position 5
+karousel-column-move-to-column-6=Meta+Ctrl+Shift+6,none,Karousel: Move column to position 6
+karousel-column-move-to-column-7=Meta+Ctrl+Shift+7,none,Karousel: Move column to position 7
+karousel-column-move-to-column-8=Meta+Ctrl+Shift+8,none,Karousel: Move column to position 8
+karousel-column-move-to-column-9=Meta+Ctrl+Shift+9,none,Karousel: Move column to position 9
+karousel-column-move-to-desktop-1=Meta+Ctrl+Shift+F1,none,Karousel: Move column to desktop 1
+karousel-column-move-to-desktop-10=Meta+Ctrl+Shift+F10,none,Karousel: Move column to desktop 10
+karousel-column-move-to-desktop-11=Meta+Ctrl+Shift+F11,none,Karousel: Move column to desktop 11
+karousel-column-move-to-desktop-12=Meta+Ctrl+Shift+F12,none,Karousel: Move column to desktop 12
+karousel-column-move-to-desktop-2=Meta+Ctrl+Shift+F2,none,Karousel: Move column to desktop 2
+karousel-column-move-to-desktop-3=Meta+Ctrl+Shift+F3,none,Karousel: Move column to desktop 3
+karousel-column-move-to-desktop-4=Meta+Ctrl+Shift+F4,none,Karousel: Move column to desktop 4
+karousel-column-move-to-desktop-5=Meta+Ctrl+Shift+F5,none,Karousel: Move column to desktop 5
+karousel-column-move-to-desktop-6=Meta+Ctrl+Shift+F6,none,Karousel: Move column to desktop 6
+karousel-column-move-to-desktop-7=Meta+Ctrl+Shift+F7,none,Karousel: Move column to desktop 7
+karousel-column-move-to-desktop-8=Meta+Ctrl+Shift+F8,none,Karousel: Move column to desktop 8
+karousel-column-move-to-desktop-9=Meta+Ctrl+Shift+F9,none,Karousel: Move column to desktop 9
+karousel-focus-1=none,none,Karousel: Move focus to column 1
+karousel-focus-2=none,none,Karousel: Move focus to column 2
+karousel-focus-3=none,none,Karousel: Move focus to column 3
+karousel-focus-4=none,none,Karousel: Move focus to column 4
+karousel-focus-5=none,none,Karousel: Move focus to column 5
+karousel-focus-6=none,none,Karousel: Move focus to column 6
+karousel-focus-7=none,none,Karousel: Move focus to column 7
+karousel-focus-8=none,none,Karousel: Move focus to column 8
+karousel-focus-9=none,none,Karousel: Move focus to column 9
+karousel-focus-down=none,none,Karousel: Move focus down
+karousel-focus-end=Meta+End,none,Karousel: Move focus to end
+karousel-focus-left=Meta+A,none,Karousel: Move focus left
+karousel-focus-right=none,none,Karousel: Move focus right
+karousel-focus-start=Meta+Home,none,Karousel: Move focus to start
+karousel-focus-up=none,none,Karousel: Move focus up
+karousel-grid-scroll-end=Meta+Alt+End,none,Karousel: Scroll to end
+karousel-grid-scroll-focused=Meta+Alt+Return,none,Karousel: Scroll to focused window
+karousel-grid-scroll-left=Meta+Alt+PgUp,none,Karousel: Scroll left
+karousel-grid-scroll-left-column=Meta+Alt+A,none,Karousel: Scroll one column to the left
+karousel-grid-scroll-right=Meta+Alt+PgDown,none,Karousel: Scroll right
+karousel-grid-scroll-right-column=Meta+Alt+D,none,Karousel: Scroll one column to the right
+karousel-grid-scroll-start=Meta+Alt+Home,none,Karousel: Scroll to start
+karousel-tail-move-to-desktop-1=Meta+Ctrl+Alt+Shift+F1,none,Karousel: Move this and all following columns to desktop 1
+karousel-tail-move-to-desktop-10=Meta+Ctrl+Alt+Shift+F10,none,Karousel: Move this and all following columns to desktop 10
+karousel-tail-move-to-desktop-11=Meta+Ctrl+Alt+Shift+F11,none,Karousel: Move this and all following columns to desktop 11
+karousel-tail-move-to-desktop-12=Meta+Ctrl+Alt+Shift+F12,none,Karousel: Move this and all following columns to desktop 12
+karousel-tail-move-to-desktop-2=Meta+Ctrl+Alt+Shift+F2,none,Karousel: Move this and all following columns to desktop 2
+karousel-tail-move-to-desktop-3=Meta+Ctrl+Alt+Shift+F3,none,Karousel: Move this and all following columns to desktop 3
+karousel-tail-move-to-desktop-4=Meta+Ctrl+Alt+Shift+F4,none,Karousel: Move this and all following columns to desktop 4
+karousel-tail-move-to-desktop-5=Meta+Ctrl+Alt+Shift+F5,none,Karousel: Move this and all following columns to desktop 5
+karousel-tail-move-to-desktop-6=Meta+Ctrl+Alt+Shift+F6,none,Karousel: Move this and all following columns to desktop 6
+karousel-tail-move-to-desktop-7=Meta+Ctrl+Alt+Shift+F7,none,Karousel: Move this and all following columns to desktop 7
+karousel-tail-move-to-desktop-8=Meta+Ctrl+Alt+Shift+F8,none,Karousel: Move this and all following columns to desktop 8
+karousel-tail-move-to-desktop-9=Meta+Ctrl+Alt+Shift+F9,none,Karousel: Move this and all following columns to desktop 9
+karousel-window-expand=Meta+X,none,Karousel: Expand window
+karousel-window-move-down=Meta+Shift+S,none,Karousel: Move window down
+karousel-window-move-end=Meta+Shift+End,none,Karousel: Move window to end
+karousel-window-move-left=Meta+Shift+A,none,Karousel: Move window left
+karousel-window-move-right=Meta+Shift+D,none,Karousel: Move window right
+karousel-window-move-start=Meta+Shift+Home,none,Karousel: Move window to start
+karousel-window-move-to-column-1=Meta+Shift+1,none,Karousel: Move window to column 1
+karousel-window-move-to-column-2=Meta+Shift+2,none,Karousel: Move window to column 2
+karousel-window-move-to-column-3=Meta+Shift+3,none,Karousel: Move window to column 3
+karousel-window-move-to-column-4=Meta+Shift+4,none,Karousel: Move window to column 4
+karousel-window-move-to-column-5=Meta+Shift+5,none,Karousel: Move window to column 5
+karousel-window-move-to-column-6=Meta+Shift+6,none,Karousel: Move window to column 6
+karousel-window-move-to-column-7=Meta+Shift+7,none,Karousel: Move window to column 7
+karousel-window-move-to-column-8=Meta+Shift+8,none,Karousel: Move window to column 8
+karousel-window-move-to-column-9=Meta+Shift+9,none,Karousel: Move window to column 9
+karousel-window-move-up=none,none,Karousel: Move window up
+karousel-window-toggle-floating=none,none,Karousel: Toggle floating
 view_actual_size=Meta+0,Meta+0,Zoom to Actual Size
 view_zoom_in=Meta++\tMeta+=,Meta++,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
 [mediacontrol]
 _k_friendly_name=Media Controller
-mediavolumedown=none,,Media volume down
-mediavolumeup=none,,Media volume up
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
 nextmedia=Media Next,Media Next,Media playback next
 pausemedia=Media Pause,Media Pause,Pause media playback
-playmedia=none,,Play media playback
+playmedia=none,none,Play media playback
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
@@ -542,9 +588,14 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 11=none,none,Activate Application Launcher Widget
 activate widget 24=none,none,Activate Application Launcher Widget
+activate widget 26=none,none,Activate Better inline clock Widget
 activate widget 3=Alt+F1,none,Activate Application Launcher Widget
+activate widget 31=none,none,Activate Application Launcher Widget
 activate widget 45=none,none,Activate Application Launcher Widget
+activate widget 54=none,none,Activate Application Launcher Widget
+activate widget 55=none,none,Activate Application Launcher Widget
 activate widget 56=none,none,Activate Application Launcher Widget
 activate widget 66=none,none,Activate Application Launcher Widget
 clear-history=none,,Clear Clipboard History

@@ -9,6 +9,7 @@
 - link:
     ~/.bashrc : .bashrc
     ~/.gitconfig : .gitconfig
+    ~/.gitignore_global: .gitignore_global
     ~/.Xmodmap: .Xmodmap
     ~/Scripts: scripts
     ~/.config/fish: .config/fish

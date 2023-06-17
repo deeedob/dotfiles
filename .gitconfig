@@ -9,7 +9,7 @@
 	editor = nvim
 	autocrlf = input
 	pager = less -FRSX
-
+	excludefile = ~/.gitignore_global
 [diff]
 	tool = meld
 [difftool]
@@ -22,10 +22,8 @@
 	prompt = false
 [mergetool "meld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
-
 [commit]
 	template = /home/all0xc/Qt/qt6/.commit-template
-
 [alias]
 	ci = commit
 	st = status
