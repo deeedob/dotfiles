@@ -86,6 +86,11 @@ return {
   },
 
   {
+    "elkowar/yuck.vim",
+    lazy = false,
+  },
+
+  {
     "tidalcycles/vim-tidal",
     config = function()
       vim.g.tidal_target = "terminal"
