@@ -8,10 +8,9 @@
 
 - link:
     ~/.bashrc : .bashrc
-    ~/.gitconfig : .gitconfig
-    ~/.gitignore_global: .gitignore_global
     ~/Scripts: scripts
 
+    ~/.config/git: .config/git
     ~/.config/hypr: .config/hypr
     ~/.config/fish: .config/fish
     ~/.config/nvim/lua/user: .config/nvim/lua/user

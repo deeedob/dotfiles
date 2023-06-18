@@ -9,7 +9,8 @@
 	editor = nvim
 	autocrlf = input
 	pager = less -FRSX
-	excludefile = ~/.gitignore_global
+	excludefile = ~/.config/git/gitignore_global
+	whitespace = trailing-space,-space-before-tab,cr-at-eol
 [diff]
 	tool = meld
 [difftool]
@@ -23,7 +24,7 @@
 [mergetool "meld"]
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [commit]
-	template = /home/all0xc/Qt/qt6/.commit-template
+	template = ~/.config/git/git-commit-template
 [alias]
 	ci = commit
 	st = status
@@ -33,15 +34,9 @@
 	ann = blame
 [credential]
 	helper = cache --timeout=36000
-
 # Enforce SSH
 ; [url "ssh://git@github.com/"]
 ;   insteadOf = https://github.com/
-[url "ssh://git@gitlab.com/"]
-  insteadOf = https://gitlab.com/
-[url "ssh://git@bitbucket.org/"]
-  insteadOf = https://bitbucket.org/
-
 [rerere]
 	enabled = true
 	autoupdate = true
@@ -49,7 +44,6 @@
 	stat = true
 [color]
 	ui = auto
-
 [web]
 	browser = firefox
 
