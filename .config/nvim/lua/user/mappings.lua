@@ -21,8 +21,14 @@ return {
       desc = "Pick to close",
     },
     ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
-    -- ["<C-l>"] = { function() vim.cmd.tabnext() end, desc = "Next tab" },
-    -- ["<C-h>"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" },
+    ["<leader>."] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<leader>,"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
     ["<leader>b"] = { name = "Buffers" },
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
     ["<leader>u"] = { "<cmd>MundoToggle<cr>", desc = "Undo History Toggle" },
@@ -71,9 +77,7 @@ return {
         local yanked_text = vim.fn.eval("@" .. current_register)
         local clean_text = string.gsub(tostring(yanked_text), '"', '\\"')
         print(clean_text)
-        vim.cmd(
-          string.format("OpenBrowser " .. "https://duckduckgo.com/%s", clean_text)
-        )
+        vim.cmd(string.format("OpenBrowser " .. "https://duckduckgo.com/%s", clean_text))
       end,
     },
   },

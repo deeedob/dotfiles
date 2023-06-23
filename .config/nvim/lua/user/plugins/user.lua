@@ -32,6 +32,15 @@ return {
     ft = { "cpp" },
     lazy = true,
   },
+  {
+    "p00f/clangd_extensions.nvim",
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "clangd" },
+      },
+    },
+  },
 
   {
     "tyru/open-browser-github.vim",
@@ -57,12 +66,9 @@ return {
 
   {
     "kylechui/nvim-surround",
-    version = "*",     -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-      })
-    end
+    config = function() require("nvim-surround").setup {} end,
   },
 
   {

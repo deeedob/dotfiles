@@ -1,75 +1,31 @@
 return {
-  -- Configure AstroNvim updates
+  -- AstroVim updater
   updater = {
-    remote = "origin", -- remote to use
+    remote = "origin",
     channel = "stable", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "nightly", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
-    show_changelog = true, -- show the changelog after performing an update
+    version = "latest",
+    branch = "nightly",
+    commit = nil,
+    pin_plugins = nil,
+    skip_prompts = false,
+    show_changelog = true,
     auto_quit = false,
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "gruvbox",
 
-  -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+  -- LSP diagnostics
   diagnostics = {
-    virtual_text = true,
+    virtual_text = false,
+    signs = true,
     underline = true,
+    update_in_insert = true,
+    severity_sort = true,
   },
 
-  lsp = {
-    servers = {
-      "qmlls",
-    },
-    config = {
-      clangd = {
-        capabilities = {
-          offsetEncoding = "utf-8",
-        },
-      },
-      qmlls = function()
-        return {
-          cmd = {
-            "/usr/lib/qt6/bin/qmlls",
-            "-l",
-            "~/Temp/qmlls.log",
-          },
-          filetypes = { "qml" },
-          root_dir = require("lspconfig.util").root_pattern "build",
-        }
-      end,
-      glsl = function ()
-        return {
-          cmd = {"glsl"},
-          filetypes = {"glsl"}
-        }
-      end,
-      grammarly = {
-        filetypes = { "markdown", "text", "qdoc" },
-      },
-    },
+  lsp = require "user.lsp",
 
-    formatting = {
-      format_on_save = {
-        enabled = false,
-      },
-      timeout_ms = 1000, -- default format timeout
-    },
-  },
-  plugins = {
-    "p00f/clangd_extensions.nvim",
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        ensure_installed = { "clangd" },
-      },
-    },
-  },
-  -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
     performance = {
@@ -79,9 +35,7 @@ return {
       },
     },
   },
-  -- This function is run last and is a good place to configuring
-  -- augroups/autocommands and custom filetypes also this just pure lua so
-  -- anything that doesn't fit in the normal config locations above can go here
+  -- This function is run last
   polish = function()
     vim.filetype.add {
       extension = {
@@ -89,7 +43,7 @@ return {
         tidal = "tidal",
         qdoc = "qdoc",
         vert = "glsl",
-        frag = "glsl"
+        frag = "glsl",
       },
       filename = {
         ["qmldir"] = "qmldir",
@@ -103,6 +57,22 @@ return {
         vim.fn.setpos(".", save_cursor)
       end,
     })
+    -- Show LSP diagnostics on cursor-hold
+    vim.api.nvim_create_autocmd("CursorHold", {
+      callback = function()
+        local opts = {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          severity_sort = true,
+          border = "rounded",
+          source = "always",
+          prefix = " ",
+          scope = "line",
+        }
+        vim.diagnostic.open_float(nil, opts)
+      end,
+    })
+    -- Neovide integration
     if vim.g.neovide == true then
       vim.api.nvim_set_keymap(
         "n",
