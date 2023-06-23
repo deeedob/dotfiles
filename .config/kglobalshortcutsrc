@@ -31,12 +31,17 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][1][General]
+ToolBoxButtonState=topcenter
+ToolBoxButtonX=373
+ToolBoxButtonY=42
+
 [Containments][2]
 activityId=
 formfactor=2
 immutability=1
 lastScreen=0
-location=4
+location=3
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
@@ -51,11 +56,6 @@ plugin=org.kde.plasma.showdesktop
 [Containments][2][Applets][3]
 immutability=1
 plugin=org.kde.plasma.kickoff
-
-[Containments][2][Applets][3][Configuration]
-PreloadWeight=100
-popupHeight=514
-popupWidth=689
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
@@ -86,6 +86,10 @@ plugin=org.kde.plasma.systemtray
 PreloadWeight=55
 SystrayContainmentId=8
 
+[Containments][2][ConfigDialog]
+DialogHeight=84
+DialogWidth=1920
+
 [Containments][2][General]
 AppletOrder=3;4;5;6;7;20;21
 
@@ -103,7 +107,7 @@ activityId=
 formfactor=2
 immutability=1
 lastScreen=0
-location=4
+location=3
 plugin=org.kde.plasma.private.systemtray
 wallpaperplugin=org.kde.image
 
@@ -155,19 +159,19 @@ hasNativeBackend=true
 
 [Containments][8][Applets][22]
 immutability=1
-plugin=org.kde.plasma.networkmanagement
+plugin=org.kde.plasma.nightcolorcontrol
 
 [Containments][8][Applets][23]
 immutability=1
-plugin=org.kde.plasma.bluetooth
+plugin=org.kde.plasma.battery
 
 [Containments][8][Applets][24]
 immutability=1
-plugin=org.kde.plasma.nightcolorcontrol
+plugin=org.kde.plasma.networkmanagement
 
 [Containments][8][Applets][25]
 immutability=1
-plugin=org.kde.plasma.battery
+plugin=org.kde.plasma.bluetooth
 
 [Containments][8][Applets][9]
 immutability=1

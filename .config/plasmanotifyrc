@@ -1,6 +1,9 @@
 [Applications][com.nextcloud.desktopclient.nextcloud]
 Seen=true
 
+[Applications][com.uploadedlobster.peek]
+Seen=true
+
 [Applications][discord]
 Seen=true
 

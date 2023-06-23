@@ -25,7 +25,27 @@
       "environment": {
         "QDOC_SHOW_INTERNAL": "1"
       }
+    },
+    {
+      "name": "Shared Namespace Build",
+      "description": "Shared Namespace Build",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/static_namespace",
+      "cacheVariables": {
+        "BUILD_SHARED_LIBS": "OFF",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
+        "CMAKE_INSTALL_PREFIX": "~/Qt/precompiled/QtDevStaticNS",
+        "FEATURE_developer_build": "OFF",
+        "QT_BUILD_SUBMODULES": "qtbase;qtdeclarative;qtimageformats;qtshadertools;qtsvg;qtquick3d",
+        "QT_NAMESPACE": "StaticNS",
+        "QT_BUILD_TESTS": "OFF",
+        "QT_BUILD_EXAMPLES": "OFF",
+        "BUILD_qtlanguageserver": "OFF",
+        "BUILD_qtquicktimeline": "OFF",
+        "WARNINGS_ARE_ERRORS": "OFF"
+      }
     }
   ]
 }
-
