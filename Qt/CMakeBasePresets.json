@@ -7,6 +7,7 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/default",
       "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "FEATURE_developer_build": "ON",
         "FEATURE_cxx20": "ON",
@@ -17,7 +18,7 @@
         "QT_BUILD_EXAMPLES": "ON",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
-        "QT_HOST_PATH": "/home/all0xc/Qt/precompiled/Qt6.6/6.6.0/gcc_64",
+        "QT_HOST_PATH": "~/Qt/precompiled/Qt6.6/6.6.0/gcc_64",
         "QT_NO_PACKAGE_VERSION_CHECK": "ON",
         "WARNINGS_ARE_ERRORS": "OFF"
       },
