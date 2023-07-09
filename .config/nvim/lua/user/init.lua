@@ -13,7 +13,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox",
+  colorscheme = "gruvbox-baby",
 
   -- LSP diagnostics
   diagnostics = {
@@ -49,8 +49,9 @@ return {
         ["qmldir"] = "qmldir",
       },
     }
-    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-      pattern = { "*" },
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
       callback = function(ev)
         local save_cursor = vim.fn.getpos "."
         vim.cmd [[%s/\s\+$//e]]

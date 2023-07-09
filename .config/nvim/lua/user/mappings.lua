@@ -11,6 +11,7 @@ return {
     ["<C-k>"] = { "<Up>", desc = "Move up" },
   },
   n = {
+    ["<CR>"] = { "^:", desc = "New tab" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -33,6 +34,15 @@ return {
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
     ["<leader>u"] = { "<cmd>MundoToggle<cr>", desc = "Undo History Toggle" },
 
+    ["<leader>lo"] = {
+      function () vim.lsp.buf.outgoing_calls() end,
+      desc = "LSP outgoing calls"
+    },
+    ["<leader>le"] = {
+      function () vim.lsp.buf.incoming_calls() end,
+      desc = "LSP incoming calls"
+    },
+
     ["<leader>c"] = {
       function() vim.opt.colorcolumn = { 80, 100 } end,
       desc = "Colorcolumn On",
@@ -42,6 +52,7 @@ return {
       desc = "Colorcolumn Off",
     },
 
+    -- Search in browser
     ["KQ"] = {
       function()
         local current_word = vim.fn.expand "<cword>"
@@ -81,4 +92,7 @@ return {
       end,
     },
   },
+  v = {
+    ["y"] = { "may`a<esc>", desc = "Yank no jump-back" },
+  }
 }

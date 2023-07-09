@@ -18,28 +18,30 @@ return {
         "--cross-file-rename",
         "--enable-config",
         "--header-insertion=iwyu",
+        "--query-driver=/usr/bin/arm-none-eabi-g++",
         "-j=8",
         "--limit-references=0",
         "--limit-results=0",
       },
     },
     qmlls = function()
+      local home = os.getenv "HOME"
       return {
         cmd = {
           "/usr/lib/qt6/bin/qmlls",
           "-l",
-          "~/Temp/qmlls.log",
+          home .. "/Temp/qmlls.log",
+          "-b",
+          "./build-Debug",
         },
         filetypes = { "qml" },
-        root_dir = require("lspconfig.util").root_pattern "build",
+        root_dir = require("lspconfig.util").root_pattern "compile_commands.json",
       }
     end,
-    glsl = function()
-      return {
-        cmd = { "glsl" },
-        filetypes = { "glsl" },
-      }
-    end,
+    glsl = {
+      cmd = { "glsl" },
+      filetypes = { "glsl" },
+    },
     grammarly = {
       filetypes = { "markdown", "text", "qdoc" },
     },

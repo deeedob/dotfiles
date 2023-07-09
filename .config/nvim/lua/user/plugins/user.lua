@@ -1,6 +1,5 @@
 return {
   -- "andweeb/presence.nvim",
-
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
@@ -32,6 +31,7 @@ return {
     ft = { "cpp" },
     lazy = true,
   },
+
   {
     "p00f/clangd_extensions.nvim",
     {
@@ -91,6 +91,74 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
   },
 
+  -- {
+  --   "VonHeikemen/fine-cmdline.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim" },
+  --   -- cmd = {"FineCmdLine"}
+  --   lazy = false
+  -- },
+
+  {
+    "crusj/bookmarks.nvim",
+    keys = {
+      { "<tab><tab>", mode = { "n" } },
+    },
+    branch = "main",
+    dependencies = { "nvim-web-devicons" },
+    config = function()
+      require("bookmarks").setup()
+      require("telescope").load_extension "bookmarks"
+    end,
+  },
+
+  {
+    "ldelossa/litee-calltree.nvim",
+    dependencies = { "ldelossa/litee.nvim" },
+    ft = { "cpp", "python", "lua" },
+    config = function()
+      require("litee.lib").setup()
+      require("litee.calltree").setup()
+    end,
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function() require("flash").jump() end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function() require("flash").treesitter() end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function() require("flash").remote() end,
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        function() require("flash").treesitter_search() end,
+        desc = "Flash Treesitter Search",
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function() require("flash").toggle() end,
+        desc = "Toggle Flash Search",
+      },
+    },
+  },
+
   {
     "tidalcycles/vim-tidal",
     config = function()
@@ -98,6 +166,5 @@ return {
       vim.g.tidal_sc_enable = 1
     end,
     ft = "tidal",
-    lazy = true,
   },
 }
