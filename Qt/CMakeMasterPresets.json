@@ -20,6 +20,7 @@
         "QT_BUILD_EXAMPLES": "ON",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
+        "QT_BUILD_EXAMPLES_AS_EXTERNAL": "ON",
         "WARNINGS_ARE_ERRORS": "OFF"
       },
       "environment": {
