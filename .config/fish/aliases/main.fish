@@ -30,14 +30,14 @@ alias del 'rm -i -v'
 alias c 'clear'
 alias h 'history'
 function neovidecloseterminal
-    if count $argv > /dev/null 
+    if count $argv > /dev/null
         neovide "$argv" & disown
         exit
     else
         neovide & disown
         exit
     end
-end 
+end
 alias nv neovidecloseterminal
 alias r 'ranger'
 alias fh 'find . -name'
@@ -80,9 +80,7 @@ alias virtoff virtoff
 alias wifioff 'sudo ip link set wlo1 down'
 alias wifion 'sudo ip link set wlo1 up'
 
-function grabwav
-  yt-dlp $argv
-end
-alias grabwav 'yt-dlp --no-playlist -x --audio-format wav -o "$samples/%(title)s_%(id)s.%(ext)s"'  
-alias grabmp3 'yt-dlp --no-playlist -x --audio-format mp3 -o "$samples/%(title)s_%(id)s.%(ext)s"'  
+# you have to quote the link
+alias grabwav 'yt-dlp --no-playlist -x --audio-format wav -o "~/Samples/DropZone/%(title)s.%(ext)s"'
+alias grabmp3 'yt-dlp --no-playlist -x --audio-format mp3 -o "~/Samples/DropZone/%(title)s.%(ext)s"'
 
