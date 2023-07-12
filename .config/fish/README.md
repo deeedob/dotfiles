@@ -1,5 +1,7 @@
 # Usage
 
+Search history: `Ctrl + R`
+
 ## FZF
 
 Leader: `Ctrl`
