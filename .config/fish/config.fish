@@ -42,6 +42,7 @@ set -x CC clang
 set -x CXX clang++
 set -x CMAKE_EXPORT_COMPILE_COMMANDS 1
 set -x QDOC_SHOW_INTERNAL 1
+set -x SHELL /usr/bin/fish
 
 set -x EDITOR nvim
 set -x GIT_EDITOR $EDITOR

@@ -18,7 +18,6 @@
     ~/.config/clangd: .config/clangd
     ~/.config/alacritty: .config/alacritty
     ~/.config/ranger: .config/ranger
-    ~/.config/eww: .config/eww
     ~/.config/user-dirs.locale: .config/user-dirs.locale
     ~/.config/user-dirs.dirs: .config/user-dirs.dirs
 
@@ -26,8 +25,6 @@
     ~/Qt/qt6/CMakePresets.json: Qt/CMakeMasterPresets.json
     ~/Qt/qt6/qtbase/CMakePresets.json: Qt/CMakeBasePresets.json
 
-#- shell:
-#  - [git submodule update --init --recursive, Installing submodules]
-#  - [scripts/install-packages.sh, Installing the fish shell]
-#  - [scripts/setup.sh, Setting up the System]
-#  - [.config/fish/install.sh, Installing the fish shell]
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [.config/fish/install.sh, Installing the fish shell]
