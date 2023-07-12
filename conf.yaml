@@ -12,6 +12,8 @@
     ~/Pictures/Wallpaper: Wallpaper
 
     ~/.bashrc : .bashrc
+    ~/.themes : .themes
+    ~/.icons : .icons
 
     ~/.config/git: .config/git
     ~/.config/hypr: .config/hypr
