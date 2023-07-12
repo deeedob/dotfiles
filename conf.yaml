@@ -7,19 +7,21 @@
 - clean: ['~']
 
 - link:
+    ~/Bin: Bin
+    ~/Scripts: Scripts
+    ~/Pictures/Wallpaper: Wallpaper
+
     ~/.bashrc : .bashrc
-    ~/Bin: bin
-    ~/Scripts: scripts
 
     ~/.config/git: .config/git
     ~/.config/hypr: .config/hypr
     ~/.config/fish: .config/fish
-    ~/.config/nvim/lua/user: .config/nvim/lua/user
     ~/.config/clangd: .config/clangd
-    ~/.config/alacritty: .config/alacritty
     ~/.config/ranger: .config/ranger
-    ~/.config/user-dirs.locale: .config/user-dirs.locale
+    ~/.config/alacritty: .config/alacritty
+    ~/.config/nvim/lua/user: .config/nvim/lua/user
     ~/.config/user-dirs.dirs: .config/user-dirs.dirs
+    ~/.config/user-dirs.locale: .config/user-dirs.locale
 
     ~/Qt/.gitconfig: Qt/.gitconfig
     ~/Qt/qt6/CMakePresets.json: Qt/CMakeMasterPresets.json
@@ -28,3 +30,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [.config/fish/install.sh, Installing the fish shell]
+

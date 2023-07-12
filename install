@@ -1,18 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
 ./sys-setup.sh
 ./setup.sh
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+# Symlink files with dotbot
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+config="conf.yaml"
+basedir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+.dotbot/bin/dotbot -d "${basedir}" -c "${config}"
+
