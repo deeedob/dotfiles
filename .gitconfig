@@ -1,0 +1,55 @@
+[user]
+	email = dennis.ob@protonmail.com
+	name = deeedob
+	username = deeedob
+[includeIf "gitdir:**/qt6/"]
+	path = ~/Qt/.gitconfig
+[core]
+	defaultBranch = main
+	editor = nvim
+	autocrlf = input
+	pager = less -FRSX
+	excludefile = ~/.gitignore_global
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+	tool = "meld"
+[mergetool]
+	prompt = false
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+[commit]
+	template = /home/all0xc/Qt/qt6/.commit-template
+[alias]
+	ci = commit
+	st = status
+	sub = submodule update --remote --merge
+	di = diff
+	co = checkout
+	ann = blame
+[credential]
+	helper = cache --timeout=36000
+
+# Enforce SSH
+; [url "ssh://git@github.com/"]
+;   insteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+  insteadOf = https://gitlab.com/
+[url "ssh://git@bitbucket.org/"]
+  insteadOf = https://bitbucket.org/
+
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	stat = true
+[color]
+	ui = auto
+
+[web]
+	browser = firefox
+
