@@ -21,6 +21,7 @@
     ~/.config/dunst: .config/dunst
     ~/.config/rofi: .config/rofi
     ~/.config/clangd: .config/clangd
+    ~/.config/btop: .config/btop
     ~/.config/ranger: .config/ranger
     ~/.config/alacritty: .config/alacritty
     ~/.config/nvim/lua/user: .config/nvim/lua/user
