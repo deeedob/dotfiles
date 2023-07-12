@@ -16,10 +16,15 @@
     ~/.config/git: .config/git
     ~/.config/hypr: .config/hypr
     ~/.config/fish: .config/fish
+    ~/.config/waybar: .config/waybar
+    ~/.config/wofi: .config/wofi
+    ~/.config/dunst: .config/dunst
+    ~/.config/rofi: .config/rofi
     ~/.config/clangd: .config/clangd
     ~/.config/ranger: .config/ranger
     ~/.config/alacritty: .config/alacritty
     ~/.config/nvim/lua/user: .config/nvim/lua/user
+
     ~/.config/user-dirs.dirs: .config/user-dirs.dirs
     ~/.config/user-dirs.locale: .config/user-dirs.locale
 

@@ -1,0 +1,118 @@
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 16px;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
+}
+
+window#waybar {
+  background: #282828;
+  border: 1px solid #504945;
+  color: #cdd6f4;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+}
+
+button {
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: inherit;
+}
+
+/* LEFT */
+#custom-launcher {
+  font-size: 20px;
+  color: #1793d0;
+  padding: 0px 10px 0px 0px;
+  margin: 0px;
+}
+
+#custom-seperator {
+  margin: 0px 5px 0px 5px;
+}
+
+#clock button:hover {
+  color: #ff0000;
+}
+
+#memory {
+  margin: 0px 5px 0px 5px;
+}
+
+#cpu {
+  margin: 0px 5px 0px 5px;
+}
+
+#temperature {
+  margin: 0px 5px 0px 5px;
+}
+
+#user {
+  margin: 0px 5px 0px 5px;
+}
+
+#battery {
+  margin: 0px 5px 0px 5px;
+}
+
+/* CENTER */
+#workspaces button {
+  border-radius: 5px;
+  padding: 0px;
+}
+
+#workspaces button label {
+  color: #cdd6f4;
+  margin: 0px 3px 0px 3px;
+}
+
+#workspaces button.active label {
+  color: #fe80Af;
+}
+
+#workspaces button.active {
+  background: #585b70;
+  margin: 1px 0px 1px 0px;
+  border-radius: 5px;
+}
+
+#workspaces button:hover {
+  background: #585b70;
+}
+
+#workspaces button:hover label {
+  color: #b8bb26;
+}
+
+/* RIGHT */
+#backlight {
+  margin: 0px 5px 0px 5px;
+}
+
+#pulseaudio {
+  margin: 0px 5px 0px 5px;
+}
+
+#bluetooth {
+  margin: 0px 5px 0px 5px;
+}
+
+#network {
+  margin: 0px 5px 0px 5px;
+}
+
+#custom-power-menu {
+  margin: 0px 5px 0px 5px;
+}
+
+#tray {
+  margin: 0px 5px 0px 5px;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=style.css.map */

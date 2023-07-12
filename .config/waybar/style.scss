@@ -1,0 +1,128 @@
+$bg: #282828;
+$fg: #504945;
+$fg2: #585b70;
+$font: #cdd6f4;
+$hl1: #83a598;
+$hl2: #fe80Af;
+$hl3: #b8bb26;
+
+$spacing: 5px;
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 16px;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background: $bg;
+    border: 1px solid $fg;
+    color: $font;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+
+}
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
+}
+
+/* LEFT */
+#custom-launcher {
+  font-size: 20px;
+  color: #1793d0;
+  padding: 0px 10px 0px 0px;
+  margin: 0px;
+}
+
+#custom-seperator{
+  margin: 0px $spacing 0px $spacing;
+}
+
+#clock button:hover {
+  color: #ff0000;
+}
+
+#memory {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#cpu {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#temperature {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#user {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#battery {
+  margin: 0px $spacing 0px $spacing;
+}
+
+/* CENTER */
+
+#workspaces button {
+  border-radius: 5px;
+  padding: 0px;
+}
+
+#workspaces button label {
+  color: $font;
+  margin: 0px 3px 0px 3px;
+}
+
+#workspaces button.active label {
+  color: $hl2;
+}
+
+#workspaces button.active {
+  background: $fg2;
+  margin: 1px 0px 1px 0px;
+  border-radius: 5px;
+}
+
+#workspaces button:hover {
+  background: $fg2;
+}
+
+#workspaces button:hover label {
+  color: $hl3;
+}
+
+/* RIGHT */
+
+#backlight {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#pulseaudio {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#bluetooth {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#network {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#custom-power-menu {
+  margin: 0px $spacing 0px $spacing;
+}
+
+#tray {
+  margin: 0px $spacing 0px $spacing;
+  color: #ffffff;
+}
