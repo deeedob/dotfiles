@@ -11,6 +11,7 @@ return {
     ["<C-k>"] = { "<Up>", desc = "Move up" },
   },
   n = {
+    ["<CR>"] = { "^:", desc = "New tab" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -21,11 +22,26 @@ return {
       desc = "Pick to close",
     },
     ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
-    -- ["<C-l>"] = { function() vim.cmd.tabnext() end, desc = "Next tab" },
-    -- ["<C-h>"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" },
+    ["<leader>."] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    ["<leader>,"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
     ["<leader>b"] = { name = "Buffers" },
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
     ["<leader>u"] = { "<cmd>MundoToggle<cr>", desc = "Undo History Toggle" },
+
+    ["<leader>lo"] = {
+      function () vim.lsp.buf.outgoing_calls() end,
+      desc = "LSP outgoing calls"
+    },
+    ["<leader>le"] = {
+      function () vim.lsp.buf.incoming_calls() end,
+      desc = "LSP incoming calls"
+    },
 
     ["<leader>c"] = {
       function() vim.opt.colorcolumn = { 80, 100 } end,
@@ -36,6 +52,7 @@ return {
       desc = "Colorcolumn Off",
     },
 
+    -- Search in browser
     ["KQ"] = {
       function()
         local current_word = vim.fn.expand "<cword>"
@@ -71,10 +88,11 @@ return {
         local yanked_text = vim.fn.eval("@" .. current_register)
         local clean_text = string.gsub(tostring(yanked_text), '"', '\\"')
         print(clean_text)
-        vim.cmd(
-          string.format("OpenBrowser " .. "https://duckduckgo.com/%s", clean_text)
-        )
+        vim.cmd(string.format("OpenBrowser " .. "https://duckduckgo.com/%s", clean_text))
       end,
     },
   },
+  v = {
+    ["y"] = { "may`a<esc>", desc = "Yank no jump-back" },
+  }
 }

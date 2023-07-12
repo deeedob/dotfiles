@@ -62,6 +62,16 @@ return {
       return opts
     end,
   },
+
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      render = "compact",
+      stages = "static",
+      level = "ERROR",
+    }
+  },
+
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --

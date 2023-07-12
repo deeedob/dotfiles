@@ -5,7 +5,10 @@ return {
     number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+    expandtab = true,
     wrap = false, -- sets vim.opt.wrap
+    list = true,
+    listchars = { space = "·" },
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
@@ -18,4 +21,3 @@ return {
     resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
   },
 }
-

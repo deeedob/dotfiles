@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-yay -S --noconfirm --needed bottom nodejs ripgrep lazygit go gdu glsl-language-server
+yay -S bottom nodejs ripgrep lazygit go gdu glsl-language-server
 
 if [ -d ~/.config/nvim ]; then
   echo "Nvim is already installed!"
