@@ -8,6 +8,7 @@
 
 - link:
     ~/.bashrc : .bashrc
+    ~/Bin: bin
     ~/Scripts: scripts
 
     ~/.config/git: .config/git

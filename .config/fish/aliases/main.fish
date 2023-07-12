@@ -30,14 +30,14 @@ alias del 'rm -i -v'
 alias c 'clear'
 alias h 'history'
 function neovidecloseterminal
-    if count $argv > /dev/null 
+    if count $argv > /dev/null
         neovide "$argv" & disown
         exit
     else
         neovide & disown
         exit
     end
-end 
+end
 alias nv neovidecloseterminal
 alias r 'ranger'
 alias fh 'find . -name'
@@ -49,7 +49,6 @@ alias untar 'tar -zxvf'
 alias dsize='du -sh *'
 alias topmem='ps aux | sort -rk 4,4 | head -n 11'
 alias sha 'shasum -a 256'
-alias grep "rg --color=always --smart-case"
 alias find "find . -name"
 # alias cmake 'cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias make "make -j$(nproc)"
@@ -83,6 +82,6 @@ alias wifion 'sudo ip link set wlo1 up'
 function grabwav
   yt-dlp $argv
 end
-alias grabwav 'yt-dlp --no-playlist -x --audio-format wav -o "$samples/%(title)s_%(id)s.%(ext)s"'  
-alias grabmp3 'yt-dlp --no-playlist -x --audio-format mp3 -o "$samples/%(title)s_%(id)s.%(ext)s"'  
+alias grabwav 'yt-dlp --no-playlist -x --audio-format wav -o "$samples/%(title)s_%(id)s.%(ext)s"'
+alias grabmp3 'yt-dlp --no-playlist -x --audio-format mp3 -o "$samples/%(title)s_%(id)s.%(ext)s"'
 
