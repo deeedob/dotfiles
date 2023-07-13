@@ -13,7 +13,9 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "gruvbox-baby",
+  -- gruvbox-baby,
+  -- astrodark, astrolight, astromars
+  colorscheme = "astrodark",
 
   -- LSP diagnostics
   diagnostics = {
@@ -49,7 +51,13 @@ return {
         ["qmldir"] = "qmldir",
       },
     }
-
+    -- auto-reload files when modified externally
+    vim.o.autoread = true
+    vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+      command = "if mode() != 'c' | checktime | endif",
+      pattern = { "*" },
+    })
+    -- remove trailing whitespace on save
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       callback = function(ev)
@@ -94,5 +102,15 @@ return {
         { silent = true }
       )
     end
+    -- TODO
+    -- set alacritty padding to zero on enter and put it back to default on leave
+    -- vim.api.nvim_create_autocmd("VimEnter", {
+    --   pattern = "*",
+    --   commend = ;
+    -- })
+    -- vim.api.nvim_create_autocmd("VimLeave", {
+    --   pattern = "*",
+    --   commend = ;
+    -- })
   end,
 }
