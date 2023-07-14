@@ -2,3 +2,27 @@
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule ".third-party/Nightfox-GTK-Theme"]
+	path = .third-party/Nightfox-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Nightfox-GTK-Theme
+[submodule ".third-party/Catppuccin-GTK-Theme"]
+	path = .third-party/Catppuccin-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
+[submodule ".third-party/Everforest-GTK-Theme"]
+	path = .third-party/Everforest-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme
+[submodule ".third-party/Gruvbox-GTK-Theme"]
+	path = .third-party/Gruvbox-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Gruvbox-GTK-Theme
+[submodule ".third-party/Kanagawa-GKT-Theme"]
+	path = .third-party/Kanagawa-GKT-Theme
+	url = https://github.com/Fausto-Korpsvart/Kanagawa-GKT-Theme
+[submodule ".third-party/Material-GTK-Themes"]
+	path = .third-party/Material-GTK-Themes
+	url = https://github.com/Fausto-Korpsvart/Material-GTK-Themes
+[submodule ".third-party/Rose-Pine-GTK-Theme"]
+	path = .third-party/Rose-Pine-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Rose-Pine-GTK-Theme
+[submodule ".third-party/Tokyo-Night-GTK-Theme"]
+	path = .third-party/Tokyo-Night-GTK-Theme
+	url = https://github.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme

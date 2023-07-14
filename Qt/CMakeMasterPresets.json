@@ -2,20 +2,20 @@
   "version": 6,
   "configurePresets": [
     {
-      "name": "Base + Declarative Dev",
+      "name": "all_debug",
       "description": "Build Base + Declarative with development support",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/base_declarative",
+      "binaryDir": "${sourceDir}/build/all_debug",
       "cacheVariables": {
         "CMAKE_C_COMPILER": "gcc",
         "CMAKE_CXX_COMPILER": "g++",
         "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "FEATURE_developer_build": "ON",
-        "QT_BUILD_SUBMODULES": "qtbase;qtdeclarative;qttools;qtdoc",
         "QT_NAMESPACE": "B",
-        "QT_UNITY_BUILD": "ON",
+        "QT_UNITY_BUILD": "OFF",
         "QT_UNITY_BUILD_BATCH_SIZE": "32",
+
         "QT_BUILD_TESTS": "ON",
         "QT_BUILD_EXAMPLES": "ON",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
