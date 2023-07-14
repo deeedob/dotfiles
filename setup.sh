@@ -6,3 +6,39 @@ cursor_theme="Bibata-Modern-TokyoNight"
 if [ ! -d /usr/share/icons/${cursor_theme} ]; then
     sudo cp -r .res/${cursor_theme} /usr/share/icons/
 fi
+
+# install xremap and set is as service to get custom keybinds.
+sudo make -C .config/xremap 1> /dev/null
+
+check_enable_start_service() {
+    local service=$1
+
+    # Check if the service is enabled
+    if systemctl is-enabled "$service" >/dev/null 2>&1; then
+        echo "Service '$service' is already enabled."
+    else
+        echo "Enabling service '$service'..."
+        if sudo systemctl enable "$service" >/dev/null 2>&1; then
+            echo "Service '$service' has been enabled."
+        else
+            echo "Failed to enable service '$service'."
+        fi
+    fi
+
+    # Check if the service is running
+    if systemctl is-active "$service" >/dev/null 2>&1; then
+        echo "Service '$service' is already running."
+    else
+        echo "Starting service '$service'..."
+        if sudo systemctl start "$service" >/dev/null 2>&1; then
+            echo "Service '$service' has been started."
+        else
+            echo "Failed to start service '$service'."
+        fi
+    fi
+}
+
+check_enable_start_service "docker"
+check_enable_start_service "bluetooth"
+check_enable_start_service "xremap"
+

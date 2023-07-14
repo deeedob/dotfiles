@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Array to store the selected devices
+selected_devices=()
+
+# Specify the input devices to search for
+devices_to_search=("Logitech MX Keys" "Razer Razer Blade Keyboard")
+
+# Read the contents of /proc/bus/input/devices
+input_devices=$(cat /proc/bus/input/devices)
+
+# Loop through the devices to search for
+for device in "${devices_to_search[@]}"
+do
+    # Check if the device is present and get its eventX path
+    if [[ $input_devices =~ $device ]]; then
+        event_path=$(grep -E -A 4 "$device" /proc/bus/input/devices | grep -o "event[0-9]\+")
+        selected_devices+=("/dev/input/$event_path")
+        echo "Found: $device, Event: $event_path"
+    fi
+done
+
+# Construct the xremap command
+xremap_command="xremap"
+
+# Loop through the selected devices and add them to the command
+for selected_device in "${selected_devices[@]}"
+do
+    xremap_command+=" --device $selected_device"
+done
+
+xremap_command+=" /opt/xremap/config.yml"
+
+# Run the xremap command
+echo "Running: $xremap_command"
+sudo -s eval $xremap_command & > /dev/null 2>&1
+

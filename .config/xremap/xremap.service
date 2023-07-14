@@ -1,0 +1,10 @@
+[Unit]
+Description=Remap Keys
+After=multi-user.target
+
+[Service]
+Type=forking
+ExecStart=/opt/xremap/xremap_start
+
+[Install]
+WantedBy=multi-user.target
