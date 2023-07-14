@@ -11,7 +11,7 @@ return {
     ["<C-k>"] = { "<Up>", desc = "Move up" },
   },
   n = {
-    ["<CR>"] = { "^:", desc = "New tab" },
+    ["<C-k>"] = { "^:", desc = "New tab" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()

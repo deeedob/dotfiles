@@ -7,6 +7,7 @@ return {
   },
   config = {
     clangd = {
+      filetypes = {"c", "cpp", "cuda"},
       capabilities = {
         offsetEncoding = "utf-8",
       },
