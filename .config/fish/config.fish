@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 # Prompt
 set fish_greeting
 
@@ -40,6 +41,7 @@ set -x EDITOR nvim
 set -x GIT_EDITOR $EDITOR
 set -x SUDO_EDITOR "rvim -u NONE"
 set -x MANPAGER "nvim +Man!"
+set -x QDEV $HOME/Qt/qt6/build/all_debug/qtbase/lib
 
 # Aliases
 
@@ -59,9 +61,25 @@ function mkcd
     cd $argv[1]
 end
 
+
 function builder
-    cmake --build cmake-builder -G Ninja
+    cmake --fresh -G Ninja -D CMAKE_EXPORT_COMPILE_COMMANDS=ON -B builder/ && cmake --build builder
+    ln -snf builder/compile_commands.json .
 end
+
+# Qt Dev Builder
+
+function qdevbuilder
+    # Print available libQt6*.so libraries
+    if set -q QDEV
+        echo "-- QDEV PATH: $QDEV"
+    end
+    for lib in $QDEV/libQt6*.so
+        echo "-- $lib"
+    end
+    builder
+end
+
 
 function grepcc
   grep -Rnw --include="*.cpp" --include="*.h" . -e $argv
