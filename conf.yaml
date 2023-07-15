@@ -12,8 +12,6 @@
     ~/Pictures/Wallpaper: Wallpaper
 
     ~/.bashrc : .bashrc
-    ~/.themes : .themes
-    ~/.icons : .icons
     ~/.gitignore_global: .gitignore_global
 
     ~/.config/git: .config/git

@@ -7,6 +7,12 @@ if [ ! -d /usr/share/icons/${cursor_theme} ]; then
     sudo cp -r .res/${cursor_theme} /usr/share/icons/
 fi
 
+if find $HOME/.themes -mindepth 1 -maxdepth 1 | read; then
+    echo ".themes order is not empty. Omitting Theme and Icon install"
+else
+    $HOME/Dotfiles/.third-party/symlink_themes.sh
+fi
+
 # install xremap and set is as service to get custom keybinds.
 sudo make -C .config/xremap 1> /dev/null
 
