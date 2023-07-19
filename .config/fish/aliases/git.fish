@@ -5,6 +5,8 @@ alias gp='git push'
 alias gs='git status'
 alias gb='git branch'
 alias gd='git diff'
+# Git last commits's files
+alias glcf='git show --pretty="format:" --name-only HEAD'
 
 # Show Git log in a compact format
 alias gl='git log --oneline --decorate --graph'
@@ -25,9 +27,9 @@ end
 set -x fish_prompt (parse_git_branch)' $ '
 
 # Update submodule
-alias gsmp='git pull --recurse-submodules --jobs=10'
+alias gsu='git submodule update --init --recursive'
 
-# Git remotes 
-alias glsremote='git remote -v | awk "{print \"\033[32m\"\$1\"\033[0m\t\033[33m\"\$2\"\033[0m\"}"'
-alias grmremote="git remote rm"
-alias gaddremote="git remote add"
+# Git remotes
+alias gr='git remote -v | awk "{print \"\033[32m\"\$1\"\033[0m\t\033[33m\"\$2\"\033[0m\"}"'
+alias grrm="git remote rm"
+alias gra="git remote add"

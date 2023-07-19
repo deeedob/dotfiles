@@ -74,6 +74,7 @@ return {
   {
     "folke/noice.nvim",
     enabled = true,
+    cond = function() return not vim.g.neovide end,
     event = "VeryLazy",
     opts = {
       cmdline = { enabled = true },

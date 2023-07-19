@@ -29,22 +29,24 @@ alias del 'rm -i -v'
 # ---- System ----
 alias c 'clear'
 alias h 'history'
-function neovidecloseterminal
-    if count $argv > /dev/null
-        neovide "$argv" & disown
-        exit
-    else
-        neovide & disown
-        exit
-    end
-end
-alias nv neovidecloseterminal
+# function neovidecloseterminal
+#     if count $argv > /dev/null
+#         neovide "$argv" & disown
+#         exit
+#     else
+#         neovide & disown
+#         exit
+#     end
+# end
+# alias nv neovidecloseterminal
+alias xw='env -u WAYLAND_DISPLAY'
+alias nv="xw neovide"
 alias r 'ranger'
 alias fh 'find . -name'
 alias sc 'grep -i -w -n -r -I --color=always'
 alias f 'find . -type f -iname '
 alias rm 'trash -vr'
-#alias cd 'z'
+# alias cd 'z'
 alias untar 'tar -zxvf'
 alias dsize='du -sh *'
 alias topmem='ps aux | sort -rk 4,4 | head -n 11'

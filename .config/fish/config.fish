@@ -35,8 +35,11 @@ function fish_prompt --description 'Write out the prompt'
     echo -n -s $status_color $suffix ' ' $normal
 end
 
-# Variables
+# extend PATH
 fish_add_path /usr/lib/qt6/bin
+fish_add_path $HOME/Bin
+
+# Variables
 set -x EDITOR nvim
 set -x GIT_EDITOR $EDITOR
 set -x SUDO_EDITOR "rvim -u NONE"

@@ -11,15 +11,17 @@
         "FEATURE_developer_build": "ON",
         "FEATURE_cxx20": "ON",
         "QT_NAMESPACE": "B",
-        "QT_UNITY_BUILD": "OFF",
+        "QT_UNITY_BUILD": "ON",
         "QT_UNITY_BUILD_BATCH_SIZE": "32",
+
         "QT_BUILD_TESTS": "ON",
         "QT_BUILD_EXAMPLES": "ON",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
-        "QT_HOST_PATH": "/home/all0xc/Qt/precompiled/Qt6.6/6.6.0/gcc_64",
+
+        "QT_HOST_PATH": "~/Qt/qt6/build/all_debug/qtbase",
         "QT_NO_PACKAGE_VERSION_CHECK": "ON",
-        "WARNINGS_ARE_ERRORS": "OFF"
+        "WARNINGS_ARE_ERRORS": "ON"
       },
       "environment": {
         "QDOC_SHOW_INTERNAL": "1"
@@ -27,4 +29,3 @@
     }
   ]
 }
-

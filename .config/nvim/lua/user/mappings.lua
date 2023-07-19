@@ -1,3 +1,33 @@
+local utils = require "astronvim.utils"
+local get_icon = utils.get_icon
+local is_available = utils.is_available
+local ui = require "astronvim.utils.ui"
+
+local maps = require("astronvim.utils").empty_map_table()
+
+local sections = {
+  x = { desc = get_icon("Terminal", 1, true) .. "CMake" },
+}
+-- TODO
+if is_available "cmake-tools" then
+  maps.n["<leader>x"] = sections.x
+  maps.n ["<leader>xs"] = { "<cmd>CMakeStop<cr>", desc = "CMakeStop" }
+  maps.n ["<leader>xf"] = { "<cmd>CMakeClean<cr>", desc = "CMakeClean" }
+  maps.n ["<leader>xc"] = { "<cmd>CMakeClose<cr>", desc = "CMakeClose" }
+
+  maps.n ["<leader>xr"] = { "<cmd>CMakeRun<cr>", desc = "CMakeRun" }
+  maps.n ["<leader>b"] = { "<cmd>CMakeBuild<cr>", desc = "CMakeBuild" }
+  maps.n ["<leader>xd"] = { "<cmd>CMakeDebug<cr>", desc = "CMakeDebug" }
+
+  maps.n ["<leader>xG"] = { "<cmd>CMakeGenerate<cr>", desc = "CMakeGenereate" }
+  maps.n ["<leader>xP"] = { "<cmd>CMakeSelectConfigurePreset<cr>", desc = "CMakeSelectConfigurePreset" }
+  maps.n ["<leader>xB"] = { "<cmd>CMakeSelectBuildTarget<cr>", desc = "CMakeSelectBuildTarget" }
+  maps.n ["<leader>xT"] = { "<cmd>CMakeSelectLaunchTarget<cr>", desc = "CMakeSelectLaunchTarget" }
+  maps.n ["<leader>xR"] = { "<cmd>CMakeQuickRun<cr>", desc = "CMakeQuickRun" }
+  maps.n ["<leader>xQ"] = { "<cmd>CMakeQuickBuild<cr>", desc = "CMakeQuickBuild" }
+  maps.n ["<leader>xD"] = { "<cmd>CMakeQuickDebug<cr>", desc = "CMakeQuickDebug" }
+end
+
 return {
   i = {
     -- go to  beginning and end
@@ -11,7 +41,7 @@ return {
     ["<C-k>"] = { "<Up>", desc = "Move up" },
   },
   n = {
-    ["<C-k>"] = { "^:", desc = "New tab" },
+    ["<C-ö>"] = { "^:", desc = "New tab" },
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
@@ -42,15 +72,14 @@ return {
       function () vim.lsp.buf.incoming_calls() end,
       desc = "LSP incoming calls"
     },
-
-    ["<leader>c"] = {
-      function() vim.opt.colorcolumn = { 80, 100 } end,
-      desc = "Colorcolumn On",
-    },
-    ["<leader>co"] = {
-      function() vim.opt.colorcolumn = {} end,
-      desc = "Colorcolumn Off",
-    },
+    -- ["<leader>c"] = {
+    --   function() vim.opt.colorcolumn = { 80, 100 } end,
+    --   desc = "Colorcolumn On",
+    -- },
+    -- ["<leader>co"] = {
+    --   function() vim.opt.colorcolumn = {} end,
+    --   desc = "Colorcolumn Off",
+    -- },
 
     -- Search in browser
     ["KQ"] = {

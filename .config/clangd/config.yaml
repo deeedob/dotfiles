@@ -55,26 +55,26 @@ Diagnostics:
         bugprone-unchecked-optional-access
       ]
     CheckOptions:
-      readability-identifier-naming.NamespaceCase: lower_case
+      readability-identifier-naming.NamespaceCase: CamelCase
       readability-identifier-naming.ClassCase: CamelCase
       readability-identifier-naming.StructCase: CamelCase
       readability-identifier-naming.TemplateParameterCase: CamelCase
       readability-identifier-naming.FunctionCase: aNy_CasE
-      readability-identifier-naming.VariableCase: lower_case
-      readability-identifier-naming.ClassMemberCase: lower_case
+      readability-identifier-naming.VariableCase: camelBack
+      readability-identifier-naming.ClassMemberCase: camelBack
       readability-identifier-naming.ClassMemberPrefix: m_
       readability-identifier-naming.PrivateMemberPrefix: m_
       readability-identifier-naming.ProtectedMemberPrefix: m_
       readability-identifier-naming.EnumConstantCase: CamelCase
-      readability-identifier-naming.EnumConstantPrefix: k
+      readability-identifier-naming.EnumConstantPrefix:
       readability-identifier-naming.ConstexprVariableCase: CamelCase
       readability-identifier-naming.ConstexprVariablePrefix:
       readability-identifier-naming.GlobalConstantCase: UPPER_CASE
-      readability-identifier-naming.GlobalConstantPrefix: k
+      readability-identifier-naming.GlobalConstantPrefix:
       readability-identifier-naming.MemberConstantCase: CamelCase
-      readability-identifier-naming.MemberConstantPrefix: k
+      readability-identifier-naming.MemberConstantPrefix:
       readability-identifier-naming.StaticConstantCase: camelBack
-      readability-identifier-naming.StaticConstantPrefix: k
+      readability-identifier-naming.StaticConstantPrefix:
       readability-implicit-bool-conversion.AllowIntegerConditions: 1
       readability-implicit-bool-conversion.AllowPointerConditions: 1
       readability-function-cognitive-complexity.IgnoreMacros: 1
