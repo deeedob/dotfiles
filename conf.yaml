@@ -12,7 +12,6 @@
     ~/Pictures/Wallpaper: Wallpaper
 
     ~/.bashrc : .bashrc
-    ~/.gitignore_global: .gitignore_global
 
     ~/.config/git: .config/git
     ~/.config/hypr: .config/hypr
