@@ -16,7 +16,7 @@ no=''
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-theme ${dir}/${theme}.rasi
+		-theme "$dir/$theme".rasi
 }
 
 # Confirmation CMD
@@ -29,7 +29,7 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you sure?' \
-		-theme ${dir}/${theme}.rasi
+		-theme "$dir/$theme".rasi
 }
 
 # Ask for confirmation
@@ -55,7 +55,8 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			loginctl terminate-user $USER
+			kill -9 -1
+			# loginctl terminate-user $USER
 		fi
 	else
 		exit 0
@@ -72,10 +73,8 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
+		if [[ -x $HOME/Scripts/swaylock-fx.sh ]]; then
+			"$HOME"/Scripts/swaylock-fx.sh
 		fi
         ;;
     $suspend)
@@ -85,4 +84,3 @@ case ${chosen} in
 		run_cmd --logout
         ;;
 esac
-
