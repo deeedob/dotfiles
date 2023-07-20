@@ -29,7 +29,7 @@ return {
       local home = os.getenv "HOME"
       return {
         cmd = {
-          "/usr/lib/qt6/bin/qmlls",
+          "qmlls",
           "-l",
           home .. "/Temp/qmlls.log",
           "-b",
