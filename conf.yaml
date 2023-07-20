@@ -32,8 +32,9 @@
     ~/.config/user-dirs.locale: .config/user-dirs.locale
 
     ~/Qt/.gitconfig: Qt/.gitconfig
-    ~/Qt/qt6/CMakePresets.json: Qt/CMakeMasterPresets.json
-    ~/Qt/qt6/qtbase/CMakePresets.json: Qt/CMakeBasePresets.json
+    ~/Qt/my-init-repository: Qt/my-init-repository.sh
+    ~/Qt/qt6/CMakeUserPresets.json: Qt/CMakeMasterPresets.json
+    ~/Qt/qt6/qtbase/CMakeUserPresets.json: Qt/CMakeBasePresets.json
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -2,25 +2,33 @@
   "version": 6,
   "configurePresets": [
     {
-      "name": "all_debug",
-      "description": "Build Base + Declarative with development support",
+      "name": "default",
+      "description": "Qt Default Development Build for Master Repo",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/all_debug",
+      "binaryDir": "${sourceDir}/build/default",
       "cacheVariables": {
-        "CMAKE_C_COMPILER": "gcc",
-        "CMAKE_CXX_COMPILER": "g++",
+        "FEATURE_developer_build": "ON",
+
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
         "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "FEATURE_developer_build": "ON",
-        "QT_NAMESPACE": "B",
+
+        "FEATURE_sanitize_address": "ON",
+        "FEATURE_sanitize_undefined": "ON",
+        "WARNINGS_ARE_ERRORS": "OFF",
+        "FEATURE_cxx20": "OFF",
+        "QT_NAMESPACE": "A",
+
         "QT_UNITY_BUILD": "OFF",
-        "QT_UNITY_BUILD_BATCH_SIZE": "32",
+
+        "FEATURE_processenvironment": "ON",
 
         "QT_BUILD_TESTS": "ON",
         "QT_BUILD_EXAMPLES": "ON",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
-        "WARNINGS_ARE_ERRORS": "OFF"
+        "QT_BUILD_EXAMPLES_AS_EXTERNAL": "ON"
       },
       "environment": {
         "QDOC_SHOW_INTERNAL": "1"

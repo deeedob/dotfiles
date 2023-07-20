@@ -2,30 +2,45 @@
   "version": 6,
   "configurePresets": [
     {
-      "name": "Development",
-      "description": "Qt Base development build with c++20 support",
+  "version": 6,
+  "configurePresets":
+  [
+    {
+      "name": "default",
+      "description": "Qt Default Development Build",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/default",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "FEATURE_developer_build": "ON",
+
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+
+        "FEATURE_sanitize_address": "ON",
+        "FEATURE_sanitize_undefined": "ON",
+        "WARNINGS_ARE_ERRORS": "ON",
         "FEATURE_cxx20": "ON",
         "QT_NAMESPACE": "B",
+
         "QT_UNITY_BUILD": "ON",
         "QT_UNITY_BUILD_BATCH_SIZE": "32",
+
+        "FEATURE_processenvironment": "ON",
+
+        "QT_HOST_PATH": "/home/qtall0xc/Qt/precompiled/Qt6.5/6.5.1/gcc_64",
+        "QT_NO_PACKAGE_VERSION_CHECK": "ON",
 
         "QT_BUILD_TESTS": "ON",
         "QT_BUILD_EXAMPLES": "ON",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
-
-        "QT_HOST_PATH": "~/Qt/qt6/build/all_debug/qtbase",
-        "QT_NO_PACKAGE_VERSION_CHECK": "ON",
-        "WARNINGS_ARE_ERRORS": "ON"
+        "QT_BUILD_EXAMPLES_AS_EXTERNAL": "ON"
       },
       "environment": {
         "QDOC_SHOW_INTERNAL": "1"
       }
-    }
+    },
   ]
 }
