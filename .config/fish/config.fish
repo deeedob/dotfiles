@@ -36,8 +36,12 @@ function fish_prompt --description 'Write out the prompt'
 end
 
 # extend PATH
-fish_add_path /usr/lib/qt6/bin
-fish_add_path $HOME/Bin
+if [ -d $HOME/Qt/qt6/build/default/qtbase/bin ]
+    fish_add_path -p $HOME/Qt/qt6/build/default/qtbase/bin
+    set -x CMAKE_PREFIX_PATH $HOME/Qt/qt6/build/default/qtbase/lib/cmake
+end
+fish_add_path -a /usr/lib/qt6/bin
+fish_add_path -a $HOME/Bin
 
 # Variables
 set -x EDITOR nvim
