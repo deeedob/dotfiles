@@ -25,6 +25,7 @@ alias la _la
 alias cp 'cp -v'
 alias mv 'mv -v'
 alias del 'rm -i -v'
+alias cat 'bat'
 
 # ---- System ----
 alias c 'clear'
