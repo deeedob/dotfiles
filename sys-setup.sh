@@ -2,7 +2,7 @@
 
 base="fish ranger neovim-nightly-bin btop git-revise meld bat"
 dev="qtcreator clion visual-studio-code-bin clang llvm docker git-open nodejs json-c dart-sass "
-sys="alacritty nextcloud-client keepassxc wine wine-gecko wine-mono teams qt6gtk2 qt6ct"
+sys="alacritty nextcloud-client keepassxc wine wine-gecko wine-mono teams qt6gtk2 qt6ct-git"
 media="bitwig-studio supercollider discord-screenaudio obsidian soulseekqt" # renoise
 appearance="ttf-jetbrains-mono-nerd ttf-material-design-icons-extended"
 optional="clang14 llvm14 solaar polkit-kde-agent"
