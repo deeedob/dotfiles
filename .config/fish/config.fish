@@ -35,20 +35,26 @@ function fish_prompt --description 'Write out the prompt'
     echo -n -s $status_color $suffix ' ' $normal
 end
 
-# extend PATH
-if [ -d $HOME/Qt/qt6/build/default/qtbase/bin ]
-    fish_add_path -p $HOME/Qt/qt6/build/default/qtbase/bin
-    set -x CMAKE_PREFIX_PATH $HOME/Qt/qt6/build/default/qtbase/lib/cmake
-end
-fish_add_path -a /usr/lib/qt6/bin
-fish_add_path -a $HOME/Bin
 
 # Variables
 set -x EDITOR nvim
 set -x GIT_EDITOR $EDITOR
 set -x SUDO_EDITOR "rvim -u NONE"
 set -x MANPAGER "nvim +Man!"
-set -x QDEV $HOME/Qt/qt6/build/all_debug/qtbase/lib
+
+set -x QDEV $HOME/Qt/qt6/build/default/qtbase
+# For Debugging QT
+# set -x QT_DEBUG_PLUGINS 1
+# set -x QML_IMPORT_TRACE 1
+
+# extend PATH
+if [ -d $QDEV/bin ]
+    fish_add_path -p $QDEV/bin
+end
+fish_add_path -a /usr/lib/qt6/bin
+fish_add_path -a $HOME/Bin
+
+
 
 # Aliases
 
@@ -70,8 +76,13 @@ end
 
 
 function builder
+    if set -q CMAKE_PREFIX_PATH
+        set -e CMAKE_PREFIX_PATH
+        echo "-- CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+    end
     cmake --fresh -G Ninja -D CMAKE_EXPORT_COMPILE_COMMANDS=ON -B builder/ && cmake --build builder
     ln -snf builder/compile_commands.json .
+    set -x CMAKE_PREFIX_PATH $QDEV
 end
 
 # Qt Dev Builder
@@ -80,9 +91,7 @@ function qdevbuilder
     # Print available libQt6*.so libraries
     if set -q QDEV
         echo "-- QDEV PATH: $QDEV"
-    end
-    for lib in $QDEV/libQt6*.so
-        echo "-- $lib"
+        set -x CMAKE_PREFIX_PATH $HOME/Qt/qt6/build/default/qtbase/lib/cmake
     end
     builder
 end
