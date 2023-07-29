@@ -68,7 +68,6 @@ if [ -f $HOME/.config/fish/aliases/git.fish ]
 end
 
 # Function
-
 function mkcd
     mkdir -p $argv[1]
     cd $argv[1]
@@ -86,7 +85,6 @@ function builder
 end
 
 # Qt Dev Builder
-
 function qdevbuilder
     # Print available libQt6*.so libraries
     if set -q QDEV

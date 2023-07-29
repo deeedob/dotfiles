@@ -33,7 +33,8 @@ return {
         "stylua",
         "shellharden",
         "shellcheck",
-        "flake8"
+        "flake8",
+        "markdownlint"
       })
     end,
   },

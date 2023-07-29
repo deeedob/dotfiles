@@ -73,7 +73,6 @@ return {
 
   {
     "folke/noice.nvim",
-    enabled = true,
     cond = function() return not vim.g.neovide end,
     event = "VeryLazy",
     opts = {
@@ -90,6 +89,16 @@ return {
       health = { checker = false },
     },
     dependencies = { "MunifTanjim/nui.nvim" },
+  },
+
+  {
+    "VonHeikemen/fine-cmdline.nvim",
+    cond = function() return vim.g.neovide end,
+    config = function()
+      vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+    end,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    lazy = false,
   },
 
   -- {
