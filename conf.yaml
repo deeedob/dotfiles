@@ -24,6 +24,7 @@
     ~/.config/btop: .config/btop
     ~/.config/ranger: .config/ranger
     ~/.config/alacritty: .config/alacritty
+    ~/.config/kitty: .config/kitty
     ~/.config/nvim/lua/user: .config/nvim/lua/user
     ~/.config/nvim/after: .config/nvim/after
 
