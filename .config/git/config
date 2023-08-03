@@ -46,4 +46,5 @@
 	ui = auto
 [web]
 	browser = firefox
-
+[grep]
+	lineNumber = true
