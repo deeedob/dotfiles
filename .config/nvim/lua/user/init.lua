@@ -76,7 +76,7 @@ return {
           border = "rounded",
           source = "always",
           prefix = " ",
-          scope = "line",
+          scope = "cursor",
         }
         vim.diagnostic.open_float(nil, opts)
       end,

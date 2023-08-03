@@ -41,6 +41,7 @@ Diagnostics:
         misc-non-private-member-variables-in-classes,
         readability-redundant-access-specifiers,
         readability-braces-around-statements,
+        readability-identifier-length,
       ]
     # https://clang.llvm.org/extra/clang-tidy/checks/readability/identifier-naming.html
     CheckOptions:

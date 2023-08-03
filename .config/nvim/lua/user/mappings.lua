@@ -45,6 +45,10 @@ return {
       function () vim.lsp.buf.incoming_calls() end,
       desc = "LSP incoming calls"
     },
+    ["<leader>lS"] = {
+      "<cmd>TagbarToggle<cr>",
+      desc = "Tagbar toggle",
+    },
     -- ["<leader>c"] = {
     --   function() vim.opt.colorcolumn = { 80, 100 } end,
     --   desc = "Colorcolumn On",

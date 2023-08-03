@@ -71,6 +71,7 @@ return {
     config = function() require("nvim-surround").setup {} end,
   },
 
+  -- enable noice cmdline if not in neovide
   {
     "folke/noice.nvim",
     cond = function() return not vim.g.neovide end,
@@ -90,7 +91,7 @@ return {
     },
     dependencies = { "MunifTanjim/nui.nvim" },
   },
-
+  -- enable fine cmdline if in neovide
   {
     "VonHeikemen/fine-cmdline.nvim",
     cond = function() return vim.g.neovide end,
@@ -100,13 +101,6 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     lazy = false,
   },
-
-  -- {
-  --   "VonHeikemen/fine-cmdline.nvim",
-  --   dependencies = { "MunifTanjim/nui.nvim" },
-  --   -- cmd = {"FineCmdLine"}
-  --   lazy = false
-  -- },
 
   {
     "crusj/bookmarks.nvim",
@@ -121,6 +115,7 @@ return {
     end,
   },
 
+  -- call hierarchy
   {
     "ldelossa/litee-calltree.nvim",
     dependencies = { "ldelossa/litee.nvim" },
@@ -167,6 +162,27 @@ return {
         desc = "Toggle Flash Search",
       },
     },
+  },
+
+  {
+    "preservim/tagbar",
+    lazy = false,
+  },
+
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("chatgpt").setup({
+        -- This requires a valid API key used and a configure pass
+        api_key_cmd = "pass show dev/chatgpt"
+      })
+    end,
   },
 
   {
