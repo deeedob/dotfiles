@@ -9,6 +9,7 @@ return {
     wrap = false, -- sets vim.opt.wrap
     list = true,
     listchars = { space = "·" },
+    shiftwidth = 4,
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader

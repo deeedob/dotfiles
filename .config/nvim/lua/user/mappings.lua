@@ -1,33 +1,3 @@
-local utils = require "astronvim.utils"
-local get_icon = utils.get_icon
-local is_available = utils.is_available
-local ui = require "astronvim.utils.ui"
-
-local maps = require("astronvim.utils").empty_map_table()
-
-local sections = {
-  x = { desc = get_icon("Terminal", 1, true) .. "CMake" },
-}
--- TODO
-if is_available "cmake-tools" then
-  maps.n["<leader>x"] = sections.x
-  maps.n ["<leader>xs"] = { "<cmd>CMakeStop<cr>", desc = "CMakeStop" }
-  maps.n ["<leader>xf"] = { "<cmd>CMakeClean<cr>", desc = "CMakeClean" }
-  maps.n ["<leader>xc"] = { "<cmd>CMakeClose<cr>", desc = "CMakeClose" }
-
-  maps.n ["<leader>xr"] = { "<cmd>CMakeRun<cr>", desc = "CMakeRun" }
-  maps.n ["<leader>b"] = { "<cmd>CMakeBuild<cr>", desc = "CMakeBuild" }
-  maps.n ["<leader>xd"] = { "<cmd>CMakeDebug<cr>", desc = "CMakeDebug" }
-
-  maps.n ["<leader>xG"] = { "<cmd>CMakeGenerate<cr>", desc = "CMakeGenereate" }
-  maps.n ["<leader>xP"] = { "<cmd>CMakeSelectConfigurePreset<cr>", desc = "CMakeSelectConfigurePreset" }
-  maps.n ["<leader>xB"] = { "<cmd>CMakeSelectBuildTarget<cr>", desc = "CMakeSelectBuildTarget" }
-  maps.n ["<leader>xT"] = { "<cmd>CMakeSelectLaunchTarget<cr>", desc = "CMakeSelectLaunchTarget" }
-  maps.n ["<leader>xR"] = { "<cmd>CMakeQuickRun<cr>", desc = "CMakeQuickRun" }
-  maps.n ["<leader>xQ"] = { "<cmd>CMakeQuickBuild<cr>", desc = "CMakeQuickBuild" }
-  maps.n ["<leader>xD"] = { "<cmd>CMakeQuickDebug<cr>", desc = "CMakeQuickDebug" }
-end
-
 return {
   i = {
     -- go to  beginning and end
@@ -52,11 +22,14 @@ return {
       desc = "Pick to close",
     },
     ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
-    ["<leader>."] = {
+    -- better buffer navigation
+    ["]b"] = false,
+    ["[b"] = false,
+    ["<S-l>"] = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
     },
-    ["<leader>,"] = {
+    ["<S-h>"] = {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
@@ -115,11 +88,29 @@ return {
       function()
         local current_register = "+"
         local yanked_text = vim.fn.eval("@" .. current_register)
-        local clean_text = string.gsub(tostring(yanked_text), '"', '\\"')
+        local clean_text = string.gsub(tostring(yanked_text), ' ', '+')
+        clean_text = string.gsub(clean_text, '\n', '+')
         print(clean_text)
-        vim.cmd(string.format("OpenBrowser " .. "https://duckduckgo.com/%s", clean_text))
+        vim.cmd(string.format("OpenBrowser " .. "https://duckduckgo.com/?t=h_&q=%s", clean_text))
       end,
     },
+    -- CMake
+    ["<leader>x"] = { desc = "󰏫 CMake" },
+    ["<leader>xs"] = { "<cmd>CMakeStop<cr>", desc = "CMakeStop" },
+    ["<leader>xf"] = { "<cmd>CMakeClean<cr>", desc = "CMakeClean" },
+    ["<leader>xc"] = { "<cmd>CMakeClose<cr>", desc = "CMakeClose" },
+
+    ["<leader>xr"] = { "<cmd>CMakeRun<cr>", desc = "CMakeRun" },
+    ["<leader>xb"] = { "<cmd>CMakeBuild<cr>", desc = "CMakeBuild" },
+    ["<leader>xd"] = { "<cmd>CMakeDebug<cr>", desc = "CMakeDebug" },
+
+    ["<leader>xG"] = { "<cmd>CMakeGenerate<cr>", desc = "CMakeGenereate" },
+    ["<leader>xP"] = { "<cmd>CMakeSelectConfigurePreset<cr>", desc = "CMakeSelectConfigurePreset" },
+    ["<leader>xB"] = { "<cmd>CMakeSelectBuildTarget<cr>", desc = "CMakeSelectBuildTarget" },
+    ["<leader>xT"] = { "<cmd>CMakeSelectLaunchTarget<cr>", desc = "CMakeSelectLaunchTarget" },
+    ["<leader>xR"] = { "<cmd>CMakeQuickRun<cr>", desc = "CMakeQuickRun" },
+    ["<leader>xQ"] = { "<cmd>CMakeQuickBuild<cr>", desc = "CMakeQuickBuild" },
+    ["<leader>xD"] = { "<cmd>CMakeQuickDebug<cr>", desc = "CMakeQuickDebug" },
   },
   v = {
     ["y"] = { "may`a<esc>", desc = "Yank no jump-back" },

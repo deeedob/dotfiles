@@ -102,15 +102,5 @@ return {
         { silent = true }
       )
     end
-    -- TODO
-    -- set alacritty padding to zero on enter and put it back to default on leave
-    -- vim.api.nvim_create_autocmd("VimEnter", {
-    --   pattern = "*",
-    --   commend = ;
-    -- })
-    -- vim.api.nvim_create_autocmd("VimLeave", {
-    --   pattern = "*",
-    --   commend = ;
-    -- })
   end,
 }
