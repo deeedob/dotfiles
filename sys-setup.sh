@@ -7,7 +7,7 @@ media="bitwig-studio supercollider discord-screenaudio obsidian soulseekqt" # re
 appearance="ttf-jetbrains-mono-nerd ttf-material-design-icons-extended"
 optional="clang14 llvm14 solaar polkit-kde-agent"
 
-wayland="wl-clipboard wev dunst pipewire wireplumber qt5-wayland qt6-wayland hyprpaper xdg-desktop-portal-hyprland-git rofi-lbonn-wayland xremap-hypr-bin swaylock-effects-git wofi"
+wayland="wl-clipboard wev dunst pipewire wireplumber qt5-wayland qt6-wayland hyprpaper xdg-desktop-portal-hyprland-git rofi-lbonn-wayland xremap-hypr-bin swaylock-effects-git wofi hyprshot-git nwg-look"
 waybar="betterlockscreen waybar hyprpicker-git candy-icons-git gtk-engine-murrine lxappearance"
 
 # Ask if packages should be installed

@@ -35,6 +35,16 @@ function fish_prompt --description 'Write out the prompt'
     echo -n -s $status_color $suffix ' ' $normal
 end
 
+<<<<<<< Updated upstream
+=======
+# extend PATH
+if [ -d $HOME/Qt/qt6/build/default/qtbase/bin ]
+    fish_add_path -p $HOME/Qt/qt6/build/default/qtbase/bin
+    set -x CMAKE_PREFIX_PATH $HOME/Qt/qt6/build/default/qtbase/lib/cmake
+end
+fish_add_path -a /usr/lib/qt6/bin
+fish_add_path -a $HOME/Bin $HOME/Scripts
+>>>>>>> Stashed changes
 
 # Variables
 set -x EDITOR nvim
@@ -42,36 +52,37 @@ set -x GIT_EDITOR $EDITOR
 set -x SUDO_EDITOR "rvim -u NONE"
 set -x MANPAGER "nvim +Man!"
 
-set -x QDEV $HOME/Qt/qt6/build/debug/qtbase
+set -x QDEV $HOME/Qt/qt6/build/default/qtbase
 # For Debugging QT
-set -x QDOC_SHOW_INTERNAL 1
 # set -x QT_DEBUG_PLUGINS 1
 # set -x QML_IMPORT_TRACE 1
 
 # extend PATH
-# if [ -d $QDEV/bin ]
-#     fish_add_path -p $QDEV/bin
-# end
-# fish_add_path -a /usr/lib/qt6/bin
+if [ -d $QDEV/bin ]
+    fish_add_path -p $QDEV/bin
+end
+fish_add_path -a /usr/lib/qt6/bin
 fish_add_path -a $HOME/Bin
-fish_add_path -a $HOME/Scripts
+
 
 
 # Aliases
-## Main
+
+# Main
 if [ -f $HOME/.config/fish/aliases/main.fish ]
     source $HOME/.config/fish/aliases/main.fish
 end
-## Git
+# Git
 if [ -f $HOME/.config/fish/aliases/git.fish ]
     source $HOME/.config/fish/aliases/git.fish
 end
 
-# Functions
+# Function
 function mkcd
     mkdir -p $argv[1]
     cd $argv[1]
 end
+
 
 function builder
     if set -q CMAKE_PREFIX_PATH
@@ -80,17 +91,21 @@ function builder
     end
     cmake --fresh -G Ninja -D CMAKE_EXPORT_COMPILE_COMMANDS=ON -B builder/ && cmake --build builder
     ln -snf builder/compile_commands.json .
-    # set -x CMAKE_PREFIX_PATH $QDEV
+    set -x CMAKE_PREFIX_PATH $QDEV
 end
 
 # Qt Dev Builder
 function qdevbuilder
     # Print available libQt6*.so libraries
+<<<<<<< Updated upstream
     if set -q QDEV
         echo "-- QDEV PATH: $QDEV"
         set -x CMAKE_PREFIX_PATH $HOME/Qt/qt6/build/default/qtbase/lib/cmake
     end
     builder
+=======
+    CMAKE_PREFIX_PATH=$QDEV builder
+>>>>>>> Stashed changes
 end
 
 

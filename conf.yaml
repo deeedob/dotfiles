@@ -30,6 +30,7 @@
 
     ~/.config/user-dirs.dirs: .config/user-dirs.dirs
     ~/.config/user-dirs.locale: .config/user-dirs.locale
+    ~/.config/electron-flags.conf: .config/electron-flags.conf
 
     ~/Qt/.gitconfig: Qt/.gitconfig
     ~/Qt/my-init-repository: Qt/my-init-repository.sh

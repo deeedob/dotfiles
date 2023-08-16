@@ -92,6 +92,12 @@ return {
       function()
         local current_register = "+"
         local yanked_text = vim.fn.eval("@" .. current_register)
+        -- check if the register looks like a url. If so, open it
+        if string.match(yanked_text, "http") then
+          vim.cmd("OpenBrowser " .. yanked_text)
+          return
+        end
+        -- otherwise, search for it
         local clean_text = string.gsub(tostring(yanked_text), ' ', '+')
         clean_text = string.gsub(clean_text, '\n', '+')
         print(clean_text)
