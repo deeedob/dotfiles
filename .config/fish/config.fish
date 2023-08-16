@@ -42,8 +42,9 @@ set -x GIT_EDITOR $EDITOR
 set -x SUDO_EDITOR "rvim -u NONE"
 set -x MANPAGER "nvim +Man!"
 
-set -x QDEV $HOME/Qt/qt6/build/default/qtbase
+set -x QDEV $HOME/Qt/qt6/build/debug/qtbase
 # For Debugging QT
+set -x QDOC_SHOW_INTERNAL 1
 # set -x QT_DEBUG_PLUGINS 1
 # set -x QML_IMPORT_TRACE 1
 
@@ -53,26 +54,24 @@ if [ -d $QDEV/bin ]
 end
 fish_add_path -a /usr/lib/qt6/bin
 fish_add_path -a $HOME/Bin
-
+fish_add_path -a $HOME/Scripts
 
 
 # Aliases
-
-# Main
+## Main
 if [ -f $HOME/.config/fish/aliases/main.fish ]
     source $HOME/.config/fish/aliases/main.fish
 end
-# Git
+## Git
 if [ -f $HOME/.config/fish/aliases/git.fish ]
     source $HOME/.config/fish/aliases/git.fish
 end
 
-# Function
+# Functions
 function mkcd
     mkdir -p $argv[1]
     cd $argv[1]
 end
-
 
 function builder
     if set -q CMAKE_PREFIX_PATH

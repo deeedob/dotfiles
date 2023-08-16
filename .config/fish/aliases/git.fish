@@ -27,7 +27,7 @@ end
 set -x fish_prompt (parse_git_branch)' $ '
 
 # Update submodule
-alias gsu='git submodule update --init --recursive'
+alias gsur='git submodule update --init --recursive'
 
 # Git remotes
 alias gr='git remote -v | awk "{print \"\033[32m\"\$1\"\033[0m\t\033[33m\"\$2\"\033[0m\"}"'
