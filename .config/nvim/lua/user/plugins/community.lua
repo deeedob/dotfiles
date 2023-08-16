@@ -1,11 +1,33 @@
 return {
   "AstroNvim/astrocommunity",
-  {
-    import = "astrocommunity.colorscheme.gruvbox-baby",
-    enabled = true
-  },
-  {
-    import = "astrocommunity.completion.copilot-lua-cmp",
-    enabled = true
-  },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.code-runner.sniprun" },
+  { import = "astrocommunity.debugging.telescope-dap-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+  { import = "astrocommunity.editing-support.chatgpt-nvim" },
+  { import = "astrocommunity.editing-support.multicursors-nvim" },
+  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  { import = "astrocommunity.git.diffview-nvim" },
+  { import = "astrocommunity.lsp.inc-rename-nvim" },
+  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
+  { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.media.vim-wakatime" },
+  { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.scrolling.vim-smoothie" },
+  { import = "astrocommunity.search.sad-nvim" },
+
+  { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.cmake" },
+  { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.proto" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.html-css" },
 }

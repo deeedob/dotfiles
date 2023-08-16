@@ -3,12 +3,11 @@ return {
   opts = function(_, config)
     local null_ls = require "null-ls"
     local home = os.getenv "HOME"
-
     -- Check supported formatters and linters
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
-      -- Set a formatter
+      -- set our clang-format globally
       null_ls.builtins.formatting.clang_format.with {
         extra_args = { "--style=file:" .. home .. "/.config/clangd/.clang-format" },
       },

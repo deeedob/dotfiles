@@ -12,16 +12,9 @@ return {
   },
   n = {
     ["<C-ö>"] = { "^:", desc = "New tab" },
-    ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
-      desc = "Pick to close",
-    },
-    ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+    ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" }, -- TODO: unmap
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
+
     -- better buffer navigation
     ["]b"] = false,
     ["[b"] = false,
@@ -33,38 +26,25 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    ["<leader>b"] = { name = "Buffers" },
-    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
-    ["<leader>u"] = { "<cmd>MundoToggle<cr>", desc = "Undo History Toggle" },
 
     ["<leader>lo"] = {
-      function () vim.lsp.buf.outgoing_calls() end,
-      desc = "LSP outgoing calls"
+      function() vim.lsp.buf.outgoing_calls() end,
+      desc = "LSP outgoing calls",
     },
     ["<leader>le"] = {
-      function () vim.lsp.buf.incoming_calls() end,
-      desc = "LSP incoming calls"
+      function() vim.lsp.buf.incoming_calls() end,
+      desc = "LSP incoming calls",
     },
     ["<leader>lS"] = {
       "<cmd>TagbarToggle<cr>",
       desc = "Tagbar toggle",
     },
-    -- ["<leader>c"] = {
-    --   function() vim.opt.colorcolumn = { 80, 100 } end,
-    --   desc = "Colorcolumn On",
-    -- },
-    -- ["<leader>co"] = {
-    --   function() vim.opt.colorcolumn = {} end,
-    --   desc = "Colorcolumn Off",
-    -- },
 
     -- Search in browser
     ["KQ"] = {
       function()
         local current_word = vim.fn.expand "<cword>"
-        vim.cmd(
-          string.format("OpenBrowser https://doc.qt.io/qt-6/search-results.html?q=%s", current_word)
-        )
+        vim.cmd(string.format("OpenBrowser https://doc.qt.io/qt-6/search-results.html?q=%s", current_word))
       end,
       desc = "Open Qt symbol in qt6 online docs",
     },
@@ -72,10 +52,8 @@ return {
       function()
         local current_word = vim.fn.expand "<cword>"
         local escaped_word = vim.fn.fnameescape(current_word)
-        local url = string.format(
-          "https://en.cppreference.com/mwiki/index.php?title=Special%%3ASearch&search=%s",
-          escaped_word
-        )
+        local url =
+          string.format("https://en.cppreference.com/mwiki/index.php?title=Special%%3ASearch&search=%s", escaped_word)
         vim.cmd("OpenBrowser " .. url)
         --vim.cmd(string.format("OpenBrowser https://en.cppreference.com/mwiki/index.php?title=Special%3ASearch&search=%s", current_word))
       end,
@@ -98,8 +76,8 @@ return {
           return
         end
         -- otherwise, search for it
-        local clean_text = string.gsub(tostring(yanked_text), ' ', '+')
-        clean_text = string.gsub(clean_text, '\n', '+')
+        local clean_text = string.gsub(tostring(yanked_text), " ", "+")
+        clean_text = string.gsub(clean_text, "\n", "+")
         print(clean_text)
         vim.cmd(string.format("OpenBrowser " .. "https://duckduckgo.com/?t=h_&q=%s", clean_text))
       end,
@@ -124,5 +102,5 @@ return {
   },
   v = {
     ["y"] = { "may`a<esc>", desc = "Yank no jump-back" },
-  }
+  },
 }

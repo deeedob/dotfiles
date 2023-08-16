@@ -1,14 +1,15 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
+    -- set to true or false etc.
     relativenumber = true, -- sets vim.opt.relativenumber
     number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    expandtab = true,
     wrap = false, -- sets vim.opt.wrap
+    expandtab = true,
     list = true,
-    listchars = { space = "·" },
+    listchars = { space = "⋅", trail = "·" },
     shiftwidth = 4,
   },
   g = {
