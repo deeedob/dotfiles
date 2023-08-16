@@ -1,6 +1,7 @@
 CompileFlags:
   Add:
     [
+      -std=c++20,
       -Wall,
       -Wextra,
       -Werror,
@@ -74,10 +75,10 @@ Diagnostics:
   UnusedIncludes: Strict
 
 InlayHints:
-  Designators: Yes
-  Enabled: Yes
-  ParameterNames: Yes
-  DeducedTypes: Yes
+  Designators: true
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
 
 Hover:
-  ShowAKA: Yes
+  ShowAKA: true
