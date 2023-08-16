@@ -2,32 +2,45 @@
   "version": 6,
   "configurePresets": [
     {
-      "name": "default",
-      "description": "Qt Default Development Build",
+      "name": "debug",
+      "description": "Qt Debug Development Build",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/default",
+      "binaryDir": "${sourceDir}/build/debug",
       "cacheVariables": {
-        "FEATURE_developer_build": "ON",
+        "WARNINGS_ARE_ERRORS": "ON",
+        "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "gcc",
         "CMAKE_CXX_COMPILER": "g++",
         "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_EXPORT_COMPILE_COMMAND": "ON",
+
+        "BUILD_SHARED_LIBS": "ON",
+        "FEATURE_cxx20": "ON",
+        "FEATURE_developer_build": "ON",
         "FEATURE_sanitize_address": "ON",
         "FEATURE_sanitize_undefined": "OFF",
         "FEATURE_processenvironment": "ON",
-        "WARNINGS_ARE_ERRORS": "ON",
-        "FEATURE_cxx20": "ON",
+        "DFEATURE_freetype": "ON",
+        "DFEATURE_harfbuzz": "ON",
+        "DFEATURE_system_freetype": "OFF",
+        "DFEATURE_system_harfbuzz": "OFF",
+        "DFEATURE_system_sqlite": "OFF",
+        "DFEATURE_system_zlib": "OFF",
+
         "QT_NAMESPACE": "B",
         "QT_UNITY_BUILD": "ON",
+        "QT_UNITY_BUILD_BATCH_SIZE": "64",
         "QT_USE_CCACHE": "ON",
-        "QT_UNITY_BUILD_BATCH_SIZE": "1009",
-        "QT_HOST_PATH": "/home/wayn/Qt/precompiled/dev/6.6.0/gcc_64",
+        "QT_HOST_PATH": "~/Qt/qt6/build/debug/qtbase",
         "QT_NO_PACKAGE_VERSION_CHECK": "ON",
+
         "QT_BUILD_TESTS": "ON",
         "QT_BUILD_EXAMPLES": "ON",
+        "QT_BUILD_BENCHMARKS": "ON",
+        "QT_BUILD_MANUAL_TESTS": "OFF",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
-        "QT_BUILD_EXAMPLES_AS_EXTERNAL": "ON"
+        "QT_BUILD_EXAMPLES_AS_EXTERNAL": "OFF"
       },
       "environment": {
         "QDOC_SHOW_INTERNAL": "1"
