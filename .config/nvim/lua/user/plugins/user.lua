@@ -76,4 +76,7 @@ return {
     end,
     ft = "tidal",
   },
+  -- {
+  --   "luckasRanarison/tree-sitter-hypr"
+  -- }
 }

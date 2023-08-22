@@ -64,8 +64,7 @@ alias ipe 'echo -n "0: ext   ";curl ipinfo.io/ip;echo "" '
 alias ipi 'ip -4 -o a | cut -d "" -f 2,7 | cut -d "/" -f 1'
 alias ipa 'ipe;ipi'
 alias ports 'nmap localhost'
-alias netcon='sudo netstat -tulanp'
-alias netcon='sudo netstat -tulanp'
+alias portlist='sudo ss -tulpn'
 
 # ---- Virtualization ----
 function virton
