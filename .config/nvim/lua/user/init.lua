@@ -39,6 +39,10 @@ return {
   },
   -- This function is run last
   polish = function()
+    if vim.fn.filereadable('.vscode/launch.json') then
+      require('dap.ext.vscode').load_launchjs(nil, { cppdbg = { 'c', 'cpp' } })
+      require('dap.ext.vscode').load_launchjs(nil, { codelldb = { 'c', 'cpp' } })
+    end
     vim.filetype.add {
       extension = {
         qml = "qml",
