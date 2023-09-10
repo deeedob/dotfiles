@@ -13,6 +13,7 @@ return {
       require("litee.calltree").setup()
     end,
   },
+  -- Press 'KK' to open cpp docs
   {
     "gauteh/vim-cppman",
     ft = { "cpp" },

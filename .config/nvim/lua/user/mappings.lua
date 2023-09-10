@@ -11,8 +11,9 @@ return {
     ["<C-k>"] = { "<Up>", desc = "Move up" },
   },
   n = {
-    ["<C-ö>"] = { "^:", desc = "New tab" },
-    ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" }, -- TODO: unmap
+    ["<leader>q"] = false,
+    ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+    ["<leader>e"] = false, -- Unmap previous Neotree toggle
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
 
     -- better buffer navigation

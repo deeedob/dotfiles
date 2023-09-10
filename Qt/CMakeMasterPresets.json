@@ -35,6 +35,8 @@
         "BUILD_qttranslations": "OFF",
         "BUILD_qt3d": "OFF",
         "BUILD_qtlocation": "OFF",
+        "BUILD_qttools": "OFF",
+        "BUILD_qtdoc": "OFF",
         "QT_ALLOW_DOWNLOAD": "ON",
 
         "QT_BUILD_TESTS": "ON",

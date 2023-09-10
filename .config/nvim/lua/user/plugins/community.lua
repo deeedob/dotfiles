@@ -4,12 +4,21 @@ return {
   { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.debugging.telescope-dap-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
+  {
+    "trouble.nvim",
+    keys = {
+      { "<leader>q" .. "X", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+      { "<leader>q" .. "x", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+      { "<leader>q" .. "l", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
+      { "<leader>q" .. "q", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+    },
+  },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
   { import = "astrocommunity.editing-support.multicursors-nvim" },
-  { import = "astrocommunity.editing-support.telescope-undo-nvim" },
+  { import = "astrocommunity.editing-support.telescope-undo-nvim" }, -- TODO: leader fu not working
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  { import = "astrocommunity.editing-support.vim-move" },
-  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  -- { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.fuzzy-finder.telescope-zoxide" }, -- TODO: needed?
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.lsp.inc-rename-nvim" },
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
