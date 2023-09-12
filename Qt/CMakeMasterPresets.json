@@ -11,7 +11,6 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "gcc",
         "CMAKE_CXX_COMPILER": "g++",
-        "CMAKE_PREFIX_PATH": "/usr/lib/llvm14/lib/cmake",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
 
         "BUILD_SHARED_LIBS": "ON",
@@ -32,16 +31,11 @@
         "QT_USE_CCACHE": "ON",
 
         "BUILD_qtwebengine": "OFF",
-        "BUILD_qttranslations": "OFF",
-        "BUILD_qt3d": "OFF",
-        "BUILD_qtlocation": "OFF",
-        "BUILD_qttools": "OFF",
-        "BUILD_qtdoc": "OFF",
         "QT_ALLOW_DOWNLOAD": "ON",
 
-        "QT_BUILD_TESTS": "ON",
-        "QT_BUILD_EXAMPLES": "ON",
-        "QT_BUILD_BENCHMARKS": "ON",
+        "QT_BUILD_TESTS": "OFF",
+        "QT_BUILD_EXAMPLES": "OFF",
+        "QT_BUILD_BENCHMARKS": "OFF",
         "QT_BUILD_MANUAL_TESTS": "OFF",
         "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
         "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",

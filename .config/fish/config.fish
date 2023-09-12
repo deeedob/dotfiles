@@ -53,6 +53,7 @@ set -x QDOC_SHOW_INTERNAL 1
 #     fish_add_path -p $QDEV/bin
 # end
 # fish_add_path -a /usr/lib/qt6/bin
+# fish_add_path -a $HOME/Libraries/install/debug/bin
 fish_add_path -a $HOME/Bin
 fish_add_path -a $HOME/Scripts
 

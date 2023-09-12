@@ -13,7 +13,7 @@
     "battery"
   ],
   "modules-center": [
-    "wlr/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-right": [
     "backlight",
@@ -86,9 +86,7 @@
     "tooltip": true
   },
 
-  "wlr/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
+  "hyprland/workspaces": {
     "format": "<b>{name}</b>",
     "format-icons": {
       "urgent": "󰗖",

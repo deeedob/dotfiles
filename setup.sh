@@ -53,4 +53,5 @@ check_enable_start_service() {
 check_enable_start_service "docker"
 check_enable_start_service "bluetooth"
 check_enable_start_service "xremap"
+check_enable_start_service "pkgstats.timer"
 

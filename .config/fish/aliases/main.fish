@@ -47,6 +47,8 @@ alias fh 'find . -name'
 alias sc 'grep -i -w -n -r -I --color=always'
 alias f 'find . -type f -iname '
 alias rm 'trash -vr'
+alias udevreload 'sudo udevadm control --reload-rules && sudo udevadm trigger'
+alias lsbackup 'sudo journalctl -fu automatic-backup'
 # alias cd 'z'
 alias untar 'tar -zxvf'
 alias dsize='du -sh *'
@@ -65,6 +67,10 @@ alias ipi 'ip -4 -o a | cut -d "" -f 2,7 | cut -d "/" -f 1'
 alias ipa 'ipe;ipi'
 alias ports 'nmap localhost'
 alias portlist='sudo ss -tulpn'
+
+# FISH
+alias fishpathn 'echo $fish_user_paths | tr " " "\n" | nl'
+alias fishpathrm 'set --erase --universal fish_user_paths[$argv]'
 
 # ---- Virtualization ----
 function virton

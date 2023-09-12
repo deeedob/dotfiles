@@ -25,6 +25,6 @@ fi
 read -rp "Enter your codereview username: " codereview_username
 read -rp "Is this correct? $codereview_username [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
-    ./init-repository --codereview-username dennisoberst -f
+    ./init-repository --codereview-username "$codereview_username" -f
 fi
 
