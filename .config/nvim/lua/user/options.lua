@@ -11,6 +11,7 @@ return {
     list = true,
     listchars = { space = "⋅", trail = "·" },
     shiftwidth = 4,
+    smartindent = false,
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader

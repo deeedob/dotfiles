@@ -1,3 +1,6 @@
+local home = os.getenv "HOME"
+
+-- https://github.com/AstroNvim/astrocommunity
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.completion.copilot-lua-cmp" },
@@ -25,12 +28,36 @@ return {
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.media.vim-wakatime" },
   { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.scrolling.vim-smoothie" },
   { import = "astrocommunity.search.sad-nvim" },
 
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
+
   { import = "astrocommunity.pack.cpp" },
+  -- https://github.com/Civitasv/cmake-tools.nvim#balloon-configuration
+  {
+    "Civitasv/cmake-tools.nvim",
+    opts = {
+      -- cmake_kits_path = home .. "/Dotfiles/.config/nvim/cmake-kits.json",
+      cmake_dap_configuration = { -- debug settings for cmake
+        name = "cpp",
+        type = "cppdbg",
+        request = "launch",
+        stopOnEntry = false,
+        runInTerminal = true,
+        console = "integratedTerminal",
+      },
+      cmake_executor = {
+        -- name = "quickfix" (default)
+        -- name = "overseer", opts={}
+        -- name = "terminal" (integrated terminal)
+        name = "terminal",
+        -- opts = {}
+      }
+    },
+  },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.proto" },

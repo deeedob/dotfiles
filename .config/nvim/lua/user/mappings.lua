@@ -15,8 +15,7 @@ return {
     ["<C-n>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
     ["<leader>e"] = false, -- Unmap previous Neotree toggle
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" },
-
-    -- better buffer navigation
+    -- switch between buffers with Shift + { h, l }
     ["]b"] = false,
     ["[b"] = false,
     ["<S-l>"] = {
@@ -27,6 +26,11 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
+    -- better search
+    -- n = { utils.better_search "n", desc = "Next search" },
+    -- N = { utils.better_search "N", desc = "Previous search" },
+    -- ["<C-j>"] = { "<cmd>m .+1<cr>==", desc = "Move line down" },
+    -- ["<C-k>"] = { "<cmd>m .-2<cr>==", desc = "Move line up" },
 
     ["<leader>lo"] = {
       function() vim.lsp.buf.outgoing_calls() end,
@@ -62,10 +66,14 @@ return {
     },
     ["KK"] = {
       function()
-        local current_word = vim.fn.expand "<cword>"
-        local escaped_word = vim.fn.fnameescape(current_word)
-        vim.cmd("Cppman " .. escaped_word)
+        local ft = vim.bo.filetype
+        if ft == "cpp" or ft == "c" then
+          local current_word = vim.fn.expand "<cword>"
+          local escaped_word = vim.fn.fnameescape(current_word)
+          vim.cmd("Cppman " .. escaped_word)
+        end
       end,
+      desc = "Open symbol in cppman",
     },
     ["<leader>K"] = {
       function()

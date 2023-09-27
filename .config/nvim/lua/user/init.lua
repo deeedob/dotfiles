@@ -55,6 +55,7 @@ return {
         ["qmldir"] = "qmldir",
       },
     }
+    vim.cmd('autocmd BufReadPre *.asm let g:asmsyntax = "fasm"')
     -- auto-reload files when modified externally
     vim.o.autoread = true
     vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {

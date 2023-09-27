@@ -27,13 +27,14 @@ return {
     },
     qmlls = function()
       local home = os.getenv "HOME"
+      -- TODO: get build-dir by looking at compile_commands.json
       return {
         cmd = {
           "qmlls",
           "-l",
           home .. "/Temp/qmlls.log",
           "-b",
-          "./build-Debug",
+          "./build/debug",
         },
         filetypes = { "qml" },
         root_dir = require("lspconfig.util").root_pattern "compile_commands.json",
