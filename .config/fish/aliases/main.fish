@@ -59,6 +59,8 @@ alias find "find . -name"
 # alias cmake 'cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias make "make -j$(nproc)"
 alias ninja "ninja -j$(nproc)"
+alias blockwifi 'rfkill block wifi'
+alias unblockwifi 'rfkill unblock wifi'
 
 # ---- Networking ----
 alias www 'python3 -m http.server'
@@ -71,6 +73,8 @@ alias portlist='sudo ss -tulpn'
 # FISH
 alias fishpathn 'echo $fish_user_paths | tr " " "\n" | nl'
 alias fishpathrm 'set --erase --universal fish_user_paths[$argv]'
+
+alias clearcmakecache 'del -rf $HOME/.cache/cmake_tools_nvim/*'
 
 # ---- Virtualization ----
 function virton

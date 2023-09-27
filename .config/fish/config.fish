@@ -107,6 +107,20 @@ function fzf --wraps=fzf --description="Use fzf-tmux if in tmux session"
   end
 end
 
+function QtDev
+    # Qt Base
+    set -x CMAKE_PREFIX_PATH $QDEV
+    set -x PATH $QDEV/bin $PATH
+    set -x LD_LIBRARY_PATH $QDEV/lib $LD_LIBRARY_PATH
+    set -x QT_QPA_PLATFORM wayland
+    # Qt Quick
+    set -x QT_QUICK_CONTROLS_STYLE Material
+    set -x QT_QUICK_CONTROLS_FALLBACK_STYLE Universal
+    set -x QT_QUICK_CONTROLS_CONF $HOME/Dotfiles/Qt/qtquickcontrols2.conf
+    set -x QT_QUICK_CONTROLS_HOVER_ENABLED 0
+
+end
+
 # Settings
 zoxide init --cmd cd fish | source
 
