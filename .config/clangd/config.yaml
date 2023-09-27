@@ -1,6 +1,7 @@
 CompileFlags:
   Add:
     [
+      -xc++,                    # Treat code as C++
       -std=c++20,
       -Wall,
       -Wextra,
@@ -19,6 +20,8 @@ CompileFlags:
       -Wformat=2,
       -Wimplicit-fallthrough,
     ]
+
+# https://clang.llvm.org/extra/clang-tidy/checks/list.html
 Diagnostics:
   ClangTidy:
     Add:
@@ -33,35 +36,38 @@ Diagnostics:
         fuchsia-*,
         google-*,
         llvm*,
-        modernize-use-trailing-return-type,
         zircon-*,
-        readability-else-after-return,
-        readability-static-accessed-through-instance,
-        readability-avoid-const-params-in-decls,
+        modernize-use-trailing-return-type,
         cppcoreguidelines-non-private-member-variables-in-classes,
         misc-non-private-member-variables-in-classes,
+        readability-identifier-length,
+        readability-else-after-return,
+        readability-static-accessed-through-instance,
         readability-redundant-access-specifiers,
         readability-braces-around-statements,
-        readability-identifier-length,
+        hicpp-braces-around-statements,
+        readability-uppercase-literal-suffix,
+        hicpp-uppercase-literal-suffix,
+        # readability-avoid-const-params-in-decls,
       ]
     # https://clang.llvm.org/extra/clang-tidy/checks/readability/identifier-naming.html
     CheckOptions:
-      # readability-identifier-naming.NamespaceCase: CamelCase
+      readability-identifier-naming.NamespaceCase: aNy_CasE
       readability-identifier-naming.ClassCase: CamelCase
       readability-identifier-naming.StructCase: CamelCase
-      readability-identifier-naming.TemplateParameterCase: CamelCase
       readability-identifier-naming.FunctionCase: aNy_CasE
       readability-identifier-naming.VariableCase: camelBack
       readability-identifier-naming.ClassMemberCase: camelBack
-      readability-identifier-naming.ClassMemberPrefix: m_
-      readability-identifier-naming.PrivateMemberPrefix: m_
-      readability-identifier-naming.ProtectedMemberPrefix: m_
+      readability-identifier-naming.TemplateParameterCase: CamelCase
+      readability-identifier-naming.GlobalVariableCase: camelBack
+      readability-identifier-naming.ConstexprVariableCase: CamelCase
+      # readability-identifier-naming.ClassMemberPrefix: m_
+      # readability-identifier-naming.PrivateMemberPrefix: m_
+      # readability-identifier-naming.ProtectedMemberPrefix: m_
       # readability-identifier-naming.EnumConstantCase: CamelCase
       # readability-identifier-naming.EnumConstantPrefix:
-      readability-identifier-naming.ConstexprVariableCase: CamelCase
-      readability-identifier-naming.ConstexprVariablePrefix: M_
-      readability-identifier-naming.GlobalVariableCase: camBack
-      readability-identifier-naming.GlobalVariablePrefix: g_
+      # readability-identifier-naming.ConstexprVariablePrefix: M_
+      # readability-identifier-naming.GlobalVariablePrefix: g_
       readability-identifier-naming.GlobalConstantCase: UPPER_CASE
       readability-identifier-naming.GlobalConstantPrefix:
       # readability-identifier-naming.MemberConstantCase: CamelCase

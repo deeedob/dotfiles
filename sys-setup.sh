@@ -1,11 +1,12 @@
 #!/bin/bash
 
 base="fish ranger neovim-nightly-bin btop git-revise meld bat"
-dev="qtcreator clion visual-studio-code-bin clang llvm docker git-open nodejs json-c dart-sass "
+dev="qtcreator clion visual-studio-code-bin clang llvm docker git-open nodejs json-c dart-sass jemalloc gperftools"
 sys="alacritty nextcloud-client keepassxc wine wine-gecko pkgstats devify wine-mono teams qt6gtk2 qt6ct-git"
 media="bitwig-studio supercollider discord-screenaudio obsidian soulseekqt" # renoise
 appearance="ttf-jetbrains-mono-nerd ttf-material-design-icons-extended"
 optional="clang14 llvm14 solaar polkit-kde-agent"
+audio="realtime-privileges pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber helio-workstation-bin zrythm sox"
 
 wayland="wl-clipboard wev dunst pipewire wireplumber qt5-wayland qt6-wayland hyprpaper xdg-desktop-portal-hyprland-git rofi-lbonn-wayland xremap-hypr-bin swaylock-effects-git wofi hyprshot-git nwg-look"
 waybar="betterlockscreen waybar hyprpicker-git candy-icons-git gtk-engine-murrine lxappearance"
@@ -28,3 +29,6 @@ else
     echo "Skipping package installation."
 fi
 
+
+sudo usermod -a -G realtime $USER
+sudo usermod -a -G audio $USER
