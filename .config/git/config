@@ -48,3 +48,5 @@
 	browser = firefox
 [grep]
 	lineNumber = true
+[safe]
+	directory = /home/shared/Coding/repos/blockhead

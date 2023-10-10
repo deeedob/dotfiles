@@ -1,4 +1,15 @@
+local utils = require "astronvim.utils"
 return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if opts.ensure_installed ~= "all" then
+        opts.ensure_installed =
+          utils.list_insert_unique(opts.ensure_installed, { "bash", "markdown", "markdown_inline", "regex", "vim" })
+      end
+    end,
+  },
+
   {
     "preservim/tagbar",
     lazy = false,
@@ -43,22 +54,44 @@ return {
   -- enable noice cmdline if not in neovide
   {
     "folke/noice.nvim",
-    cond = function() return not vim.g.neovide end,
     event = "VeryLazy",
-    opts = {
-      cmdline = { enabled = true },
-      message = { enabled = false },
-      popupmenu = { enabled = false },
-      notify = { enabled = false },
-      lsp = {
-        progress = { enabled = false },
-        hover = { enabled = false },
-        signature = { enabled = false },
-        message = { enabled = false },
-      },
-      health = { checker = false },
-    },
+    cond = not vim.g.neovide,
     dependencies = { "MunifTanjim/nui.nvim" },
+    opts = function(_, opts)
+      return utils.extend_tbl(opts, {
+        cmdline = {
+          enabled = true,
+          view = "cmdline_popup",
+        },
+        messages = { enabled = false, },
+        popupmenu = { enabled = true, },
+        notify = { enabled = false },
+        lsp = {
+          progress = { enabled = false, },
+          hover = { enabled = false, },
+          signature = { enabled = false, },
+          message = { enabled = false },
+        },
+        presets = {
+          inc_rename = utils.is_available "inc-rename.nvim",
+        },
+        views = {
+          cmdline_popup = {
+            position = { row = 10, col = "50%", },
+            size = { width = 60, height = "auto", },
+          },
+          popupmenu = {
+            relative = "editor",
+            position = { row =  12, col = "50%", },
+            size = { width = 60, height = 10, },
+            border = { style = "rounded", padding = { 0, 1 }, },
+            win_options = {
+              winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+            },
+          },
+        },
+      })
+    end,
   },
   -- enable fine cmdline if in neovide
   {

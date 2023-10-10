@@ -49,13 +49,13 @@ return {
         runInTerminal = true,
         console = "integratedTerminal",
       },
-      cmake_executor = {
-        -- name = "quickfix" (default)
-        -- name = "overseer", opts={}
-        -- name = "terminal" (integrated terminal)
-        name = "terminal",
-        -- opts = {}
-      }
+      -- cmake_executor = {
+      --   -- name = "quickfix" (default)
+      --   -- name = "overseer", opts={}
+      --   -- name = "terminal" (integrated terminal)
+      --   name = "terminal",
+      --   -- opts = {}
+      -- }
     },
   },
   { import = "astrocommunity.pack.json" },
@@ -66,4 +66,6 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.html-css" },
+
+  { import = "astrocommunity.media.pets-nvim" },
 }

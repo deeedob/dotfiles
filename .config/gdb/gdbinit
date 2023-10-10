@@ -1,0 +1,5 @@
+set confirm off
+set breakpoint pending on
+set pagination off
+set print pretty on
+set history save on
