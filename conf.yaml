@@ -26,8 +26,7 @@
     ~/.config/ranger: .config/ranger
     ~/.config/alacritty: .config/alacritty
     ~/.config/kitty: .config/kitty
-    ~/.config/nvim/lua/user: .config/nvim/lua/user
-    ~/.config/nvim/after: .config/nvim/after
+    ~/.config/nvim: .config/nvim
 
     ~/.config/user-dirs.dirs: .config/user-dirs.dirs
     ~/.config/user-dirs.locale: .config/user-dirs.locale
@@ -40,5 +39,4 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [.config/fish/install.sh, Installing the fish shell]
-  - [.config/nvim/install.sh, Install Neovim]
 

@@ -43,15 +43,16 @@ set -x SUDO_EDITOR "rvim -u NONE"
 set -x MANPAGER "nvim +Man!"
 
 set -x QDEV $HOME/Qt/qt6/build/debug/qtbase
+if count $QDEV/lib/* > /dev/null; and count $QDEV/bin/* > /dev/null
+    echo "Qt Dev Path: $QDEV"
+    fish_add_path -p $QDEV/bin
+    set -Ux CMAKE_PREFIX_PATH $QDEV/lib/cmake/ $CMAKE_PREFIX_PATH
+end
 # For Debugging QT
 set -x QDOC_SHOW_INTERNAL 1
 # set -x QT_DEBUG_PLUGINS 1
 # set -x QML_IMPORT_TRACE 1
 
-# extend PATH
-# if [ -d $QDEV/bin ]
-#     fish_add_path -p $QDEV/bin
-# end
 # fish_add_path -a /usr/lib/qt6/bin
 # fish_add_path -a $HOME/Libraries/install/debug/bin
 fish_add_path -a $HOME/Bin
@@ -89,9 +90,10 @@ function qdevbuilder
     # Print available libQt6*.so libraries
     if set -q QDEV
         echo "-- QDEV PATH: $QDEV"
-        set -x CMAKE_PREFIX_PATH $HOME/Qt/qt6/build/default/qtbase/lib/cmake
+        set -x CMAKE_PREFIX_PATH $HOME/Qt/precompiled/6.7/6.7.0/gcc_64/lib/cmake
     end
-    builder
+    cmake --fresh -G Ninja -D CMAKE_EXPORT_COMPILE_COMMANDS=ON -D CMAKE_PREFIX_PATH=/home/wayn/Qt/precompiled/6.7/6.7.0/gcc_64/lib/cmake-B builder/ && cmake --build builder
+    ln -snf builder/compile_commands.json .
 end
 
 

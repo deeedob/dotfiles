@@ -33,3 +33,4 @@ alias gsur='git submodule update --init --recursive'
 alias gr='git remote -v | awk "{print \"\033[32m\"\$1\"\033[0m\t\033[33m\"\$2\"\033[0m\"}"'
 alias grrm="git remote rm"
 alias gra="git remote add"
+alias gsr='git status -uno'

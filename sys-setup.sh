@@ -6,9 +6,9 @@ sys="alacritty nextcloud-client keepassxc wine wine-gecko pkgstats devify wine-m
 media="bitwig-studio supercollider discord-screenaudio obsidian soulseekqt" # renoise
 appearance="ttf-jetbrains-mono-nerd ttf-material-design-icons-extended"
 optional="clang14 llvm14 solaar polkit-kde-agent"
-audio="realtime-privileges pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber helio-workstation-bin zrythm sox"
+audio="realtime-privileges pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber helio-workstation-bin zrythm sox noisetorch"
 
-wayland="wl-clipboard wev dunst pipewire wireplumber qt5-wayland qt6-wayland hyprpaper xdg-desktop-portal-hyprland-git rofi-lbonn-wayland xremap-hypr-bin swaylock-effects-git wofi hyprshot-git nwg-look"
+wayland="wl-clipboard wev dunst qt5-wayland qt6-wayland hyprpaper xdg-desktop-portal-hyprland-git rofi-lbonn-wayland xremap-hypr-bin swaylock-effects-git wofi hyprshot-git nwg-look wl-clip-persist cliphist"
 waybar="betterlockscreen waybar hyprpicker-git candy-icons-git gtk-engine-murrine lxappearance"
 
 # Ask if packages should be installed

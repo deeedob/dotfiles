@@ -4,6 +4,8 @@
 	username = deeedob
 [includeIf "gitdir:**/qt6/"]
 	path = ~/Qt/.gitconfig
+[includeIf "gitdir:**/pyside-setup/"]
+	path = ~/Qt/.gitconfig
 [core]
 	defaultBranch = main
 	editor = nvim
@@ -50,3 +52,5 @@
 	lineNumber = true
 [safe]
 	directory = /home/shared/Coding/repos/blockhead
+	directory = /home/shared/Coding/repos/stable-diffusion-webui
+	directory = /home/shared/Coding/repos/stable-diffusion-webui/repositories/stable-diffusion-stability-ai

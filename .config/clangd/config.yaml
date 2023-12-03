@@ -25,9 +25,7 @@ CompileFlags:
 Diagnostics:
   ClangTidy:
     Add:
-      [
-        '*',
-      ]
+      [ '*' ]
     Remove:
       [
         abseil-*,
