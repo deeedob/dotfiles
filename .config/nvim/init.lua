@@ -29,6 +29,6 @@ local lazy_opts = {
 require("lazy").setup("wayn.plugins", lazy_opts)
 
 -- Clear deprecated highlights (had problems in C code with typedef)
-vim.cmd [[
-    hi! clear DiagnosticDeprecated
-]]
+-- vim.cmd [[
+--     hi! clear DiagnosticDeprecated
+-- ]]
