@@ -4,7 +4,7 @@ base="fish ranger neovim-nightly-bin btop git-revise meld bat"
 dev="qtcreator clion visual-studio-code-bin clang llvm docker git-open nodejs json-c dart-sass jemalloc gperftools"
 sys="alacritty nextcloud-client keepassxc wine wine-gecko pkgstats devify wine-mono teams qt6gtk2 qt6ct-git"
 media="bitwig-studio supercollider discord-screenaudio obsidian soulseekqt" # renoise
-appearance="ttf-jetbrains-mono-nerd ttf-material-design-icons-extended"
+appearance="ttf-jetbrains-mono-nerd ttf-material-design-icons-extended ttf-nerd-font-symbols"
 optional="clang14 llvm14 solaar polkit-kde-agent"
 audio="realtime-privileges pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber helio-workstation-bin zrythm sox noisetorch"
 

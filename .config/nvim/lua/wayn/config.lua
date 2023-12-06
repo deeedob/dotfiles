@@ -1,6 +1,6 @@
 return {
     -- "kanagawa", "gruvbox-material"
-    colorscheme = "gruvbox-material",
+    colorscheme = "kanagawa",
     lsp = {
         icon_sign = false, -- uses colored num column if false
         hover_diagnostic = true

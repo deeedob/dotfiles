@@ -22,6 +22,9 @@ fi
 # install xremap and set is as service to get custom keybinds.
 sudo make -C .config/xremap 1> /dev/null
 
+# gh-dash extension
+gh extension install dlvhdr/gh-dash
+
 check_enable_start_service() {
     local service=$1
 

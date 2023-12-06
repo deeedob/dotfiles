@@ -1,16 +1,16 @@
 local map = vim.keymap.set
 
 -- Window navigation
-map("n", "<C-h>", "<C-w>h", { desc = "GoTo left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "GoTo lower window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "GoTo upper window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "GoTo right window", remap = true })
+-- map("n", "<C-h>", "<C-w>h", { desc = "GoTo left window", remap = true })
+-- map("n", "<C-j>", "<C-w>j", { desc = "GoTo lower window", remap = true })
+-- map("n", "<C-k>", "<C-w>k", { desc = "GoTo upper window", remap = true })
+-- map("n", "<C-l>", "<C-w>l", { desc = "GoTo right window", remap = true })
 
 -- Window resize
-map("n", "<S-Up>", "<cmd>resize +3<cr>", { desc = "Increase window height" })
-map("n", "<S-Down>", "<cmd>resize -3<cr>", { desc = "Decrease window height" })
-map("n", "<S-Left>", "<cmd>vertical resize -3<cr>", { desc = "Decrease window width" })
-map("n", "<S-Right>", "<cmd>vertical resize +3<cr>", { desc = "Increase window width" })
+-- map("n", "<S-Up>", "<cmd>resize +3<cr>", { desc = "Increase window height" })
+-- map("n", "<S-Down>", "<cmd>resize -3<cr>", { desc = "Decrease window height" })
+-- map("n", "<S-Left>", "<cmd>vertical resize -3<cr>", { desc = "Decrease window width" })
+-- map("n", "<S-Right>", "<cmd>vertical resize +3<cr>", { desc = "Increase window width" })
 
 -- Better up/down (deals with word wrap)
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -57,6 +57,9 @@ map('n', 'Q', ':q<cr>', { desc = 'Save the current file' })
 
 -- Fast escape using 'jk'
 map("i", "jk", "<ESC>")
+
+-- Classic remove word
+map("i","<C-BS>","<C-W>", { noremap = true })
 
 -- Delete into blackhole register
 vim.keymap.set({ 'n', 'x' }, 'x', '"_x')

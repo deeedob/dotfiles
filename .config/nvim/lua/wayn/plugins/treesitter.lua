@@ -24,7 +24,7 @@ return {
                     -- Add languages to be installed here that you want installed for treesitter
                     ensure_installed = {
                         'c', 'cpp', 'lua', 'python', 'vimdoc', 'vim', 'bash', 'markdown', 'markdown_inline', 'diff', 'vimdoc', 'yaml',
-                        'fish', 'rasi'
+                        'fish', 'rasi', 'proto'
                     },
 
                     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
@@ -40,7 +40,7 @@ return {
                             end
                         end
                     },
-                    indent = { enable = true },
+                    indent = { enable = false },
                     incremental_selection = {
                         enable = true,
                         keymaps = {

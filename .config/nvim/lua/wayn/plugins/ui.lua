@@ -111,7 +111,7 @@ return {
                         -- Middle
                         {
                             "%=",
-                             cond = function()
+                            cond = function()
                                 return conditions.min_window_width(60)
                             end,
                         },
@@ -147,7 +147,8 @@ return {
                             end,
                             icon = icons.cmake.Arch,
                             cond = function()
-                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and not cmake.has_cmake_preset()
+                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and
+                                    not cmake.has_cmake_preset()
                             end,
                             color = { fg = col },
                             on_click = function(n, mouse)
@@ -165,7 +166,8 @@ return {
                             end,
                             icon = icons.cmake.Build,
                             cond = function()
-                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and cmake.has_cmake_preset()
+                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and
+                                    cmake.has_cmake_preset()
                             end,
                             color = { fg = col },
                             on_click = function(n, mouse)
@@ -183,7 +185,8 @@ return {
                             end,
                             icon = icons.cmake.Build,
                             cond = function()
-                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and not cmake.has_cmake_preset()
+                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and
+                                    not cmake.has_cmake_preset()
                             end,
                             color = { fg = col },
                             on_click = function(n, mouse)
@@ -200,7 +203,8 @@ return {
                                 return (b_preset and b_preset or "X")
                             end,
                             cond = function()
-                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and cmake.has_cmake_preset()
+                                return conditions.min_window_width(hide_cmake) and cmake.is_cmake_project() and
+                                    cmake.has_cmake_preset()
                             end,
                             color = { fg = col },
                             on_click = function(n, mouse)
@@ -300,5 +304,31 @@ return {
         dependencies = { "MunifTanjim/nui.nvim" },
         lazy = false,
     },
+
+    {
+        "mrjones2014/smart-splits.nvim",
+        lazy = false,
+        opts = { at_edge = "stop" },
+        build = "./kitty/install-kittens.bash",
+        keys = {
+            { "<S-Left>",             function() require("smart-splits").resize_left() end },
+            { "<S-Right>",             function() require("smart-splits").resize_right() end },
+            { "<S-Up>",             function() require("smart-splits").resize_up() end },
+            { "<S-Down>",             function() require("smart-splits").resize_down() end },
+            -- moving between splits
+            { "<C-h>",             function() require("smart-splits").move_cursor_left() end },
+            { "<C-j>",             function() require("smart-splits").move_cursor_down() end },
+            { "<C-k>",             function() require("smart-splits").move_cursor_up() end },
+            { "<C-l>",             function() require("smart-splits").move_cursor_right() end },
+            -- swapping buffers between windows
+            { "<leader>bsh", function() require("smart-splits").swap_buf_left() end,    desc = "swap left" },
+            { "<leader>bsj", function() require("smart-splits").swap_buf_down() end,    desc = "swap down" },
+            { "<leader>bsk", function() require("smart-splits").swap_buf_up() end,      desc = "swap up" },
+            { "<leader>bsl", function() require("smart-splits").swap_buf_right() end,   desc = "swap right" },
+
+            { "<leader>bsh", ":sp<cr>",   desc = "split horiz" },
+            { "<leader>bsv", ":vsp<cr>", desc = "split vertical" },
+        },
+    }
 
 }

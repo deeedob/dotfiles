@@ -259,7 +259,9 @@ return {
         keys = {
             { "<leader>ff", function() return require("telescope.builtin").find_files() end,               desc = "Files" },
             { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",                 desc = "Buffers" },
-            { "<leader>fw", function() return require("telescope.builtin").live_grep() end,                desc = 'Words' },
+            { "<leader>fw", function() return require("telescope.builtin").live_grep({
+                cwd = require("telescope.utils").buffer_dir()
+            }) end,                desc = 'Words' },
             { "<leader>/",  "<cmd>Telescope current_buffer_fuzzy_find<cr>",                                desc = "Current Buffer" },
             { "<leader>fl", function() return require("telescope.builtin").resume() end,                   desc = "Resume" },
             { "<leader>fh", function() return require("telescope.builtin").help_tags() end,                desc = "Help" },

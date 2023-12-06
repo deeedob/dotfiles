@@ -1,27 +1,30 @@
 local servers = {
     "clangd",
-    "cmake",
+    "neocmake",
     "pyright",
     "lua_ls",
     "bashls",
     "marksman",
+    "bufls"
 }
 
 -- LSP-related key mappings
 local lsp_mappings = {
-    { 'n', '<leader>lr',  ":Lspsaga rename<cr>",               '[R]ename' },
-    { 'n', '<leader>lci', ":Lspsaga incoming_calls<cr>",       '[I]ncoming Calls' },
-    { 'n', '<leader>lco', ":Lspsaga outgoing_calls<cr>",       '[O]outgoing Calls' },
-    { 'n', '<leader>la',  ":Lspsaga code_action<cr>",          'Code [A]ctions' },
-    { 'n', '<leader>ls',  ":Lspsaga outline<cr>",              '[S]ymbols' },
-    { 'n', '<leader>lF',  ":Lspsaga finder<cr>",               '[F]inder' },
-    { 'n', '[d',          ":Lspsaga diagnostic_jump_prev<cr>", 'Diagnostic Prev' },
-    { 'n', ']d',          ":Lspsaga diagnostic_jump_next<cr>", 'Diagnostic Next' },
-    { 'n', 'K',           ":Lspsaga hover_doc<cr>",            'Hover Doc' },
-    { 'n', 'gp',          ":Lspsaga peek_definition<cr>",      'Peek Definition' },
-    { 'n', 'gP',          ":Lspsaga peek_type_definition<cr>", 'Peek Type Definition' },
+    { 'n', '<leader>lr',  ":Lspsaga rename<cr>",                               '[R]ename' },
+    { 'n', '<leader>lci', ":Lspsaga incoming_calls<cr>",                       '[I]ncoming Calls' },
+    { 'n', '<leader>lco', ":Lspsaga outgoing_calls<cr>",                       '[O]outgoing Calls' },
+    { 'n', '<leader>la',  ":Lspsaga code_action<cr>",                          'Code [A]ctions' },
+    { 'n', '<leader>ls',  ":Lspsaga outline<cr>",                              '[S]ymbols' },
+    { 'n', '<leader>lF',  ":Lspsaga finder<cr>",                               '[F]inder' },
+    { 'n', '[d',          ":Lspsaga diagnostic_jump_prev<cr>",                 'Diagnostic Prev' },
+    { 'n', ']d',          ":Lspsaga diagnostic_jump_next<cr>",                 'Diagnostic Next' },
+    { 'n', 'K',           ":Lspsaga hover_doc<cr>",                            'Hover Doc' },
+    { 'n', 'gp',          ":Lspsaga peek_definition<cr>",                      'Peek Definition' },
+    { 'n', 'gP',          ":Lspsaga peek_type_definition<cr>",                 'Peek Type Definition' },
     { 'n', 'gd',          ":Lspsaga goto_definition<cr>",      'Goto Definition' },
-    { 'n', 'gD',          ":Lspsaga goto_type_definition<cr>", 'Goto Type Definition' },
+    { 'n', 'gdv',          ":vsplit | lua vim.lsp.buf.definition()<CR>", 'Goto Definition' },
+    { 'n', 'gdh',          ":belowright split | lua vim.lsp.buf.definition()<CR>", 'Goto Definition' },
+    { 'n', 'gD',          ":Lspsaga goto_type_definition<cr>",                 'Goto Type Definition' },
     -- { 'n', '<C-k>',       ":lua vim.lsp.buf.signature_help()<cr>", '[S]ignature' },
     -- { 'n', '<leader>li', ":lua require('telescope.builtin').lsp_implementations()<cr>", '[I]mplementation' },
     -- { 'n', "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", 'Lsp [R]eferences' },
@@ -168,12 +171,12 @@ return {
 
             -- Handlers
             -- Better refresh in nvim 0.10
-            -- vim.lsp.handlers['workspace/diagnostic/refresh'] = function(_, _, ctx)
-            --     local ns = vim.lsp.diagnostic.get_namespace(ctx.client_id)
-            --     local bufnr = vim.api.nvim_get_current_buf()
-            --     vim.diagnostic.reset(ns, bufnr)
-            --     return true
-            -- end
+            vim.lsp.handlers['workspace/diagnostic/refresh'] = function(_, _, ctx)
+                local ns = vim.lsp.diagnostic.get_namespace(ctx.client_id)
+                local bufnr = vim.api.nvim_get_current_buf()
+                vim.diagnostic.reset(ns, bufnr)
+                return true
+            end
 
             -- Diagnostics config
             vim.diagnostic.config({
@@ -232,6 +235,7 @@ return {
                             local status, cmake = pcall(require, "cmake-tools")
                             if status then cmake.clangd_on_new_config(conf) end
                         end,
+                        filetypes = { "c", "cpp", "objc", "objcpp" },
                         cmd = {
                             "clangd",
                             "--background-index",
@@ -250,14 +254,17 @@ return {
                         }
                     }
                 end,
-                ["cmake"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.cmake.setup {
-                        capabilities = capabilities,
-                        on_attach = on_attach_default,
-                        root_dir = lspconfig.util.root_pattern("cmake-build/", "build/")
-                    }
-                end,
+                -- ["neocmake"] = function()
+                --     local lspconfig = require("lspconfig.configs")
+                --     lspconfig.cmake.setup {
+                --         capabilities = capabilities,
+                --         on_attach = on_attach_default,
+                --         root_dir = function(fname)
+                --             return lspconfig.util.find_git_ancestor(fname)
+                --         end,
+                --         single_file_support = true,
+                --     }
+                -- end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {

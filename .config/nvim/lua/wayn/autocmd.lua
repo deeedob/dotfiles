@@ -42,7 +42,9 @@ autocmd("VimResized", {
 autocmd("TextYankPost", {
     group = augroup("highlight_yank"),
     callback = function()
-        vim.highlight.on_yank()
+        vim.highlight.on_yank({
+            timeout = 225,
+        })
     end,
 })
 

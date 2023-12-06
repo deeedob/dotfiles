@@ -21,6 +21,7 @@ opt.hlsearch = false
 
 -- Make terminal support truecolor
 opt.termguicolors = true
+opt.pumheight = 12
 
 -- Make neovim use the system clipboard
 opt.clipboard = 'unnamedplus'
@@ -39,6 +40,7 @@ opt.smartindent = true
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.shiftround = true
+vim.cmd[[set cinoptions+=L0]]
 
 -- Code folding
 opt.foldenable = true
