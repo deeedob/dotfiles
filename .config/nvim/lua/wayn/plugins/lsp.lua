@@ -10,21 +10,21 @@ local servers = {
 
 -- LSP-related key mappings
 local lsp_mappings = {
-    { 'n', '<leader>lr',  ":Lspsaga rename<cr>",                               '[R]ename' },
-    { 'n', '<leader>lci', ":Lspsaga incoming_calls<cr>",                       '[I]ncoming Calls' },
-    { 'n', '<leader>lco', ":Lspsaga outgoing_calls<cr>",                       '[O]outgoing Calls' },
-    { 'n', '<leader>la',  ":Lspsaga code_action<cr>",                          'Code [A]ctions' },
-    { 'n', '<leader>ls',  ":Lspsaga outline<cr>",                              '[S]ymbols' },
-    { 'n', '<leader>lF',  ":Lspsaga finder<cr>",                               '[F]inder' },
-    { 'n', '[d',          ":Lspsaga diagnostic_jump_prev<cr>",                 'Diagnostic Prev' },
-    { 'n', ']d',          ":Lspsaga diagnostic_jump_next<cr>",                 'Diagnostic Next' },
-    { 'n', 'K',           ":Lspsaga hover_doc<cr>",                            'Hover Doc' },
-    { 'n', 'gp',          ":Lspsaga peek_definition<cr>",                      'Peek Definition' },
-    { 'n', 'gP',          ":Lspsaga peek_type_definition<cr>",                 'Peek Type Definition' },
-    { 'n', 'gd',          ":Lspsaga goto_definition<cr>",      'Goto Definition' },
-    { 'n', 'gdv',          ":vsplit | lua vim.lsp.buf.definition()<CR>", 'Goto Definition' },
-    { 'n', 'gdh',          ":belowright split | lua vim.lsp.buf.definition()<CR>", 'Goto Definition' },
-    { 'n', 'gD',          ":Lspsaga goto_type_definition<cr>",                 'Goto Type Definition' },
+    { 'n', '<leader>lr',  ":Lspsaga rename<cr>",                                  '[R]ename' },
+    { 'n', '<leader>lci', ":Lspsaga incoming_calls<cr>",                          '[I]ncoming Calls' },
+    { 'n', '<leader>lco', ":Lspsaga outgoing_calls<cr>",                          '[O]outgoing Calls' },
+    { 'n', '<leader>la',  ":Lspsaga code_action<cr>",                             'Code [A]ctions' },
+    { 'n', '<leader>ls',  ":Lspsaga outline<cr>",                                 '[S]ymbols' },
+    { 'n', '<leader>lF',  ":Lspsaga finder<cr>",                                  '[F]inder' },
+    { 'n', '[d',          ":Lspsaga diagnostic_jump_prev<cr>",                    'Diagnostic Prev' },
+    { 'n', ']d',          ":Lspsaga diagnostic_jump_next<cr>",                    'Diagnostic Next' },
+    { 'n', 'K',           ":Lspsaga hover_doc<cr>",                               'Hover Doc' },
+    { 'n', 'gp',          ":Lspsaga peek_definition<cr>",                         'Peek Definition' },
+    { 'n', 'gP',          ":Lspsaga peek_type_definition<cr>",                    'Peek Type Definition' },
+    { 'n', 'gd',          ":Lspsaga goto_definition<cr>",                         'Goto Definition' },
+    { 'n', 'gdv',         ":vsplit | lua vim.lsp.buf.definition()<CR>",           'Goto Definition' },
+    { 'n', 'gdh',         ":belowright split | lua vim.lsp.buf.definition()<CR>", 'Goto Definition' },
+    { 'n', 'gD',          ":Lspsaga goto_type_definition<cr>",                    'Goto Type Definition' },
     -- { 'n', '<C-k>',       ":lua vim.lsp.buf.signature_help()<cr>", '[S]ignature' },
     -- { 'n', '<leader>li', ":lua require('telescope.builtin').lsp_implementations()<cr>", '[I]mplementation' },
     -- { 'n', "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", 'Lsp [R]eferences' },
@@ -177,6 +177,8 @@ return {
                 vim.diagnostic.reset(ns, bufnr)
                 return true
             end
+            -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+            -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
             -- Diagnostics config
             vim.diagnostic.config({

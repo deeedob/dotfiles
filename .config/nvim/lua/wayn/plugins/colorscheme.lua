@@ -47,10 +47,10 @@ return {
                     local pal = colors.palette
                     local theme = cols.theme
                     return {
-                        -- CursorLine = { bg = "None" },
-                        -- NormalFloat = { bg = "none" },
-                        -- FloatBorder = { bg = "none" },
-                        -- FloatTitle = { bg = "none" },
+                        CursorLine = { bg = "None" },
+                        NormalFloat = { bg = "none" },
+                        FloatBorder = { bg = "none" },
+                        FloatTitle = { bg = "none" },
 
                         -- -- Save an hlgroup with dark background and dimmed foreground
                         -- -- so that you can use it where your still want darker windows.

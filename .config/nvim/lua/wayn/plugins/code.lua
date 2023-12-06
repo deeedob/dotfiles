@@ -10,24 +10,24 @@ local nvim_config_path = vim.fn.stdpath("config")
 
 return {
     -- Completion
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        build = ":Copilot auth",
-        opts = function()
-            vim.cmd('imap <silent><script><expr> <C-CR> copilot#Accept("\\<CR>")')
-            vim.g.copilot_no_tab_map = true
-            return
-            {
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-                filetypes = {
-                    markdown = true,
-                    help = true,
-                },
-            }
-        end
-    },
+    -- {
+    --     "zbirenbaum/copilot.lua",
+    --     cmd = "Copilot",
+    --     build = ":Copilot auth",
+    --     opts = function()
+    --         vim.cmd('imap <silent><script><expr> <C-CR> copilot#Accept("\\<CR>")')
+    --         vim.g.copilot_no_tab_map = true
+    --         return
+    --         {
+    --             suggestion = { enabled = false },
+    --             panel = { enabled = false },
+    --             filetypes = {
+    --                 markdown = true,
+    --                 help = true,
+    --             },
+    --         }
+    --     end
+    -- },
     {
         "hrsh7th/nvim-cmp",
         version = false,
@@ -37,12 +37,12 @@ return {
             "neovim/nvim-lspconfig",
 
             "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lsp-signature-help",
+            "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-buffer",
 
-            "zbirenbaum/copilot-cmp",
+            -- "zbirenbaum/copilot-cmp",
 
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
@@ -51,7 +51,6 @@ return {
         },
         config = function()
             local cmp = require("cmp")
-            local defaults = require("cmp.config.default")()
             local luasnip = require("luasnip")
             local lspkind = require('lspkind')
             -- Icons
@@ -61,13 +60,13 @@ return {
                 update_events = "TextChanged,TextChangedI"
             })
             -- Copilot Cmp
-            require("copilot").setup({
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
-            lspkind.init({ symbol_map = { Copilot = "", } })
-            vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#787575" })
-            require("copilot_cmp").setup()
+            -- require("copilot").setup({
+            --     suggestion = { enabled = false },
+            --     panel = { enabled = false },
+            -- })
+            -- lspkind.init({ symbol_map = { Copilot = "", } })
+            -- vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#787575" })
+            -- require("copilot_cmp").setup()
 
             cmp.setup({
                 snippet = {
@@ -79,7 +78,7 @@ return {
                     completeopt = "menu,menuone,noinsert",
                     -- autocomplete = false
                 },
-                -- view = { entries = "custom" },
+                view = { entries = "custom" },
                 mapping = {
                     ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
                     ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -116,14 +115,20 @@ return {
                     end, { 'i', 's' }),
                 },
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    completion = cmp.config.window.bordered({
+                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Cursor,Search:None",
+                        side_padding = 0,
+                    }),
+                    documentation = cmp.config.window.bordered({
+                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Cursor,Search:None",
+                    })
                 },
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
                     format = function(entry, vim_item)
-                        local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry,
-                            vim_item)
+                        local kind = require("lspkind").cmp_format({
+                            mode = "symbol_text", maxwidth = 50
+                        })(entry, vim_item)
                         local strings = vim.split(kind.kind, "%s", { trimempty = true })
                         kind.kind = " " .. (strings[1] or "") .. " "
                         kind.menu = "    (" .. (strings[2] or "") .. ")"
@@ -135,10 +140,10 @@ return {
                         name = "nvim_lsp",
                         -- entry_filter = function(entry) return entry.kind ~= "Text" end,
                     },
-                    { name = 'copilot' },
                     { name = "luasnip" },
                     { name = "nvim_lsp_signature_help" },
                     { name = "path",                   option = { trailing_slash = true } },
+                    -- { name = 'copilot' },
                 },
                 sorting = {
                     comparators = {
@@ -181,20 +186,20 @@ return {
         "Civitasv/cmake-tools.nvim",
         ft = { "cmake", "cpp" },
         keys = {
-            { "<leader>cb", ":CMakeBuild<CR>", desc = "CMake Build" },
-            { "<leader>cfb", ":CMakeBuild!<CR>", desc = "CMake Force Build" },
-            { "<leader>cg", ":CMakeGenerate<CR>", desc = "CMake Configure" },
-            { "<leader>cfg", ":CMakeGenerate!<CR>", desc = "CMake Force Configure" },
-            { "<leader>cr", ":CMakeRun<CR>", desc = "CMake Run" },
-            { "<leader>cd", ":CMakeDebug<CR>", desc = "CMake Debug" },
-            { "<leader>ck", ":CMakeStop<CR>", desc = "CMake Kill" },
-            { "<leader>cc", ":CMakeClean<CR>", desc = "CMake Clean" },
+            { "<leader>cb",  ":CMakeBuild<CR>",              desc = "CMake Build" },
+            { "<leader>cfb", ":CMakeBuild!<CR>",             desc = "CMake Force Build" },
+            { "<leader>cg",  ":CMakeGenerate<CR>",           desc = "CMake Configure" },
+            { "<leader>cfg", ":CMakeGenerate!<CR>",          desc = "CMake Force Configure" },
+            { "<leader>cr",  ":CMakeRun<CR>",                desc = "CMake Run" },
+            { "<leader>cd",  ":CMakeDebug<CR>",              desc = "CMake Debug" },
+            { "<leader>ck",  ":CMakeStop<CR>",               desc = "CMake Kill" },
+            { "<leader>cc",  ":CMakeClean<CR>",              desc = "CMake Clean" },
 
             { "<leader>csr", ":CMakeSelectLaunchTarget<CR>", desc = "CMake Select Run Target" },
-            { "<leader>csb", ":CMakeSelectBuildTarget<CR>", desc = "CMake Select Build Target" },
-            { "<leader>cst", ":CMakeSelectBuildType<CR>", desc = "CMake Select Build Type" },
-            { "<leader>csk", ":CMakeSelectKit<CR>", desc = "CMake Select Kit" },
-            { "<leader>csf", ":CMakeShowTargetFiles<CR>", desc = "CMake Show Target's files" },
+            { "<leader>csb", ":CMakeSelectBuildTarget<CR>",  desc = "CMake Select Build Target" },
+            { "<leader>cst", ":CMakeSelectBuildType<CR>",    desc = "CMake Select Build Type" },
+            { "<leader>csk", ":CMakeSelectKit<CR>",          desc = "CMake Select Kit" },
+            { "<leader>csf", ":CMakeShowTargetFiles<CR>",    desc = "CMake Show Target's files" },
         },
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -262,7 +267,7 @@ return {
         keys = {
             {
                 "KK",
-                function ()
+                function()
                     local word = vim.fn.expand("<cword>")
                     local escaped_word = vim.fn.fnameescape(word)
                     vim.cmd("Cppman " .. escaped_word)

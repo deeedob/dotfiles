@@ -133,7 +133,7 @@ return {
                     enabled = false,
                     leave_dirs_open = true,
                 },
-                group_empty_dirs = true,
+                group_empty_dirs = false,
                 use_libuv_file_watcher = true,
                 find_by_full_path_words = false,
                 window = {
