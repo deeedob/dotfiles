@@ -64,6 +64,14 @@ return {
                     close_after_jump = true,
                 },
             })
+            -- TODO!
+            -- https://github.com/nvimdev/lspsaga.nvim/issues/145
+            -- vim.api.nvim_create_autocmd("<buffer>", {
+            --     group = "Signature",
+            --     callback = function()
+            --         print("hi")
+            --     end
+            -- })
         end,
     },
 
@@ -86,10 +94,36 @@ return {
     -- Enhanced clangd
     {
         "p00f/clangd_extensions.nvim",
+        event = "LspAttach",
+        filetypes = { "cpp", "c" },
         keys = {
-            { "<leader>cs", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+            { "<leader>ll", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+            { "<leader>lA", "<cmd>ClangdAST<cr>", desc = "AST toggle" },
+            { "<leader>ui", "<cmd>ClangdToggleInlayHints<cr>", desc = "LSP Toggle Inlay Hints" },
         },
-        lazy = true,
+        opts = {
+            inlay_hints = { inline = false },
+            ast = {
+                -- requires codicons
+                role_icons = {
+                    type = "",
+                    declaration = "",
+                    expression = "",
+                    specifier = "",
+                    statement = "",
+                    ["template argument"] = "",
+                },
+                kind_icons = {
+                    Compound = "",
+                    Recovery = "",
+                    TranslationUnit = "",
+                    PackExpansion = "",
+                    TemplateTypeParm = "",
+                    TemplateTemplateParm = "",
+                    TemplateParamObject = "",
+                },
+            }
+        },
     },
 
     -- LSP
@@ -144,29 +178,6 @@ return {
                         buffer = bufnr
                     })
                 end
-                require("clangd_extensions").setup({
-                    inlay_hints = { inline = false },
-                    ast = {
-                        -- requires codicons
-                        role_icons = {
-                            type = "",
-                            declaration = "",
-                            expression = "",
-                            specifier = "",
-                            statement = "",
-                            ["template argument"] = "",
-                        },
-                        kind_icons = {
-                            Compound = "",
-                            Recovery = "",
-                            TranslationUnit = "",
-                            PackExpansion = "",
-                            TemplateTypeParm = "",
-                            TemplateTemplateParm = "",
-                            TemplateParamObject = "",
-                        },
-                    }
-                })
             end
 
             -- Handlers
@@ -177,8 +188,6 @@ return {
                 vim.diagnostic.reset(ns, bufnr)
                 return true
             end
-            -- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
-            -- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
             -- Diagnostics config
             vim.diagnostic.config({

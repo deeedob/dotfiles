@@ -100,3 +100,6 @@ map('n', '<leader>kq', function() vim.fn.jobstart({ "xdg-open", search_in_qt_doc
     { desc = "Open Qt docs", silent = true })
 map('n', '<leader>kr', function() vim.fn.jobstart({ "xdg-open", search_in_cppreference() }, { detach = true }) end,
     { desc = "Open cppreference", silent = true })
+
+map('n', "<leader>uc", ":ToggleListChars<cr>", { desc = "Toggle List Chars" })
+map('n', "<leader>bf", ":tabnew %<cr>", { desc = "Buffer fullscreen" })

@@ -7,4 +7,10 @@ return {
         end,
         ft = "tidal",
     },
+
+    {
+        "madskjeldgaard/vim-norns",
+        config = function()
+        end
+    }
 }

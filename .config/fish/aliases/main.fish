@@ -98,4 +98,5 @@ alias grabmp3 'yt-dlp --no-playlist -x --audio-format mp3 -o "~/Samples/DropZone
 
 alias update-all 'yay -Syu --needed --noconfirm'
 alias y 'cliphist'
+alias flush 'reset'
 

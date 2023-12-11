@@ -258,6 +258,7 @@ return {
         cmd = "Telescope",
         keys = {
             { "<leader>ff", function() return require("telescope.builtin").find_files() end,               desc = "Files" },
+            { "<leader>fa", function() return require('telescope').extensions.live_grep_args.live_grep_args() end,          desc = "With Args" },
             { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",                 desc = "Buffers" },
             { "<leader>fw", function() return require("telescope.builtin").live_grep({
                 cwd = require("telescope.utils").buffer_dir()
@@ -290,6 +291,10 @@ return {
                     require("telescope").load_extension("fzf")
                 end,
             },
+            {
+                "nvim-telescope/telescope-live-grep-args.nvim",
+                version = "^1.0.0",
+            }
         },
         opts = function()
             -- File and text search in hidden files and directories
@@ -297,6 +302,7 @@ return {
             -- Clone the default Telescope configuration
             local vimgrep_arguments = { unpack(ts_conf.values.vimgrep_arguments) }
             local actions = require("telescope.actions")
+            require("telescope").load_extension("live_grep_args")
 
             -- I want to search in hidden/dot files.
             table.insert(vimgrep_arguments, "--hidden")
@@ -351,6 +357,27 @@ return {
                 "<leader>hf",
                 ":Telescope harpoon marks<cr>",
                 desc = "[H]arpoon Finder",
+            },
+            {
+                "<leader>h1",
+                function ()
+                    require("harpoon.ui").nav_file(1)
+                end,
+                desc = "[H]arpoon Goto 1",
+            },
+            {
+                "<leader>h2",
+                function ()
+                    require("harpoon.ui").nav_file(2)
+                end,
+                desc = "[H]arpoon Goto 2",
+            },
+            {
+                "<leader>h3",
+                function ()
+                    require("harpoon.ui").nav_file(3)
+                end,
+                desc = "[H]arpoon Goto 3",
             },
         },
         dependencies = {
