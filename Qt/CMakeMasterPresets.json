@@ -2,49 +2,109 @@
   "version": 6,
   "configurePresets": [
     {
-      "name": "debug",
-      "description": "Qt Debug Development Build for Master Repo",
+      "name": "base",
+      "hidden": true,
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/debug",
       "cacheVariables": {
-        "WARNINGS_ARE_ERRORS": "OFF",
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_C_COMPILER": "gcc",
-        "CMAKE_CXX_COMPILER": "g++",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "BUILD_SHARED_LIBS": true,
+        "WARNINGS_ARE_ERRORS": false,
 
-        "BUILD_SHARED_LIBS": "ON",
-        "FEATURE_developer_build": "ON",
-        "FEATURE_sanitize_address": "OFF",
-        "FEATURE_sanitize_undefined": "OFF",
-        "FEATURE_processenvironment": "ON",
-        "DFEATURE_freetype": "ON",
-        "DFEATURE_harfbuzz": "ON",
-        "DFEATURE_system_freetype": "OFF",
-        "DFEATURE_system_harfbuzz": "OFF",
-        "DFEATURE_system_sqlite": "OFF",
-        "DFEATURE_system_zlib": "OFF",
+        "FEATURE_developer_build": true,
+        "FEATURE_processenvironment": true,
+        "FEATURE_freetype": true,
+        "FEATURE_harfbuzz": true,
+        "FEATURE_system_freetype": false,
+        "FEATURE_system_harfbuzz": false,
+        "FEATURE_system_sqlite": false,
+        "FEATURE_system_zlib": false,
 
-        "QT_NAMESPACE": "A",
-        "QT_UNITY_BUILD": "OFF",
+        "QT_UNITY_BUILD": false,
         "QT_UNITY_BUILD_BATCH_SIZE": "64",
-        "QT_USE_CCACHE": "ON",
+        "QT_USE_CCACHE": true,
 
-        "BUILD_qtwebengine": "OFF",
-        "QT_ALLOW_DOWNLOAD": "ON",
+        "QT_BUILD_TESTS": true,
+        "QT_BUILD_EXAMPLES": true,
+        "QT_BUILD_BENCHMARKS": false,
+        "QT_BUILD_MANUAL_TESTS": false,
+        "QT_BUILD_TESTS_BY_DEFAULT": false,
+        "QT_BUILD_EXAMPLES_BY_DEFAULT": false,
+        "QT_BUILD_EXAMPLES_AS_EXTERNAL": false
+      }
+    },
+    {
+      "name": "gcc",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "clang",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
 
-        "QT_BUILD_TESTS": "OFF",
-        "QT_BUILD_EXAMPLES": "OFF",
-        "QT_BUILD_BENCHMARKS": "OFF",
-        "QT_BUILD_MANUAL_TESTS": "OFF",
-        "QT_BUILD_TESTS_BY_DEFAULT": "OFF",
-        "QT_BUILD_EXAMPLES_BY_DEFAULT": "OFF",
-        "QT_BUILD_EXAMPLES_AS_EXTERNAL": "OFF"
-      },
-      "environment": {
-        "QDOC_SHOW_INTERNAL": "1"
+
+    {
+      "name": "debug",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_INTERPROCEDURAL_OPTIMIZATION": true,
+        "FEATURE_optimize_full": true
+      }
+    },
+
+
+    {
+      "name": "debug-gcc",
+      "inherits": ["gcc", "debug"],
+      "description": "GCC Debug Build",
+      "binaryDir": "${sourceDir}/build/debug-gcc",
+      "cacheVariables": {
+          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/debug-gcc/"
+      }
+    },
+    {
+      "name": "release-gcc",
+      "inherits": ["gcc", "release"],
+      "description": "GCC Release Build",
+      "binaryDir": "${sourceDir}/build/release-gcc",
+      "cacheVariables": {
+          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/release-gcc/"
+      }
+    },
+    {
+      "name": "debug-clang",
+      "inherits": ["clang", "debug"],
+      "description": "Clang Debug Build",
+      "binaryDir": "${sourceDir}/build/debug-clang",
+      "cacheVariables": {
+          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/debug-clang/"
+      }
+    },
+    {
+      "name": "release-clang",
+      "inherits": ["clang", "release"],
+      "description": "Clang Release Build",
+      "binaryDir": "${sourceDir}/build/release-clang",
+      "cacheVariables": {
+          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/release-clang/"
       }
     }
   ]
 }
-
