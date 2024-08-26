@@ -1,0 +1,189 @@
+{
+  "layer": "top",
+  "include": "~/.config/waybar/custom/modules",
+  "margin": "7",
+  "modules-left": [
+    "custom/launcher",
+    "clock",
+    "custom/seperator",
+    "user",
+    "cpu",
+    "temperature",
+    "memory",
+    "disk",
+    "battery",
+    "custom/seperator",
+    "tray"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "backlight",
+    "pulseaudio#output",
+    "pulseaudio#input",
+    "group/group-power"
+  ],
+
+  "memory": {
+    "interval": 30,
+    "format": "<span color='#8D8A7C'></span>  <b>{used:0.1f}G</b>",
+    "max-length": 10
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "<span color='#8D8A7C'></span>  <b>{usage}%</b>"
+  },
+  "clock": {
+    "format": "<b>{:%H:%M}</b>",
+    "format-alt": "<b>{:%a.%d,%b}</b>",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#d1c7b7'><b>{}</b></span>",
+        "days": "<span color='#d1c7b7'><b>{}</b></span>",
+        "weeks": "<span color='#d1c7b7'><b>W{}</b></span>",
+        "weekdays": "<span color='#c0a06e'><b>{}</b></span>",
+        "today": "<span color='#b9615c'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "temperature": {
+    // "thermal-zone": 0,
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 90,
+    "format-critical": "<span color='#b9615c'></span> <b>{temperatureC}°C</b>",
+    "format": "<span color='#8D8A7C'></span> <b>{temperatureC}°C</b>"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "<span color='#8D8A7C'></span>  <b>{percentage_used}%</b>",
+    "path": "/"
+  },
+  "user": {
+    "format": "<span color='#8D8A7C'>↑</span> <b>{work_H}:{work_M}m</b>",
+    "interval": 60,
+    "height": 30,
+    "width": 30,
+    "icon": true
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<b>{icon} {capacity}%</b>",
+    "format-alt": "<b>{icon}</b>",
+    "format-charging": "<b>{icon}⚡{capacity}%</b>",
+    "format-icons": [" ", " ", " ", " "],
+    "max-length": 25,
+    "tooltip": true
+  },
+
+  "hyprland/workspaces": {
+    "format": "<b>{name}</b>",
+    "format-icons": {
+      "urgent": "󰗖",
+      "default": ""
+    }
+  },
+
+  "backlight": {
+    "format": "{icon} <b>{percent}</b>",
+    "tooltip": false,
+    "format-icons": ["󰪞", "󰪡", "󰪥"]
+  },
+
+  "hyprland/language": {
+    "format": "<span color='#8D8A7C'></span>  {}",
+    "format-en": "EN",
+    "format-de": "DE"
+  },
+
+  "pulseaudio#output": {
+    "format": "<span color='#8D8A7C'>{icon}</span>  <b>{volume}</b>",
+    "format-bluetooth": "<span color='#8D8A7C'>󰗾 </span> <b>{volume}</b>",
+    "format-bluetooth-muted": "<span color='#8D8A7C'>󰗿</span>",
+    "tooltip-format": "{desc}",
+    "format-muted": "<span size='large'>󰝟</span>    ",
+    "on-click": "pavucontrol -t 3",
+    "on-click-right": "amixer set Master toggle",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+    }
+  },
+  "pulseaudio#input": {
+    "format-source": "<span color='#8D8A7C'></span> <b>{volume}</b>",
+    "format-source-muted": "   ",
+    "format": "{format_source}",
+    "on-click": "pacucontrol -t 4",
+    "on-click-right": "amixer set Capture toggle",
+    "on-scroll-up": "amixer set Capture 5%+",
+    "on-scroll-down": "amixer set Capture 5%-",
+    "tooltip": false
+    },
+
+  "bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click" : "blueman-manager"
+  },
+
+  "network": {
+        "tooltip": true,
+        "format-wifi": "<span color='#8D8A7C'></span>  {bandwidthDownBytes} <span color='#8D8A7C'></span>  {bandwidthUpBytes}",
+        "format-ethernet": "<span color='#8D8A7C'></span>  {bandwidthDownBytes} <span color='#8D8A7C'></span>  {bandwidthUpBytes}",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": " 󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 10,
+        "on-click": ""
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 4
+  },
+
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": true
+    },
+    "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot",
+    ]
+  }
+}

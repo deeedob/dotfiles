@@ -1,0 +1,159 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "warnings",
+      "hidden": true,
+      "cacheVariables": {
+        "COMPILE_WARNINGS_AS_ERRORS": "ON",
+        "CMAKE_C_FLAGS": "-Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wformat=2",
+        "CMAKE_CXX_FLAGS": "-Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wformat=2"
+      }
+    },
+    {
+      "name": "asan",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "-fsanitize=address -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-fsanitize=address -fno-omit-frame-pointer",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=address"
+      }
+    },
+    {
+      "name": "ubsan",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "-fsanitize=undefined -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-fsanitize=undefined -fno-omit-frame-pointer",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=undefined"
+      }
+    },
+    {
+      "name": "tsan",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "-fsanitize=thread -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-fsanitize=thread -fno-omit-frame-pointer",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=thread"
+      }
+    },
+    {
+      "name": "msan",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "-fsanitize=memory -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-fsanitize=memory -fno-omit-frame-pointer",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=memory"
+      }
+    },
+    {
+      "name": "coverage",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "--coverage -fprofile-arcs -ftest-coverage",
+        "CMAKE_CXX_FLAGS": "--coverage -fprofile-arcs -ftest-coverage"
+      }
+    },
+    {
+      "name": "debug",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "gcc",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "clang",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "debug-gcc",
+      "inherits": ["gcc", "debug", "warnings"],
+      "description": "GCC Debug Build",
+      "binaryDir": "${sourceDir}/build/debug-gcc"
+    },
+    {
+      "name": "release-gcc",
+      "inherits": ["gcc", "release", "warnings"],
+      "description": "GCC Release Build",
+      "binaryDir": "${sourceDir}/build/release-gcc"
+    },
+    {
+      "name": "debug-clang",
+      "inherits": ["clang", "debug", "warnings"],
+      "description": "Clang Debug Build",
+      "binaryDir": "${sourceDir}/build/debug-clang"
+    },
+    {
+      "name": "release-clang",
+      "inherits": ["clang", "release", "warnings"],
+      "description": "Clang Release Build",
+      "binaryDir": "${sourceDir}/build/release-clang"
+    },
+    {
+      "name": "debug-asan",
+      "inherits": ["debug", "warnings", "asan"],
+      "description": "Debug Build with AddressSanitizer",
+      "binaryDir": "${sourceDir}/build/debug-asan"
+    },
+    {
+      "name": "debug-ubsan",
+      "inherits": ["debug", "warnings", "ubsan"],
+      "description": "Debug Build with UndefinedBehaviorSanitizer",
+      "binaryDir": "${sourceDir}/build/debug-ubsan"
+    },
+    {
+      "name": "debug-tsan",
+      "inherits": ["debug", "warnings", "tsan"],
+      "description": "Debug Build with ThreadSanitizer",
+      "binaryDir": "${sourceDir}/build/debug-tsan"
+    },
+    {
+      "name": "debug-msan",
+      "inherits": ["debug", "warnings", "msan"],
+      "description": "Debug Build with MemorySanitizer",
+      "binaryDir": "${sourceDir}/build/debug-msan"
+    },
+    {
+      "name": "debug-aubsan",
+      "inherits": ["debug", "warnings", "asan", "ubsan"],
+      "description": "Debug Build with Address + UB Sanitizer",
+      "binaryDir": "${sourceDir}/build/debug-a+ubsan"
+    },
+    {
+      "name": "debug-coverage",
+      "inherits": ["gcc", "debug", "coverage"],
+      "description": "Debug Build with Coverage",
+      "binaryDir": "${sourceDir}/build/coverage"
+    }
+
+  ]
+}

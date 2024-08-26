@@ -1,0 +1,95 @@
+#!/bin/zsh
+
+# Command wrappers
+alias cp='cp -v'
+alias mv='mv -v'
+alias rm='rm -v'
+alias ls='exa --icons --color=always'
+alias ll='ls --long --tree --level=$argv'
+alias ll='_ll() {
+  if [ ! -z "$1" ]
+    then
+      ls --long --tree --level="$1";
+    else
+      ls --long --tree --level=1;
+  fi
+  };
+  _ll'
+alias la='_la() {
+  if [ ! -z "$1" ]
+    then
+      ls --long --tree --all --level="$1";
+    else
+      ls --long --tree --all --level=1;
+  fi
+  };
+  _la'
+
+#vim
+# alias v='nvim --listen /tmp/nvimsocket'
+alias vs="nvr -cc tabedit --remote-wait +'set bufhidden=wipe'"
+alias nvim_clear_cmake="rm -rf $HOME/.cache/cmake_tools_nvim/*"
+
+# Shortcuts
+alias r='ranger'
+alias c='clear'
+alias h='history'
+alias f='fd'
+alias g='grep -i -w -n -r -I --color=always'
+alias s='kitten ssh'
+
+# Helpers
+alias untar='tar -zxvf'
+alias getpass='openssl rand -base64 20'
+alias fsize='find . -type f -exec du -ah {} + | sort -n -r | less'
+alias fmake="make -j$(nproc)"
+alias fninja="ninja -j$(nproc)"
+alias flush="printf '\033[2J\033[3J\033[1;1H'"
+alias logout="loginctl terminate-user $USER"
+
+alias virton="sudo systemctl start libvirtd.service;sudo systemctl start virtlogd.servie
+nce"
+alias virtoff="sudo systemctl stop libvirtd.service;sudo systemctl stop virtlogd.service"
+alias wifioff="sudo ip link set wlo1 down"
+alias wifion="sudo ip link set wlo1 up"
+alias copy="kitten clipboard"
+alias udevrestart="sudo udevadm control --reload-rules && sudo udevadm trigger"
+
+alias grabwav='yt-dlp --no-playlist -x --audio-format wav -o "$samples/%(title)s_%(id)s.%(ext)s"'
+
+# Web
+alias ipe=$'echo -n \"0: ext   \";curl ipinfo.io/ip;echo \"\" '
+alias ipi=$'ip -4 -o a | cut -d \'\' -f 2,7 | cut -d \'/\' -f 1'
+alias ipa='ipe;ipi'
+alias www='python3 -m http.server'
+alias ports='nmap localhost'
+alias netcon='sudo netstat -tulanp'
+
+# Tuning
+alias cpu-max='sudo tuned-adm profile latency-performance'
+alias cpu-balanced='sudo tuned-adm profile balanced'
+alias cpu-min='sudo tuned-adm profile laptop-battery-powersave'
+
+# Git aliases
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gs='git status --untracked-files=no'
+alias gb='git branch'
+alias gd='git diff'
+alias gg='git grep -i -w -n -r -I --color=always'
+alias gl='git log --oneline --decorate --graph'
+alias gll="git log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(9,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D' --date=relative"
+alias gld="git log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(9,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D' --date=human"
+
+alias gbr='git branch --show-current'
+alias gbrl='git branch --format "%(refname:short)" | awk "{print \"\033[32m\"\$1\"\033[0m\"}"'
+
+alias gundo='git reset HEAD~' # Undo the last commit (use with caution!)
+alias gsu='git pull --recurse-submodules --jobs=10' # Update submodule
+
+alias gstat="git shortlog --summary --numbered --all --no-merges"
+
+alias gr='git remote -v | awk "{print \"\033[32m\"\$1\"\033[0m\t\033[33m\"\$2\"\033[0m\"}"'
+alias grmr="git remote rm"
+alias grma="git remote add"

@@ -1,0 +1,41 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "debug",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/qt/qt6/build/debug/qtbase/lib/cmake",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "COMPILE_WARNINGS_AS_ERRORS": "ON"
+      }
+    },
+    {
+        "name": "a+ubsan",
+        "hidden": true,
+        "cacheVariables": {
+            "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -Wall -pedantic",
+            "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -Wall -pedantic",
+            "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined"
+        }
+    },
+    {
+      "name": "gcc",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "clang",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build/debug-clang",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    }
+  ]
+}

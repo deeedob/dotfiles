@@ -1,0 +1,97 @@
+CompileFlags:
+  Add:
+    [
+      -xc++,                    # Treat code as C++
+      -std=c++23,
+      -D__cpp_concepts=202002L, # clang does not have this defined.. for gcc usage >= c++20
+      -Wall,
+      -Wextra,
+      -Werror,
+      -Wshadow,
+      -Wnon-virtual-dtor,
+      -Wold-style-cast,
+      -Wcast-align,
+      -Wunused,
+      -Woverloaded-virtual,
+      -Wpedantic,
+      -Wconversion,
+      -Wsign-conversion,
+      -Wnull-dereference,
+      -Wdouble-promotion,
+      -Wformat=2,
+      -Wimplicit-fallthrough,
+      -I/usr/lib/clang/17/include
+      # -I/usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include
+    ]
+
+# https://clang.llvm.org/extra/clang-tidy/checks/list.html
+Diagnostics:
+  ClangTidy:
+    Add:
+      [ '*' ]
+    Remove:
+      [
+        bugprone-unchecked-optional-access, # clang-tidy gets stuck on clangd17 should be fixed in 18
+        abseil-*,
+        altera-*,
+        android-*,
+        fuchsia-*,
+        google-*,
+        llvm*,
+        zircon-*,
+        modernize-use-trailing-return-type,
+        cppcoreguidelines-non-private-member-variables-in-classes,
+        misc-non-private-member-variables-in-classes,
+        readability-identifier-length,
+        readability-else-after-return,
+        readability-static-accessed-through-instance,
+        readability-redundant-access-specifiers,
+        readability-braces-around-statements,
+        hicpp-braces-around-statements,
+        readability-uppercase-literal-suffix,
+        hicpp-uppercase-literal-suffix,
+        bugprone-easily-swappable-parameters,
+        readability-function-cognitive-complexity,
+
+        cppcoreguidelines-avoid-magic-numbers,
+        readability-magic-numbers
+        # readability-avoid-const-params-in-decls,
+      ]
+    # https://clang.llvm.org/extra/clang-tidy/checks/readability/identifier-naming.html
+    CheckOptions:
+      readability-identifier-naming.NamespaceCase: aNy_CasE
+      readability-identifier-naming.ClassCase: CamelCase
+      readability-identifier-naming.StructCase: CamelCase
+      readability-identifier-naming.FunctionCase: aNy_CasE
+      readability-identifier-naming.VariableCase: camelBack
+      readability-identifier-naming.ClassMemberCase: camelBack
+      readability-identifier-naming.TemplateParameterCase: CamelCase
+      readability-identifier-naming.GlobalVariableCase: camelBack
+      readability-identifier-naming.ConstexprVariableCase: CamelCase
+      # readability-identifier-naming.ClassMemberPrefix: m_
+      # readability-identifier-naming.PrivateMemberPrefix: m_
+      # readability-identifier-naming.ProtectedMemberPrefix: m_
+      # readability-identifier-naming.EnumConstantCase: CamelCase
+      # readability-identifier-naming.EnumConstantPrefix:
+      # readability-identifier-naming.ConstexprVariablePrefix: M_
+      # readability-identifier-naming.GlobalVariablePrefix: g_
+      # readability-identifier-naming.GlobalConstantCase: UPPER_CASE
+      # readability-identifier-naming.GlobalConstantPrefix:
+      # readability-identifier-naming.MemberConstantCase: CamelCase
+      # readability-identifier-naming.MemberConstantPrefix:
+      # readability-identifier-naming.StaticConstantCase: camelBack
+      # readability-identifier-naming.StaticConstantPrefix:
+      readability-implicit-bool-conversion.AllowIntegerConditions: 1
+      readability-implicit-bool-conversion.AllowPointerConditions: 1
+      readability-function-cognitive-complexity.IgnoreMacros: 1
+
+  UnusedIncludes: Strict
+
+InlayHints:
+  Designators: true
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+
+Hover:
+  ShowAKA: true

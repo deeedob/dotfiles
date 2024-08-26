@@ -1,0 +1,32 @@
+{
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "wofi --show drun",
+    "tooltip": false
+  },
+  "custom/seperator": {
+    "format": "<span color='#8D8A7C'>|</span>",
+    "tooltip": false
+  },
+
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "loginctl terminate-user $USER"
+  },
+  "custom/lock": {
+      "format": "󰍁",
+      "tooltip": false,
+      "on-click": "pidof hyprlock || hyprlock --immediate"
+  },
+  "custom/reboot": {
+      "format": "󰜉",
+      "tooltip": false,
+      "on-click": "reboot"
+  },
+  "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "shutdown now"
+  }
+}

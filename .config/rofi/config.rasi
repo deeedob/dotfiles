@@ -1,0 +1,10 @@
+configuration {
+	modi:                       "drun,window";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-window:             "WINDOW";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
+}
+
+@theme "~/.config/rofi/themes/green.rasi"

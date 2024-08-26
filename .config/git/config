@@ -1,0 +1,69 @@
+[user]
+	email = dennis.ob@protonmail.com
+	name = deeedob
+	username = deeedob
+[includeIf "gitdir:**/Qt/"]
+	path = ~/Qt/.gitconfig
+[core]
+	defaultBranch = main
+	autocrlf = input
+	pager = delta
+	excludefile = ~/.config/git/gitignore_global
+	whitespace = trailing-space,-space-before-tab,cr-at-eol
+	editor = nvr -cc tabedit --remote-wait +'set bufhidden=wipe'
+[interactive]
+    diffFilter = delta --color-only
+[diff]
+    tool = nvr
+[difftool]
+	prompt = false
+[difftool "nvr"]
+    cmd = nvr -s -d $LOCAL $REMOTE
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = nvr
+[mergetool]
+	prompt = false
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+[mergetool "nvr"]
+    cmd = nvr -s -d $LOCAL $BASE $REMOTE $MERGED -c 'wincmd J | wincmd ='
+[commit]
+	template = ~/.config/git/git-commit-template
+[alias]
+	ci = commit
+	st = status
+	sub = submodule update --remote --merge
+	di = diff
+	co = checkout
+	ann = blame
+[credential]
+	helper = cache --timeout=36000
+# Enforce SSH
+; [url "ssh://git@github.com/"]
+;   insteadOf = https://github.com/
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	stat = true
+[color]
+	ui = auto
+[web]
+	browser = firefox
+[grep]
+	lineNumber = true
+[safe]
+	directory = /home/shared/Coding/repos/blockhead
+	directory = /home/shared/Coding/repos/stable-diffusion-webui
+	directory = /home/shared/Coding/repos/stable-diffusion-webui/repositories/stable-diffusion-stability-ai
+[oh-my-zsh]
+	hide-dirty = 1
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main

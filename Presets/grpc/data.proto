@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package api;
+
+service PingPongService {
+    rpc UnaryCall(UnaryCallRequest) returns (UnaryCallResponse);
+    rpc ServerStreaming(ServerStreamingRequest) returns (stream ServerStreamingResponse);
+    rpc ClientStreaming(stream ClientStreamingRequest) returns (ClientStreamingResponse);
+    rpc BiDirStreaming(stream BiDirStreamingRequest) returns (stream BiDirStreamingResponse);
+}
+
+message UnaryCallRequest {
+    uint64 ping = 1;
+}
+message UnaryCallResponse {
+    uint64 pong = 1;
+}
+message ServerStreamingRequest {
+    uint64 ping = 1;
+}
+message ServerStreamingResponse {
+    uint64 pong = 1;
+}
+message ClientStreamingRequest {
+    uint64 ping = 1;
+}
+message ClientStreamingResponse {
+    uint64 pong = 1;
+}
+message BiDirStreamingRequest {
+    uint64 ping = 1;
+}
+message BiDirStreamingResponse {
+    uint64 pong = 1;
+}
+

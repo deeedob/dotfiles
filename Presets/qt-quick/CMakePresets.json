@@ -1,0 +1,34 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "debug",
+      "hidden": true,
+      "generator": "Ninja",
+      "displayName": "Debug",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/qt/qt6/build/debug/qtbase/lib/cmake",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "WARNINGS_ARE_ERRORS": "ON"
+      }
+    },
+    {
+      "name": "debug-gcc",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build/debug-gcc",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "debug-clang",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build/debug-clang",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    }
+  ]
+}
