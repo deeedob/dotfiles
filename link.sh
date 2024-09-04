@@ -4,6 +4,7 @@ ln -svrf ./Qt/CMakeMasterPresets.json ~/Qt/qt6/CMakePresets.json
 ln -svrf ./Qt/.gitconfig ~/Qt/
 ln -svrf ./Qt/setup.sh ~/Qt/
 ln -svrf ./Scripts/ ~/
+ln -svrf ./Bin/ ~/
 
 ln -svrf .zshenv ~/
 ln -svrf .config/* ~/.config/

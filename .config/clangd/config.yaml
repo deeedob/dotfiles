@@ -31,7 +31,8 @@ Diagnostics:
       [ '*' ]
     Remove:
       [
-        bugprone-unchecked-optional-access, # clang-tidy gets stuck on clangd17 should be fixed in 18
+        # bugprone-unchecked-optional-access, # clang-tidy gets stuck on clangd17 should be fixed in 18
+        cppcoreguidelines-owning-memory, # clangd crash https://github.com/llvm/llvm-project/issues/106444
         abseil-*,
         altera-*,
         android-*,
@@ -54,7 +55,7 @@ Diagnostics:
         readability-function-cognitive-complexity,
 
         cppcoreguidelines-avoid-magic-numbers,
-        readability-magic-numbers
+        readability-magic-numbers,
         # readability-avoid-const-params-in-decls,
       ]
     # https://clang.llvm.org/extra/clang-tidy/checks/readability/identifier-naming.html
