@@ -1,0 +1,3 @@
+[Default Applications]
+application/javascript=nvim.desktop
+text/plain=nvim.desktop

@@ -24,6 +24,7 @@ alias la='_la() {
   fi
   };
   _la'
+alias cat='bat'
 
 #vim
 # alias v='nvim --listen /tmp/nvimsocket'

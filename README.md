@@ -5,5 +5,5 @@ My [arch](https://archlinux.org/) based dotfiles for the
 
 ```bash
 git clone -b hyprland https://github.com/deeedob/dotfiles.git $HOME/Dotfiles --depth 1
-git submodule update --init
+git submodule update --init --recursive
 ```

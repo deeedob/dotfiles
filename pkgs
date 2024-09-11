@@ -2,10 +2,10 @@ hyprland-git
 hyprpaper
 hyprpicker
 hyprshot
-xdg-desktop-portal-hyprland
-hyprcursor
 hypridle
 hyprlock
+xdg-desktop-portal-hyprland
+waybar
 
 wl-clipboard
 ttf-nerd-fonts-symbols-mono
@@ -36,14 +36,18 @@ poppler
 
 bluez
 bluez-utils
+blueman
 nautilus-bluetooth
 gnome-bluetooth-3.0
 
+keepassxc
 nextcloud-client
 python-nautilus
 
 obs-studio
 obs-backgroundremoval
+
+betterbird-bin
 
 gimp
 
@@ -81,10 +85,12 @@ lazygit
 ffmpegthumbnailer
 unrar
 p7zip
+unzip
 openssh
-lldb
+fzf
+bat
 
-realtime-priviliges
+realtime-privileges
 
 spectral-compressor-vst3-git
 chowmultitool-bin

@@ -413,7 +413,7 @@ handle_mime() {
             exit 5;;
 
         ## Text
-        text/* | */xml)
+        text/* | application/javascript | */xml)
             ## Syntax highlight
             if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
                 exit 2

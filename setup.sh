@@ -2,8 +2,8 @@
 
 packages=$(grep -v '^\s*$' pkgs | tr '\n' ' ')
 
-echo "installing ${packages}"
-yay -Syu --needed --noconfirm "${packages}"
+echo "Running CMD: yay -Syu --needed --noconfirm ${packages}"
+yay -Syu --needed --noconfirm ${packages}
 
 services="docker.socket bluetooth.service"
 uservices="ssh-agent.service"

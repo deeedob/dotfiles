@@ -1,0 +1,16 @@
+#!/bin/bash
+
+LAYOUT=$(hyprctl -j getoption general:layout | jq '.str' | sed 's/"//g')
+
+case $LAYOUT in
+"master")
+  hyprctl keyword general:layout dwindle
+  notify-send -i "Layout" "Dwindle"
+  ;;
+"dwindle")
+  hyprctl keyword general:layout master
+  notify-send -i "Layout" "Master"
+  ;;
+*) ;;
+
+esac
