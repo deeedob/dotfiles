@@ -4,7 +4,7 @@
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
-alias ls='exa --icons --color=always'
+alias ls='eza --icons --color=always'
 alias ll='ls --long --tree --level=$argv'
 alias ll='_ll() {
   if [ ! -z "$1" ]
@@ -42,8 +42,8 @@ alias s='kitten ssh'
 alias untar='tar -zxvf'
 alias getpass='openssl rand -base64 20'
 alias fsize='find . -type f -exec du -ah {} + | sort -n -r | less'
-alias fmake="make -j$(nproc)"
-alias fninja="ninja -j$(nproc)"
+alias fmake="make -j$(nproc --ignore=1)"
+alias fninja="ninja -j$(nproc --ignore=1)"
 alias flush="printf '\033[2J\033[3J\033[1;1H'"
 alias logout="loginctl terminate-user $USER"
 
@@ -86,7 +86,7 @@ alias gbr='git branch --show-current'
 alias gbrl='git branch --format "%(refname:short)" | awk "{print \"\033[32m\"\$1\"\033[0m\"}"'
 
 alias gundo='git reset HEAD~' # Undo the last commit (use with caution!)
-alias gsu='git pull --recurse-submodules --jobs=10' # Update submodule
+alias gsu='git submodule update' # Update submodule
 
 alias gstat="git shortlog --summary --numbered --all --no-merges"
 

@@ -1,4 +1,5 @@
 # PATH
+export PATH="/usr/lib/ccache/bin:$PATH" # always use ccache
 export PATH="$HOME/Bin/:$PATH"
 export PATH="$HOME/Scripts/:$PATH"
 
@@ -48,7 +49,9 @@ export SAVEHIST=10000
 export MANPAGER='nvim +Man!'
 
 # Utility
-export MAKEFLAGS="-j $(nproc --ignore=1)"
+export MAKEFLAGS="-j $(nproc --ignore=2)"
+export CPPFLAGS="${CPPFLAGS} -fdiagnostics-color=always"
+export CMAKE_GENERATOR="Ninja"
 export QDOC_SHOW_INTERNAL="1"
 
 # fzf

@@ -25,8 +25,10 @@ dunst
 libnotify
 
 zsh
-zsh-syntax-highlighting
+zsh-completions
+zsh-fast-syntax-highlighting
 zsh-autosuggestions
+zsh-history-substring-search
 
 ranger
 python-pillow
@@ -54,11 +56,24 @@ wireplumber
 gtk-engine-murrine
 gnome-themes-extra
 
+gstreamer
+gst-plugins-base
+gst-plugins-base-libs
+gd
+
+clang
+lld
+lldb
+llvm
+libc++
+ccache
+valgrind
+jemalloc
+
 neovim-remote
 fd
-clang
 ripgrep
-exa
+eza
 btop
 zoxide
 git-delta
@@ -68,3 +83,14 @@ unrar
 p7zip
 openssh
 lldb
+
+realtime-priviliges
+
+spectral-compressor-vst3-git
+chowmultitool-bin
+chowbyod-bin
+chowtapemodel-bin
+chowmatrix-bin
+chowcentaur-bin
+chowkick-bin
+chowphaser-bin

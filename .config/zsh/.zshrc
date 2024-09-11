@@ -1,7 +1,17 @@
 #!/usr/bin/env zsh
 # https://thevaluable.dev/zsh-install-configure-mouseless/
 
-fpath=($ZDOTDIR/plugins $fpath)
+# Load additional completions from zsh-completions
+fpath=(/usr/share/zsh/site-functions/ $fpath)
+
+# +---------+
+# | PLUGINS |
+# +---------+
+
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+fast-theme -q sv-orple
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # +------------+
 # | NAVIGATION |
@@ -114,15 +124,15 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd '^v' edit-command-line
 
-# +---------------------+
-# | SYNTAX HIGHLIGHTING |
-# +---------------------+
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # +---------+
 # | VARIOUS |
 # +---------+
 
-eval "$(zoxide init --cmd cd zsh)"
+# fixes annoying completion duplicates for cd
+# https://github.com/ajeetdsouza/zoxide/issues/491#issuecomment-2137626085
+eval "$(zoxide init --cmd cd zsh | sed 's/_files/_cd/g')"

@@ -2,9 +2,6 @@
 # | General |
 # +---------+
 
-# Load more completions
-fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath)
-
 # Should be called before compinit
 zmodload zsh/complist
 
@@ -21,7 +18,7 @@ bindkey -M menuselect '^xh' accept-and-hold                # Hold
 bindkey -M menuselect '^xn' accept-and-infer-next-history  # Next
 bindkey -M menuselect '^xu' undo                           # Undo
 
-autoload -U compinit; compinit
+autoload -U compinit; compinit -u
 _comp_options+=(globdots) # With hidden files
 
 # Only work with the Zsh function vman

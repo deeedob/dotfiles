@@ -7,24 +7,28 @@
       "generator": "Ninja",
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "BUILD_SHARED_LIBS": true,
-        "WARNINGS_ARE_ERRORS": false,
+        "CMAKE_COLOR_DIAGNOSTICS": true,
+        "CMAKE_WARNINGS_ARE_ERRORS": false,
 
+        "QT_BUILD_SUBMODULES": "qtbase;qtdeclarative;qttools;qtimageformats;qtlanguageserver;qtshadertools;qtsvg;qtmultimedia;qtwayland;qttools",
+        "BUILD_SHARED_LIBS": true,
         "FEATURE_developer_build": true,
         "FEATURE_processenvironment": true,
         "FEATURE_freetype": true,
         "FEATURE_harfbuzz": true,
-        "FEATURE_system_freetype": false,
+        "FEATURE_fontconfig": true,
+        "FEATURE_system_freetype": true,
         "FEATURE_system_harfbuzz": false,
         "FEATURE_system_sqlite": false,
         "FEATURE_system_zlib": false,
+        "QLITEHTML_USE_SYSTEM_LITEHTML": false,
 
         "QT_UNITY_BUILD": false,
         "QT_UNITY_BUILD_BATCH_SIZE": "64",
         "QT_USE_CCACHE": true,
 
-        "QT_BUILD_TESTS": true,
-        "QT_BUILD_EXAMPLES": true,
+        "QT_BUILD_TESTS": false,
+        "QT_BUILD_EXAMPLES": false,
         "QT_BUILD_BENCHMARKS": false,
         "QT_BUILD_MANUAL_TESTS": false,
         "QT_BUILD_TESTS_BY_DEFAULT": false,
@@ -45,10 +49,24 @@
       "hidden": true,
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++"
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++",
+        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
+
+        "LLVM_DIR": "~/Libs/release-clang/lib/cmake/llvm",
+        "Clang_DIR": "~/Libs/release-clang/lib/cmake/clang",
+        "FEATURE_clang": true
       }
     },
-
+    {
+        "name": "asanub",
+        "hidden": true,
+        "cacheVariables": {
+            "FEATURE_sanitize_address": true,
+            "FEATURE_sanitize_undefined": true
+        }
+    },
 
     {
       "name": "debug",
@@ -69,14 +87,13 @@
       }
     },
 
-
     {
       "name": "debug-gcc",
       "inherits": ["gcc", "debug"],
       "description": "GCC Debug Build",
       "binaryDir": "${sourceDir}/build/debug-gcc",
       "cacheVariables": {
-          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/debug-gcc/"
+          "CMAKE_PREFIX_PATH": "~/Libs/debug-gcc/"
       }
     },
     {
@@ -85,16 +102,26 @@
       "description": "GCC Release Build",
       "binaryDir": "${sourceDir}/build/release-gcc",
       "cacheVariables": {
-          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/release-gcc/"
+          "CMAKE_PREFIX_PATH": "~/Libs/release-gcc/"
       }
     },
+
     {
       "name": "debug-clang",
       "inherits": ["clang", "debug"],
       "description": "Clang Debug Build",
       "binaryDir": "${sourceDir}/build/debug-clang",
       "cacheVariables": {
-          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/debug-clang/"
+          "CMAKE_PREFIX_PATH": "~/Libs/debug-clang/"
+      }
+    },
+    {
+      "name": "debug-asanub-clang",
+      "inherits": ["debug", "asanub", "clang"],
+      "description": "Clang Release Build",
+      "binaryDir": "${sourceDir}/build/debug-asanub-clang",
+      "cacheVariables": {
+          "CMAKE_PREFIX_PATH": "~/Libs/debug-asanub-clang/"
       }
     },
     {
@@ -103,7 +130,7 @@
       "description": "Clang Release Build",
       "binaryDir": "${sourceDir}/build/release-clang",
       "cacheVariables": {
-          "CMAKE_PREFIX_PATH": "~/Libs/install/grpc/release-clang/"
+          "CMAKE_PREFIX_PATH": "~/Libs/release-clang/"
       }
     }
   ]

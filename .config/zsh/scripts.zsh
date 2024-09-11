@@ -43,6 +43,7 @@ _ex() {
         *.rar)      7z x $1         ;; # require p7zip
         *.iso)      7z x $1         ;; # require p7zip
         *.Z)        uncompress $1   ;;
+        *.rpm)      bsdtar xf $1    ;;
         *)          echo "'$1' cannot be extracted" ;;
     esac
 }

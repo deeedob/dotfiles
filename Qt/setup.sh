@@ -19,5 +19,5 @@ done
 
 read -rp "Do you want to install the dependencies? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
-    yay -S --needed --noconfirm lttng-ust libxcb xdb-proto xcb-util xcb-util-image xcb-util-wm libxi renderdoc-bin mysql postgresql oracle-instantclient-sdk unixodbc ccache mariadb llvm gperf python-html5lib
+    yay -S --needed --noconfirm lttng-ust libxcb xdb-proto xcb-util xcb-util-image xcb-util-wm libxi renderdoc-bin mysql postgresql oracle-instantclient-sdk unixodbc ccache mariadb llvm gperf python-html5lib fontconfig openxr libwmf
 fi
