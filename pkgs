@@ -54,7 +54,12 @@ gimp
 docker
 docker-compose
 
+realtime-privileges
 pipewire
+pipewire-audio
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
 wireplumber
 
 gtk-engine-murrine
@@ -89,8 +94,7 @@ unzip
 openssh
 fzf
 bat
-
-realtime-privileges
+man-db
 
 spectral-compressor-vst3-git
 chowmultitool-bin
