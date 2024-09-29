@@ -52,7 +52,7 @@ imgtojpg() {
     for file in "$@"
     do
         local filename=${file%\.*}
-        convert -quality 100 $file "${filename}.jpg"
+        magick -quality 100 $file "${filename}.jpg"
     done
 }
 
@@ -60,7 +60,7 @@ imgtopng() {
     for file in "$@"
     do
         local filename=${file%\.*}
-        convert -quality 100 $file "${filename}.png"
+        magick -quality 100 $file "${filename}.png"
     done
 }
 

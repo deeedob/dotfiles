@@ -43,6 +43,7 @@ gnome-bluetooth-3.0
 keepassxc
 nextcloud-client
 python-nautilus
+czkawka-gui-bin
 
 obs-studio
 obs-backgroundremoval
@@ -95,6 +96,7 @@ openssh
 fzf
 bat
 man-db
+pv
 
 spectral-compressor-vst3-git
 chowmultitool-bin

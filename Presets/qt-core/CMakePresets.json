@@ -2,23 +2,14 @@
   "version": 6,
   "configurePresets": [
     {
-      "name": "debug",
+      "name": "base",
       "hidden": true,
       "generator": "Ninja",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/qt/qt6/build/debug/qtbase/lib/cmake",
-        "CMAKE_BUILD_TYPE": "Debug",
-        "COMPILE_WARNINGS_AS_ERRORS": "ON"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_COLOR_DIAGNOSTICS": true,
+        "CMAKE_WARNINGS_ARE_ERRORS": true
       }
-    },
-    {
-        "name": "a+ubsan",
-        "hidden": true,
-        "cacheVariables": {
-            "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -Wall -pedantic",
-            "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -Wall -pedantic",
-            "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined"
-        }
     },
     {
       "name": "gcc",
@@ -30,11 +21,103 @@
     },
     {
       "name": "clang",
-      "inherits": "debug",
-      "binaryDir": "${sourceDir}/build/debug-clang",
+      "hidden": true,
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++"
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++",
+        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld"
+      }
+    },
+    {
+      "name": "asanub",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined"
+      }
+    },
+
+    {
+      "name": "debug",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+
+    {
+      "name": "debug-gcc",
+      "inherits": ["gcc", "debug"],
+      "description": "GCC Debug Build",
+      "binaryDir": "${sourceDir}/build/debug-gcc",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-gcc/;~/Libs/debug-gcc/"
+      }
+    },
+    {
+      "name": "debug-asanub-gcc",
+      "inherits": ["gcc", "debug", "asanub"],
+      "description": "Clang Release Build",
+      "binaryDir": "${sourceDir}/build/debug-asanub-clang",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-asanub-gcc/;~/Libs/debug-asanub-gcc/"
+      }
+    },
+    {
+      "name": "release-gcc",
+      "inherits": ["gcc", "release"],
+      "description": "GCC Release Build",
+      "binaryDir": "${sourceDir}/build/release-gcc",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/release-gcc/;~/Libs/release-gcc/"
+      }
+    },
+
+    {
+      "name": "debug-clang",
+      "inherits": ["clang", "debug"],
+      "description": "Clang Debug Build",
+      "binaryDir": "${sourceDir}/build/debug-clang",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-clang/;~/Libs/debug-clang/",
+        "QT_PROTOBUF_CONFORMANCE_TEST_RUNNER": "~/Libs/src/grpc/build/debug-clang/third_party/protobuf/conformance_test_runner"
+      }
+    },
+    {
+      "name": "debug-asanub-clang",
+      "inherits": ["debug", "clang"],
+      "description": "Clang Release Build",
+      "binaryDir": "${sourceDir}/build/debug-asanub-clang",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -DGRPC_ASAN_SUPPRESSED",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++ -fsanitize=address,undefined -fno-omit-frame-pointer -DGRPC_ASAN_SUPPRESSED",
+        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined",
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-asanub-clang/qtbase/lib/cmake/;~/Libs/debug-asanub-clang/"
+      }
+    },
+    {
+      "name": "release-clang",
+      "inherits": ["clang", "release"],
+      "description": "Clang Release Build",
+      "binaryDir": "${sourceDir}/build/release-clang",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/release-clang/;~/Libs/release-clang/"
       }
     }
   ]

@@ -106,16 +106,24 @@
       "description": "Clang Debug Build",
       "binaryDir": "${sourceDir}/build/debug-clang",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-clang/;~/Libs/debug-clang/"
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-clang/;~/Libs/debug-clang/",
+        "QT_PROTOBUF_CONFORMANCE_TEST_RUNNER": "~/Libs/src/grpc/build/debug-clang/third_party/protobuf/conformance_test_runner"
       }
     },
     {
       "name": "debug-asanub-clang",
-      "inherits": ["debug", "clang"],
+      "inherits": ["debug"],
       "description": "Clang Release Build",
       "binaryDir": "${sourceDir}/build/debug-asanub-clang",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-asanub-clang/;~/Libs/debug-asanub-clang/"
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++ -fsanitize=address,undefined -fno-omit-frame-pointer",
+        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined",
+        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/debug-asanub-clang/qtbase/lib/cmake/;~/Libs/debug-asanub-clang/"
       }
     },
     {

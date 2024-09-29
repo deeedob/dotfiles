@@ -32,9 +32,6 @@ add_best_qmlls_to_path() {
 # Call the function to update the PATH
 add_best_qmlls_to_path
 
-# SSH
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
 # editor
 export EDITOR="nvim"
 export VISUAL="nvim"

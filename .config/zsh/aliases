@@ -47,6 +47,7 @@ alias fmake="make -j$(nproc --ignore=1)"
 alias fninja="ninja -j$(nproc --ignore=1)"
 alias flush="printf '\033[2J\033[3J\033[1;1H'"
 alias logout="loginctl terminate-user $USER"
+alias empty='echo -n Taking out teh trash | pv -qL 10 && rm -rf  ~/.local/share/Trash/files'
 
 alias virton="sudo systemctl start libvirtd.service;sudo systemctl start virtlogd.servie
 nce"

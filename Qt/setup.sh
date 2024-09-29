@@ -5,16 +5,15 @@ if [ ! -f "./init-repository" ]; then
     exit 1
 fi
 
-cmake_base_preset=~/dotfiles/Qt/CMakePresets.json
+cmake_base_preset=~/Dotfiles/Qt/CMakePresets.json
 if [ ! -f $cmake_base_preset ]; then
     echo "Did not find in $cmake_base_preset!"
     exit 1
 fi
 
 # print all directory names that start with qt and copy the preset file
-for dir in `find -name "qt*" -type d -maxdepth 1`; do
-    cp $cmake_base_preset $dir/CMakePresets.json
-    echo "Copied $cmake_base_preset to $dir/CMakePresets.json"
+for dir in `find -maxdepth 1 -name "qt*" -type d`; do
+    ln -svrf $cmake_base_preset $dir/CMakePresets.json
 done
 
 read -rp "Do you want to install the dependencies? [y/N] " response

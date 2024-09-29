@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO: switch to STOW? make sure folder exist at least...
+# https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+
 set -e
 
 ln -svrf ./Wallpaper/ ~/
