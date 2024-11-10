@@ -33,6 +33,9 @@ Diagnostics:
       [
         # bugprone-unchecked-optional-access, # clang-tidy gets stuck on clangd17 should be fixed in 18
         cppcoreguidelines-owning-memory, # clangd crash https://github.com/llvm/llvm-project/issues/106444
+        boost-use-ranges, # crash
+
+        bugprone-unused-return-value,
         abseil-*,
         altera-*,
         android-*,
@@ -48,11 +51,12 @@ Diagnostics:
         readability-static-accessed-through-instance,
         readability-redundant-access-specifiers,
         readability-braces-around-statements,
-        hicpp-braces-around-statements,
         readability-uppercase-literal-suffix,
-        hicpp-uppercase-literal-suffix,
-        bugprone-easily-swappable-parameters,
         readability-function-cognitive-complexity,
+        hicpp-braces-around-statements,
+        hicpp-uppercase-literal-suffix,
+        hicpp-avoid-c-arrays,
+        bugprone-easily-swappable-parameters,
 
         cppcoreguidelines-avoid-magic-numbers,
         readability-magic-numbers,

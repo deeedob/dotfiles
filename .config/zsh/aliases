@@ -57,7 +57,7 @@ alias wifion="sudo ip link set wlo1 up"
 alias copy="kitten clipboard"
 alias udevrestart="sudo udevadm control --reload-rules && sudo udevadm trigger"
 
-alias grabwav='yt-dlp --no-playlist -x --audio-format wav -o "$samples/%(title)s_%(id)s.%(ext)s"'
+alias grabwav='yt-dlp --no-playlist -x --audio-format wav -o "$HOME/Nextcloud/Samples/DropZone/grabwav/%(title)s_%(id)s.%(ext)s"'
 
 # Web
 alias ipe=$'echo -n \"0: ext   \";curl ipinfo.io/ip;echo \"\" '

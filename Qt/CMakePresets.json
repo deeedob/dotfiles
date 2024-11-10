@@ -9,6 +9,7 @@
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_COLOR_DIAGNOSTICS": true,
         "WARNINGS_ARE_ERRORS": true,
+        "QT_QML_GENERATE_QMLLS_INI": true,
 
         "BUILD_SHARED_LIBS": true,
         "FEATURE_developer_build": true,

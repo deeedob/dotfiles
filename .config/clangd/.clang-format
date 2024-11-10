@@ -141,7 +141,7 @@ IntegerLiteralSeparator:
 KeepEmptyLinesAtTheStartOfBlocks: false
 
 LambdaBodyIndentation: Signature
-LineEnding: LF # Qt is LF-only
+LineEnding: LF
 
 Macros:
   - Q_DISABLE_COPY_MOVE(x)=x;
