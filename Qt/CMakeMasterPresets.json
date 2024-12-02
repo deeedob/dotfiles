@@ -12,8 +12,8 @@
 
         "QT_BUILD_SUBMODULES": "qtbase;qtdeclarative;qttools;qtimageformats;qtlanguageserver;qtshadertools;qtsvg;qtmultimedia;qtwayland;qttools;qtdoc",
         "BUILD_qtwebengine": false,
-
         "BUILD_SHARED_LIBS": true,
+
         "FEATURE_developer_build": true,
         "FEATURE_processenvironment": true,
         "FEATURE_freetype": true,
@@ -56,13 +56,13 @@
         "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
         "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
 
-        "LLVM_DIR": "~/Libs/release-clang/lib/cmake/llvm",
-        "Clang_DIR": "~/Libs/release-clang/lib/cmake/clang",
+        "LLVM_DIR": "~/Libs/clang-release/lib/cmake/llvm",
+        "Clang_DIR": "~/Libs/clang-release/lib/cmake/clang",
         "FEATURE_clang": true
       }
     },
     {
-      "name": "asanub",
+      "name": "aub_san",
       "hidden": true,
       "cacheVariables": {
         "FEATURE_sanitize_address": true,
@@ -90,58 +90,58 @@
     },
 
     {
-      "name": "debug-gcc",
+      "name": "gcc-debug",
       "inherits": ["gcc", "debug"],
       "description": "GCC Debug Build",
-      "binaryDir": "${sourceDir}/build/debug-gcc",
+      "binaryDir": "${sourceDir}/build/gcc-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/debug-gcc/"
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug/"
       }
     },
     {
-      "name": "debug-asanub-gcc",
-      "inherits": ["gcc", "debug", "asanub"],
-      "description": "Clang Release Build",
-      "binaryDir": "${sourceDir}/build/debug-asanub-clang",
+      "name": "gcc-debug-aub_san",
+      "inherits": ["gcc", "debug", "aub_san"],
+      "description": "GCC Debug Address+UB Sanitizer Build",
+      "binaryDir": "${sourceDir}/build/gcc-debug-aub_san",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/debug-asanub-gcc/"
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug-aub_san/"
       }
     },
     {
-      "name": "release-gcc",
+      "name": "gcc-release",
       "inherits": ["gcc", "release"],
       "description": "GCC Release Build",
-      "binaryDir": "${sourceDir}/build/release-gcc",
+      "binaryDir": "${sourceDir}/build/gcc-release",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/release-gcc/"
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-release/"
       }
     },
 
     {
-      "name": "debug-clang",
+      "name": "clang-debug",
       "inherits": ["clang", "debug"],
       "description": "Clang Debug Build",
-      "binaryDir": "${sourceDir}/build/debug-clang",
+      "binaryDir": "${sourceDir}/build/clang-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/debug-clang/"
+        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug/"
       }
     },
     {
-      "name": "debug-asanub-clang",
-      "inherits": ["debug", "asanub", "clang"],
-      "description": "Clang Release Build",
-      "binaryDir": "${sourceDir}/build/debug-asanub-clang",
+      "name": "clang-debug-aub_san",
+      "inherits": ["clang", "debug", "aub_san"],
+      "description": "Clang Debug Address+UB Sanitizer Build",
+      "binaryDir": "${sourceDir}/build/clang-debug-aub_san",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/debug-asanub-clang/"
+        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug-aub_san/"
       }
     },
     {
-      "name": "release-clang",
+      "name": "clang-release",
       "inherits": ["clang", "release"],
       "description": "Clang Release Build",
-      "binaryDir": "${sourceDir}/build/release-clang",
+      "binaryDir": "${sourceDir}/build/clang-release",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/release-clang/"
+        "CMAKE_PREFIX_PATH": "~/Libs/clang-release/"
       }
     }
   ]

@@ -88,7 +88,7 @@ alias gbr='git branch --show-current'
 alias gbrl='git branch --format "%(refname:short)" | awk "{print \"\033[32m\"\$1\"\033[0m\"}"'
 
 alias gundo='git reset HEAD~' # Undo the last commit (use with caution!)
-alias gsu='git submodule update' # Update submodule
+alias gsu='git submodule update --init --recursive' # Update submodule(s)
 
 alias gstat="git shortlog --summary --numbered --all --no-merges"
 

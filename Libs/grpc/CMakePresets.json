@@ -6,27 +6,35 @@
       "hidden": true,
       "generator": "Ninja",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
-        "CMAKE_COLOR_DIAGNOSTICS": true,
-        "WARNINGS_ARE_ERRORS": true,
+        "CMAKE_POSITION_INDEPENDENT_CODE": true,
+        "CMAKE_CXX_STANDARD": "17",
 
-        "BUILD_SHARED_LIBS": true,
-        "FEATURE_developer_build": true,
+        "BUILD_TESTING": false,
+        "gRPC_BUILD_TESTS": false,
 
-        "QT_QML_GENERATE_QMLLS_INI": true,
-        "QT_USE_CCACHE": true,
-        "QT_UNITY_BUILD": false,
-        "QT_UNITY_BUILD_BATCH_SIZE": "64",
+        "gRPC_BUILD_GRPC_CPP_PLUGIN": true,
+        "gRPC_BUILD_GRPC_PYTHON_PLUGIN": false,
+        "gRPC_BUILD_GRPC_CSHARP_PLUGIN": false,
+        "gRPC_BUILD_GRPC_NODE_PLUGIN": false,
+        "gRPC_BUILD_GRPC_OBJECTIVE_C_PLUGIN": false,
+        "gRPC_BUILD_GRPC_PHP_PLUGIN": false,
+        "gRPC_BUILD_GRPC_RUBY_PLUGIN": false,
 
-        "QT_BUILD_TESTS": true,
-        "QT_BUILD_EXAMPLES": true,
-        "QT_BUILD_BENCHMARKS": true,
-        "QT_BUILD_MANUAL_TESTS": true,
-        "QT_BUILD_TESTS_BY_DEFAULT": true,
-        "QT_BUILD_EXAMPLES_BY_DEFAULT": true,
-        "QT_BUILD_EXAMPLES_AS_EXTERNAL": false
+        "gRPC_ABSL_PROVIDER": "module",
+        "gRPC_PROTOBUF_PROVIDER": "module",
+        "gRPC_ZLIB_PROVIDER": "module",
+        "gRPC_SSL_PROVIDER": "module",
+        "gRPC_CARES_PROVIDER": "module",
+        "gRPC_RE2_PROVIDER": "module",
+
+        "protobuf_BUILD_CONFORMANCE": true,
+        "protobuf_ALLOW_CCACHE": true
+      },
+      "environment": {
+        "GRPC_BUILD_ENABLE_CCACHE": "1"
       }
     },
+
     {
       "name": "gcc",
       "hidden": true,
@@ -55,7 +63,6 @@
         "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined"
       }
     },
-
     {
       "name": "debug",
       "hidden": true,
@@ -79,8 +86,8 @@
       "description": "GCC Debug Build",
       "binaryDir": "${sourceDir}/build/gcc-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/gcc-debug/qtbase/;~/Libs/gcc-debug/",
-        "QT_PROTOBUF_CONFORMANCE_TEST_RUNNER": "~/Libs/src/grpc/build/gcc-debug/third_party/protobuf/conformance_test_runner"
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/gcc-debug"
       }
     },
     {
@@ -89,7 +96,8 @@
       "description": "GCC Debug Address+UB Sanitizer Build",
       "binaryDir": "${sourceDir}/build/gcc-debug-aub_san",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/gcc-debug-aub_san/qtbase/;~/Libs/gcc-debug-aub_san/"
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug-aub_san/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/gcc-debug-aub_san/"
       }
     },
     {
@@ -98,7 +106,8 @@
       "description": "GCC Release Build",
       "binaryDir": "${sourceDir}/build/gcc-release",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/gcc-release/qtbase/;~/Libs/gcc-release/"
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-release/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/gcc-release/"
       }
     },
 
@@ -108,8 +117,8 @@
       "description": "Clang Debug Build",
       "binaryDir": "${sourceDir}/build/clang-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/clang-debug/qtbase/;~/Libs/clang-debug/",
-        "QT_PROTOBUF_CONFORMANCE_TEST_RUNNER": "~/Libs/src/grpc/build/clang-debug/third_party/protobuf/conformance_test_runner"
+        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/clang-debug/"
       }
     },
     {
@@ -125,7 +134,9 @@
         "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
         "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
         "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined",
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/clang-debug-aub_san/qtbase/;~/Libs/clang-debug-aub_san/"
+
+        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug-aub_san/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/clang-debug-aub_san/"
       }
     },
     {
@@ -134,7 +145,8 @@
       "description": "Clang Release Build",
       "binaryDir": "${sourceDir}/build/clang-release",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Qt/qt6/build/clang-release/qtbase/;~/Libs/clang-release/"
+        "CMAKE_PREFIX_PATH": "~/Libs/clang-release/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/clang-release/"
       }
     }
   ]

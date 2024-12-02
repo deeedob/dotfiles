@@ -5,10 +5,13 @@
 
 set -e
 
-ln -svrf ./Wallpaper/ ~/
 ln -svrf ./Qt/CMakeMasterPresets.json ~/Qt/qt6/CMakePresets.json
 ln -svrf ./Qt/.gitconfig ~/Qt/
 ln -svrf ./Qt/setup.sh ~/Qt/
+
+ln -svrf ./Libs/grpc/CMakePresets.json ~/Libs/src/grpc/
+
+ln -svrf ./Wallpaper/ ~/
 ln -svrf ./Scripts/ ~/
 ln -svrf ./Bin/ ~/
 

@@ -136,10 +136,10 @@
     "format-source": "<span color='#8D8A7C'></span> <b>{volume}</b>",
     "format-source-muted": "   ",
     "format": "{format_source}",
-    "on-click": "pacucontrol -t 4",
+    "on-click": "pavucontrol -t 4",
     "on-click-right": "amixer set Capture toggle",
-    "on-scroll-up": "amixer set Capture 5%+",
-    "on-scroll-down": "amixer set Capture 5%-",
+    "on-scroll-up": "amixer set Capture 1%+",
+    "on-scroll-down": "amixer set Capture 1%-",
     "tooltip": false
     },
 
