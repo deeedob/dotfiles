@@ -13,7 +13,11 @@ fi
 
 # print all directory names that start with qt and copy the preset file
 for dir in `find -maxdepth 1 -name "qt*" -type d`; do
-    ln -svrf $cmake_base_preset $dir/CMakePresets.json
+    if [ "$(ls -A "$dir")" ]; then
+        ln -svrf "$cmake_base_preset" "$dir/CMakePresets.json"
+    else
+        echo "Skipping empty directory: $dir"
+    fi
 done
 
 read -rp "Do you want to install the dependencies? [y/N] " response

@@ -79,7 +79,7 @@
       "description": "GCC Debug Build",
       "binaryDir": "${sourceDir}/build/gcc-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug/;~/Qt/qt6/build/gcc-debug/qtbase/",
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug/;~/Qt/qt6/build/gcc-debug/qtbase/lib/cmake/",
         "QT_PROTOBUF_CONFORMANCE_TEST_RUNNER": "~/Libs/src/grpc/build/gcc-debug/third_party/protobuf/conformance_test_runner"
       }
     },

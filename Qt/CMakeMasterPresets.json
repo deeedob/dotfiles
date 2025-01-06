@@ -9,9 +9,6 @@
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_COLOR_DIAGNOSTICS": true,
         "WARNINGS_ARE_ERRORS": false,
-
-        "QT_BUILD_SUBMODULES": "qtbase;qtdeclarative;qttools;qtimageformats;qtlanguageserver;qtshadertools;qtsvg;qtmultimedia;qtwayland;qttools;qtdoc",
-        "BUILD_qtwebengine": false,
         "BUILD_SHARED_LIBS": true,
 
         "FEATURE_developer_build": true,
