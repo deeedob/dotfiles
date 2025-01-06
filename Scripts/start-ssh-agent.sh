@@ -8,7 +8,7 @@ check_ssh_agent() {
 }
 
 if ! check_ssh_agent; then
-    ssh-agent -t 1h > "$SSH_ENV"
+    ssh-agent > "$SSH_ENV"
     echo "SSH Agent: Started new instance"
 fi
 

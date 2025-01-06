@@ -56,9 +56,7 @@
         "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
         "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
 
-        "LLVM_DIR": "~/Libs/clang-release/lib/cmake/llvm",
-        "Clang_DIR": "~/Libs/clang-release/lib/cmake/clang",
-        "FEATURE_clang": true
+        "QT_NO_FIND_PACKAGE_CLANG_WORKAROUND": true
       }
     },
     {
@@ -99,21 +97,21 @@
       }
     },
     {
-      "name": "gcc-debug-aub_san",
-      "inherits": ["gcc", "debug", "aub_san"],
-      "description": "GCC Debug Address+UB Sanitizer Build",
-      "binaryDir": "${sourceDir}/build/gcc-debug-aub_san",
-      "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug-aub_san/"
-      }
-    },
-    {
       "name": "gcc-release",
       "inherits": ["gcc", "release"],
       "description": "GCC Release Build",
       "binaryDir": "${sourceDir}/build/gcc-release",
       "cacheVariables": {
         "CMAKE_PREFIX_PATH": "~/Libs/gcc-release/"
+      }
+    },
+    {
+      "name": "gcc-debug-aub_san",
+      "inherits": ["gcc", "debug", "aub_san"],
+      "description": "GCC Debug Address+UB Sanitizer Build",
+      "binaryDir": "${sourceDir}/build/gcc-debug-aub_san",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug-aub_san/"
       }
     },
 
@@ -123,16 +121,7 @@
       "description": "Clang Debug Build",
       "binaryDir": "${sourceDir}/build/clang-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug/"
-      }
-    },
-    {
-      "name": "clang-debug-aub_san",
-      "inherits": ["clang", "debug", "aub_san"],
-      "description": "Clang Debug Address+UB Sanitizer Build",
-      "binaryDir": "${sourceDir}/build/clang-debug-aub_san",
-      "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug-aub_san/"
+        "CMAKE_PREFIX_PATH": "~/Libs/llvm/;~/Libs/clang-debug/"
       }
     },
     {
@@ -141,7 +130,16 @@
       "description": "Clang Release Build",
       "binaryDir": "${sourceDir}/build/clang-release",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/clang-release/"
+        "CMAKE_PREFIX_PATH": "~/Libs/llvm/;~/Libs/clang-release/"
+      }
+    },
+    {
+      "name": "clang-debug-aub_san",
+      "inherits": ["clang", "debug", "aub_san"],
+      "description": "Clang Debug Address+UB Sanitizer Build",
+      "binaryDir": "${sourceDir}/build/clang-debug-aub_san",
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "~/Libs/llvm/;~/Libs/clang-debug-aub_san/"
       }
     }
   ]

@@ -8,7 +8,7 @@ fi
 set -e
 set -v
 
-export RESTIC_REPOSITORY='/backups'
+export RESTIC_REPOSITORY='/mnt/backups/restic'
 export RESTIC_PASSWORD_COMMAND='get-restic-password'
 export RESTIC_COMPRESSION='auto'
 export RESTIC_CACHE_DIR=~/.cache/restic

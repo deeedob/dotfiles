@@ -28,7 +28,7 @@ AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: Never # always break if
 AllowShortLambdasOnASingleLine: Inline
-AllowShortLoopsOnASingleLine: true
+AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: Yes
@@ -141,12 +141,47 @@ IntegerLiteralSeparator:
 KeepEmptyLinesAtTheStartOfBlocks: false
 
 LambdaBodyIndentation: Signature
-LineEnding: LF
+LineEnding: LF # Qt is LF-only
 
 Macros:
+  - Q_PROTOBUF_OBJECT=x;
   - Q_DISABLE_COPY_MOVE(x)=x;
   - Q_DECLARE_PRIVATE(x)=x;
+  - Q_ENUM(x)=x;
+  - Q_ENUM_NS(x)=x;
+  - Q_FLAG(x)=x;
+  - Q_FLAG_NS(x)=x;
+  - Q_GADGET=x;
+  - Q_GADGET_EXPORT(x)=x;
+  - Q_INTERFACES(x)=x;
+  - Q_MOC_INCLUDE=x;
+  - Q_NAMESPACE=x;
+  - Q_NAMESPACE_EXPORT(x)=x;
   - Q_OBJECT=x;
+  - Q_PROPERTY(x)=x;
+  - Q_REVISION=x;
+  - QML_ADDED_IN_VERSION(x,y)=x,y;
+  - QML_ANONYMOUS=x;
+  - QML_ATTACHED(x)=x;
+  - QML_CONSTRUCTIBLE_VALUE(x)=x;
+  - QML_DECLARE_TYPE=x;
+  - QML_DECLARE_TYPEINFO(x,y)=x,y;
+  - QML_ELEMENT=x;
+  - QML_EXTENDED(x)=x;
+  - QML_EXTENDED_NAMESPACE(x)=x;
+  - QML_EXTRA_VERSION(x)=x;
+  - QML_FOREIGN(x)=x;
+  - QML_FOREIGN_NAMESPACE(x)=x;
+  - QML_IMPLEMENTS_INTERFACE(x)=x;
+  - QML_INTERFACE=x;
+  - QML_NAMED_ELEMENT(x)=x;
+  - QML_REMOVED_IN_VERSION(x,y)=x,y;
+  - QML_SEQUENTIAL_CONTAINER(x)=x;
+  - QML_SINGLETON=x;
+  - QML_STRUCTURED_VALUE=x;
+  - QML_UNAVAILABLE=x;
+  - QML_UNCREATABLE(x)=x;
+  - QML_VALUE_TYPE(x)=x;
 MaxEmptyLinesToKeep: 2
 
 NamespaceIndentation: Inner
@@ -159,11 +194,11 @@ PenaltyBreakComment: 10
 PenaltyBreakFirstLessLess: 20
 PenaltyBreakOpenParenthesis: 25
 PenaltyBreakScopeResolution: 1000
-PenaltyBreakString: 100
+PenaltyBreakString: 150
 PenaltyBreakTemplateDeclaration: 0
 PenaltyExcessCharacter: 1000
-PenaltyIndentedWhitespace: 0
-PenaltyReturnTypeOnItsOwnLine: 25
+PenaltyIndentedWhitespace: 5
+PenaltyReturnTypeOnItsOwnLine: 50
 PointerAlignment: Right
 
 QualifierAlignment: Left

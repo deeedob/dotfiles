@@ -5,7 +5,9 @@ hyprshot
 hypridle
 hyprlock
 xdg-desktop-portal-hyprland
+
 waybar
+waybar-crypto
 
 wl-clipboard
 ttf-nerd-fonts-symbols-mono
@@ -108,3 +110,5 @@ chowmatrix-bin
 chowcentaur-bin
 chowkick-bin
 chowphaser-bin
+
+

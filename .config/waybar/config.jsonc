@@ -19,6 +19,7 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
+    "custom/crypto",
     "hyprland/language",
     "backlight",
     "pulseaudio#output",

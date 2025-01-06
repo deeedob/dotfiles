@@ -6,9 +6,11 @@
       "hidden": true,
       "generator": "Ninja",
       "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_POSITION_INDEPENDENT_CODE": true,
         "CMAKE_CXX_STANDARD": "17",
 
+        "BUILD_SHARED_LIBS": false,
         "BUILD_TESTING": false,
         "gRPC_BUILD_TESTS": false,
 
@@ -27,11 +29,7 @@
         "gRPC_CARES_PROVIDER": "module",
         "gRPC_RE2_PROVIDER": "module",
 
-        "protobuf_BUILD_CONFORMANCE": true,
-        "protobuf_ALLOW_CCACHE": true
-      },
-      "environment": {
-        "GRPC_BUILD_ENABLE_CCACHE": "1"
+        "protobuf_BUILD_CONFORMANCE": true
       }
     },
 
@@ -50,8 +48,8 @@
         "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++",
         "CMAKE_CXX_FLAGS": "-stdlib=libc++",
-        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
-        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld"
+        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld -Wl,--undefined-version",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld -Wl,--undefined-version"
       }
     },
     {
@@ -117,26 +115,8 @@
       "description": "Clang Debug Build",
       "binaryDir": "${sourceDir}/build/clang-debug",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug/",
+        "CMAKE_PREFIX_PATH": "~/Libs/llvm/;~/Libs/clang-debug/",
         "CMAKE_INSTALL_PREFIX": "~/Libs/clang-debug/"
-      }
-    },
-    {
-      "name": "clang-debug-aub_san",
-      "inherits": ["debug"],
-      "description": "Clang Debug Address+UB Sanitizer Build",
-      "binaryDir": "${sourceDir}/build/clang-debug-aub_san",
-      "cacheVariables": {
-        "CMAKE_C_COMPILER": "clang",
-        "CMAKE_CXX_COMPILER": "clang++",
-        "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer",
-        "CMAKE_CXX_FLAGS": "-stdlib=libc++ -fsanitize=address,undefined -fno-omit-frame-pointer",
-        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
-        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
-        "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined",
-
-        "CMAKE_PREFIX_PATH": "~/Libs/clang-debug-aub_san/",
-        "CMAKE_INSTALL_PREFIX": "~/Libs/clang-debug-aub_san/"
       }
     },
     {
@@ -145,8 +125,22 @@
       "description": "Clang Release Build",
       "binaryDir": "${sourceDir}/build/clang-release",
       "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "~/Libs/clang-release/",
+        "CMAKE_PREFIX_PATH": "~/Libs/llvm/;~/Libs/clang-release/",
         "CMAKE_INSTALL_PREFIX": "~/Libs/clang-release/"
+      }
+    },
+    {
+      "name": "clang-debug-aub_san",
+      "inherits": ["clang","debug"],
+      "description": "Clang Debug Address+UB Sanitizer Build",
+      "binaryDir": "${sourceDir}/build/clang-debug-aub_san",
+      "cacheVariables": {
+        "CMAKE_C_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++ -fsanitize=address,undefined -fno-omit-frame-pointer",
+        "CMAKE_LINKER_FLAGS": "-fsanitize=address,undefined",
+
+        "CMAKE_PREFIX_PATH": "~/Libs/llvm/;~/Libs/clang-debug-aub_san/",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/clang-debug-aub_san/"
       }
     }
   ]

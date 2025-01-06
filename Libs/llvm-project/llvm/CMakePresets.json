@@ -1,0 +1,32 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "release",
+      "generator": "Ninja",
+      "description": "Release Build",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/llvm",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++",
+        "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=lld",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=lld",
+
+        "LLVM_USE_LINKER": "lld",
+        "LLVM_ENABLE_PROJECTS": "clang;clang-tools-extra;lld;lldb",
+        "LLVM_ENABLE_RUNTIMES": "libc;libcxx;libcxxabi;compiler-rt",
+        "LLVM_ENABLE_RTTI": true,
+        "LLVM_ENABLE_LTO": true,
+        "LLVM_PARALLEL_COMPILE_JOBS": "4",
+        "LLVM_PARALLEL_LINK_JOBS": "4",
+
+        "LIBCXXABI_USE_LLVM_UNWINDER": false
+      }
+    }
+  ]
+}

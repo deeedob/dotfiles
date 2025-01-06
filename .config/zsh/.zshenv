@@ -55,6 +55,9 @@ export QDOC_SHOW_INTERNAL="1"
 export FZF_DEFAULT_COMMAND='fd --type f -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+export RESTIC_REPOSITORY="/mnt/backups/restic"
+export RESTIC_PASSWORD_COMMAND="secret-tool lookup restic desktop-backup"
+
 FZF_COLORS="bg+:-1,\
 fg:gray,\
 fg+:white,\
