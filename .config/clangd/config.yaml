@@ -16,7 +16,6 @@ CompileFlags:
       -Wconversion,
       -Wsign-conversion,
       -Wnull-dereference,
-      -Wdouble-promotion,
       -Wformat=2,
       -Wimplicit-fallthrough,
       -I/usr/lib/clang/17/include,

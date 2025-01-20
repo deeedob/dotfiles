@@ -111,6 +111,23 @@
         "CMAKE_PREFIX_PATH": "~/Libs/gcc-debug-aub_san/"
       }
     },
+    {
+      "name": "gcc-static",
+      "inherits": ["gcc", "release"],
+      "description": "GCC Static Release Build",
+      "binaryDir": "${sourceDir}/build/gcc-static",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
+        "CMAKE_INSTALL_PREFIX": "~/Libs/qt-static",
+        "CMAKE_PREFIX_PATH": "~/Libs/gcc-release/",
+        "BUILD_SHARED_LIBS": false,
+        "QT_BUILD_SUBMODULES": "qtbase;qtdeclarative;qtquick3d;qtshadertools;qtimageformats;qtsvg;qtgrpc;qtgraphs;qtwayland",
+        "FEATURE_optimize_size": true,
+        "FEATURE_developer_build": false,
+        "FEATURE_testlib": false,
+        "FEATURE_xml": false
+      }
+    },
 
     {
       "name": "clang-debug",

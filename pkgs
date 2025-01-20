@@ -111,4 +111,5 @@ chowcentaur-bin
 chowkick-bin
 chowphaser-bin
 
-
+android-udev
+gvfs-mtp
