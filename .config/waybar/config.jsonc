@@ -19,7 +19,6 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/crypto",
     "hyprland/language",
     "backlight",
     "pulseaudio#output",
@@ -87,9 +86,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "<b>{icon} {capacity}%</b>",
-    "format-alt": "<b>{icon}</b>",
-    "format-charging": "<b>{icon}⚡{capacity}%</b>",
+    "format": "<span color='#8D8A7C'>{icon}</span> <b>{capacity}%</b>",
+    "format-alt": "<span color='#8D8A7C'>{icon}</span>",
+    "format-charging": "<span color='#00ff00'><b>{icon} {capacity}%</b></span>",
     "format-icons": [" ", " ", " ", " "],
     "max-length": 25,
     "tooltip": true
