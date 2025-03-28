@@ -1,0 +1,57 @@
+# Detect GPU and set appropriate variables
+if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -q NVIDIA; then
+    # NVIDIA-specific environment
+    export GBM_BACKEND="nvidia-drm"
+    export __GLX_VENDOR_LIBRARY_NAME="nvidia"
+    export LIBVA_DRIVER_NAME="nvidia"
+    export __GL_SYNC_ALLOWED="1"
+    export NVD_BACKEND="direct"
+elif lspci -k | grep -A 2 -E "(VGA|3D)" | grep -q AMD; then
+    # AMD-specific environment
+    export LIBVA_DRIVER_NAME="radeonsi"
+fi
+
+# Wayland/X11 toolkit backend preferences
+export GDK_BACKEND="wayland,x11,*"
+export QT_QPA_PLATFORM="wayland;xcb"
+export SDL_VIDEODRIVER="wayland"
+export CLUTTER_BACKEND="wayland"
+export MOZ_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT="auto"
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Qt configurations
+export QT_AUTO_SCREEN_SCALE_FACTOR="1" # Qt5, automatic scaling
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export QSG_RHI_BACKEND="vulkan"
+
+export XDG_BIN_HOME="$HOME/.local/bin"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export XDG_DOCUMENTS_DIR="$HOME/Documents"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_MUSIC_DIR="$HOME/Music"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
+export XDG_VIDEOS_DIR="$HOME/Videos"
+export GRIM_DEFAULT_DIR="$XDG_SCREENSHOTS_DIR"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR="nvim -u NONE"
+export BROWSER="firefox"
+export TERMINAL="kitty"
+export USER_TERMINAL="kitty"
+export USER_FILEMANAGER="nautilus"
+
+export RUSTUP_HOME="$XDG_STATE_HOME/rustup"
+export CARGO_HOME="$XDG_STATE_HOME/cargo"
+export GOPATH="$XDG_DATA_HOME/go"
+
+export XCURSOR_THEME="Bibata-Modern-TokyoNight"
+export XCURSOR_SIZE=24
+export GTK_THEME="Kanagawa"
+
