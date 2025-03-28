@@ -11,12 +11,13 @@
         "WARNINGS_ARE_ERRORS": false,
         "BUILD_SHARED_LIBS": true,
 
+        "FEATURE_use_mold_linker": true,
         "FEATURE_developer_build": true,
         "FEATURE_processenvironment": true,
         "FEATURE_freetype": true,
         "FEATURE_harfbuzz": true,
         "FEATURE_fontconfig": true,
-        "FEATURE_system_freetype": false,
+        "FEATURE_system_freetype": true,
         "FEATURE_system_harfbuzz": false,
         "FEATURE_system_sqlite": false,
         "FEATURE_system_zlib": false,
@@ -70,7 +71,9 @@
       "hidden": true,
       "inherits": "base",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "FEATURE_enable_gdb_index": true,
+        "FEATURE_optimize_debug": true
       }
     },
     {
@@ -164,10 +167,13 @@
         "binaryDir": "${sourceDir}/build/android-arm64-v8a-debug",
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Debug",
-            "CMAKE_TOOLCHAIN_FILE": "~/Android/Sdk/ndk/28.0.12916984/build/cmake/android.toolchain.cmake",
+            "CMAKE_TOOLCHAIN_FILE": "~/Android/Sdk/ndk/28.0.13004108/build/cmake/android.toolchain.cmake",
             "ANDROID_ABI": "arm64-v8a",
             "ANDROID_SDK_ROOT": "/home/ddob/Android/Sdk",
-            "QT_HOST_PATH": "~/Qt/qt6/build/gcc-debug/qtbase/"
+            "QT_HOST_PATH": "~/Qt/qt6/build/gcc-debug/qtbase/",
+            "OPENSSL_CRYPTO_LIBRARY": "~/Android/Sdk/android_openssl/ssl_3/arm64-v8a/libcrypto_3.so",
+            "OPENSSL_SSL_LIBRARY": "~/Android/Sdk/android_openssl/ssl_3/arm64-v8a/libssl_3.so",
+            "OPENSSL_INCLUDE_DIR": "~/Android/Sdk/android_openssl/ssl_3/arm64-v8a/include"
         }
     }
   ]

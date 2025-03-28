@@ -5,6 +5,8 @@ hyprshot
 hypridle
 hyprlock
 xdg-desktop-portal-hyprland
+hyprpolkitagent
+uwsm
 
 waybar
 waybar-crypto
@@ -12,7 +14,6 @@ waybar-crypto
 wl-clipboard
 ttf-nerd-fonts-symbols-mono
 ttf-jetbrains-mono-nerd
-polkit-kde-agent
 xwaylandvideobridge
 feh
 
@@ -82,6 +83,7 @@ libc++
 ccache
 valgrind
 jemalloc
+mold
 
 neovim-remote
 fd
@@ -113,3 +115,17 @@ chowphaser-bin
 
 android-udev
 gvfs-mtp
+
+ananicy-cpp
+irqbalance
+nohang
+preload
+prelockd
+uresourced
+
+qt5
+qt6
+qt5ct
+qt6ct
+kvantum
+kvantim-qt5

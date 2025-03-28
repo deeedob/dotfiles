@@ -15,6 +15,7 @@
     diffFilter = delta --color-only
 [diff]
     tool = nvr
+	mnemonicPrefix = true
 [difftool]
 	prompt = false
 [difftool "nvr"]

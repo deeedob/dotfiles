@@ -8,9 +8,11 @@
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_COLOR_DIAGNOSTICS": true,
+        "BUILD_SHARED_LIBS": true,
+
         "WARNINGS_ARE_ERRORS": true,
 
-        "BUILD_SHARED_LIBS": true,
+        "FEATURE_use_mold_linker": true,
         "FEATURE_developer_build": true,
 
         "QT_QML_GENERATE_QMLLS_INI": true,
@@ -61,7 +63,9 @@
       "hidden": true,
       "inherits": "base",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "QT_LIBINFIX": "Ifx",
+        "QT_NAMESPACE": "Ns"
       }
     },
     {

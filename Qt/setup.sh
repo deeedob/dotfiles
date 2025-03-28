@@ -10,15 +10,13 @@ if [ ! -f $cmake_base_preset ]; then
     echo "Did not find in $cmake_base_preset!"
     exit 1
 fi
+git submodule foreach "ln -svrf '$cmake_base_preset' . || true"
 
-# print all directory names that start with qt and copy the preset file
-for dir in `find -maxdepth 1 -name "qt*" -type d`; do
-    if [ "$(ls -A "$dir")" ]; then
-        ln -svrf "$cmake_base_preset" "$dir/CMakePresets.json"
-    else
-        echo "Skipping empty directory: $dir"
-    fi
-done
+read -rp "Update Qt to dev? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
+    git submodule foreach "git checkout dev || true"
+    git submodule foreach "git pull || true"
+fi
 
 read -rp "Do you want to install the dependencies? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then

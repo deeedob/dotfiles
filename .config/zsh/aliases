@@ -95,3 +95,6 @@ alias gstat="git shortlog --summary --numbered --all --no-merges"
 alias gr='git remote -v | awk "{print \"\033[32m\"\$1\"\033[0m\t\033[33m\"\$2\"\033[0m\"}"'
 alias grmr="git remote rm"
 alias grma="git remote add"
+
+# System admin
+alias sl="systemctl list-units --type=service"

@@ -3,11 +3,6 @@ export PATH="/usr/lib/ccache/bin:$PATH" # always use ccache
 export PATH="$HOME/Bin/:$PATH"
 export PATH="$HOME/Scripts/:$PATH"
 
-# editor
-export EDITOR="nvim"
-export VISUAL="nvim"
-export SUDO_EDITOR="nvim -u NONE"
-
 # zsh
 export HISTFILE="$ZDOTDIR/.zhistory"
 export HISTSIZE=10000
@@ -21,6 +16,7 @@ export MAKEFLAGS="-j $(nproc --ignore=2)"
 export CPPFLAGS="${CPPFLAGS} -fdiagnostics-color=always"
 export CMAKE_GENERATOR="Ninja"
 export QDOC_SHOW_INTERNAL="1"
+export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f -L'

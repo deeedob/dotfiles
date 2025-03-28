@@ -1,0 +1,81 @@
+#!/bin/bash
+
+set -e
+
+command -v perf >/dev/null 2>&1 || { echo "Error: 'perf' is not installed." >&2; exit 1; }
+command -v flamegraph.pl >/dev/null 2>&1 || { echo "Error: 'flamegraph.pl' is not in PATH or not installed." >&2; exit 1; }
+command -v stackcollapse-perf.pl >/dev/null 2>&1 || { echo "Error: 'stackcollapse-perf.pl' is not in PATH or not installed." >&2; exit 1; }
+
+if [[ $# -lt 1 ]]; then
+    echo "Usage: $0 <application> [<arg1> <arg2> ...] [--call-graph <dwarf|fp>] [--freq <frequency>]"
+    exit 1
+fi
+
+# Default values
+CALL_GRAPH="fp"  # Default call graph mode
+RECORD_FREQ=99    # Default record frequency
+
+# Parse options
+POSITIONAL_ARGS=()
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --call-graph)
+            CALL_GRAPH="$2"
+            shift 2
+            ;;
+        --freq)
+            RECORD_FREQ="$2"
+            shift 2
+            ;;
+        --help|-h)
+            echo "Usage: $0 <application> [<arg1> <arg2> ...] [--call-graph <dwarf|fp>] [--freq <frequency>]"
+            echo "  --call-graph <dwarf|fp>    Set call graph recording mode (default: fp)"
+            echo "  --freq <frequency>         Set sampling frequency (default: 99 Hz)"
+            exit 0
+            ;;
+        *)
+            POSITIONAL_ARGS+=("$1")
+            shift
+            ;;
+    esac
+done
+set -- "${POSITIONAL_ARGS[@]}"
+
+if [[ $# -lt 1 ]]; then
+    echo "Error: No application specified."
+    exit 1
+fi
+
+APP="$1"
+shift # Remove the application name from arguments
+APP_ARGS="$@"
+
+# Derive executable name without path
+EXE_NAME=$(basename "$APP")
+
+# Generate unique SVG file name to avoid overwriting
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+FLAMEGRAPH_SVG="${EXE_NAME}_${TIMESTAMP}_flamegraph.svg"
+
+# Temporary files
+PERF_DATA="perf_${TIMESTAMP}.data"
+PERF_SCRIPT_OUT="perf_unfolded_${TIMESTAMP}.out"
+
+echo "Starting performance profiling for: $APP $APP_ARGS"
+echo "Call graph mode: $CALL_GRAPH"
+echo "Sampling frequency: $RECORD_FREQ Hz"
+
+# Start perf recording
+sudo perf record -F "$RECORD_FREQ" --call-graph "$CALL_GRAPH" -- "$APP" $APP_ARGS
+
+echo "Generating stack traces using perf script..."
+sudo perf script > "$PERF_SCRIPT_OUT"
+
+echo "Generating flame graph..."
+stackcollapse-perf.pl --all "$PERF_SCRIPT_OUT" | flamegraph.pl --hash --title="$EXE_NAME" --subtitle="$APP_ARGS" --cp --colors mem> "$FLAMEGRAPH_SVG"
+# TODO: opts for --cp --colors mem
+
+echo "Cleaning up temporary files..."
+rm -f "$PERF_DATA" "$PERF_SCRIPT_OUT"
+
+echo "Flamegraph generated: $FLAMEGRAPH_SVG"

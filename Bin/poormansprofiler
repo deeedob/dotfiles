@@ -1,0 +1,36 @@
+#!/bin/bash
+# Usage:
+# ./poor_mans_profiler.sh <application> <nsamples> <sleeptime_us>
+
+if [[ $# -lt 3 ]]; then
+  echo "Usage: $0 <application> <nsamples> <sleeptime_us>"
+  exit 1
+fi
+
+application="$1"         # The application to profile
+nsamples="$2"            # Number of samples
+sleeptime_us="$3"        # Sleep time in microseconds
+
+# Start the application in the background and get its PID
+$application &
+pid=$!
+echo "Started application '$application' with PID: $pid"
+
+# Ensure the application is stopped if the script is interrupted
+trap "kill $pid 2>/dev/null" EXIT
+
+# Profile the application
+for x in $(seq 1 $nsamples); do
+  gdb -ex "set pagination 0" -ex "thread apply all bt" -batch -p $pid
+  usleep $sleeptime_us
+done | \
+awk '
+  BEGIN { s = ""; }
+  /^Thread/ { print s; s = ""; }
+  /^\#/ { if (s != "" ) { s = s "," $4} else { s = $4 } }
+  END { print s }' | \
+sort | uniq -c | sort -r -n -k 1,1
+
+# Cleanup
+kill $pid 2>/dev/null
+trap - EXIT
