@@ -8,8 +8,14 @@
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_COLOR_DIAGNOSTICS": true,
+
         "WARNINGS_ARE_ERRORS": false,
         "BUILD_SHARED_LIBS": true,
+
+        "INPUT_openssl": "runtime",
+        "OPENSSL_CRYPTO_LIBRARY": "/usr/lib/libcrypt.so",
+        "OPENSSL_SSL_LIBRARY": "/usr/lib/libssl.so",
+        "OPENSSL_INCLUDE_DIR": "/usr/include/",
 
         "FEATURE_use_mold_linker": true,
         "FEATURE_developer_build": true,
@@ -23,6 +29,7 @@
         "FEATURE_system_zlib": false,
         "QLITEHTML_USE_SYSTEM_LITEHTML": false,
 
+        "QT_COORD_TYPE": "double",
         "QT_UNITY_BUILD": false,
         "QT_UNITY_BUILD_BATCH_SIZE": "64",
         "QT_USE_CCACHE": true,

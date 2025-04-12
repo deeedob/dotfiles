@@ -29,6 +29,7 @@
         "gRPC_CARES_PROVIDER": "module",
         "gRPC_RE2_PROVIDER": "module",
 
+        "protobuf_FORCE_FETCH_DEPENDENCIES": true,
         "protobuf_BUILD_CONFORMANCE": true
       }
     },
@@ -66,7 +67,9 @@
       "hidden": true,
       "inherits": "base",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BUILD_TESTING": true,
+        "gRPC_BUILD_TESTS": true
       }
     },
     {
