@@ -55,3 +55,4 @@ export XCURSOR_THEME="Bibata-Modern-TokyoNight"
 export XCURSOR_SIZE=24
 export GTK_THEME="Kanagawa"
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

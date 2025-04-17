@@ -32,7 +32,6 @@ alias vs="nvr -cc tabedit --remote-wait +'set bufhidden=wipe'"
 alias nvim_clear_cmake="rm -rf $HOME/.cache/cmake_tools_nvim/*"
 
 # Shortcuts
-alias r='ranger'
 alias c='clear'
 alias h='history'
 alias f='fd'

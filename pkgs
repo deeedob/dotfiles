@@ -1,11 +1,12 @@
 hyprland-git
-hyprpaper
-hyprpicker
-hyprshot
-hypridle
-hyprlock
-xdg-desktop-portal-hyprland
-hyprpolkitagent
+hyprpaper-git
+hyprpicker-git
+hyprshot-git
+hypridle-git
+hyprlock-git
+xdg-desktop-portal-hyprland-git
+xdg-desktop-portal-gtk
+hyprpolkitagent-git
 uwsm
 
 waybar
@@ -33,9 +34,10 @@ zsh-fast-syntax-highlighting
 zsh-autosuggestions
 zsh-history-substring-search
 
-ranger
-python-pillow
-poppler
+yazi
+hexyl
+mediainfo
+ouch
 
 bluez
 bluez-utils
@@ -43,7 +45,7 @@ blueman
 nautilus-bluetooth
 gnome-bluetooth-3.0
 
-keepassxc
+bitwarden
 nextcloud-client
 python-nautilus
 czkawka-gui-bin
@@ -52,6 +54,7 @@ obs-studio
 obs-backgroundremoval
 
 betterbird-bin
+protonmail-bridge
 
 gimp
 
@@ -103,6 +106,7 @@ fzf
 bat
 man-db
 pv
+yq
 
 spectral-compressor-vst3-git
 chowmultitool-bin
