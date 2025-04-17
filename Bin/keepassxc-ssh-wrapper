@@ -1,3 +1,0 @@
-#!/bin/bash
-source $HOME/Scripts/start-ssh-agent.sh
-/usr/bin/keepassxc
