@@ -23,7 +23,7 @@ rofi-wayland
 nautilus
 nautilus-open-any-terminal
 
-kitty
+ghostty
 
 dunst
 libnotify
@@ -107,6 +107,7 @@ bat
 man-db
 pv
 yq
+sqlite
 
 spectral-compressor-vst3-git
 chowmultitool-bin

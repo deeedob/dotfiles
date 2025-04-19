@@ -1,0 +1,15 @@
+font-family = MonoLisa
+# theme = ayu
+theme = Kanagawa Dragon
+
+shell-integration = zsh
+mouse-hide-while-typing = true
+
+keybind = alt+t=new_tab
+keybind = alt+c=close_tab
+keybind = alt+]=next_tab
+keybind = alt+[=previous_tab
+
+keybind = alt+r=reload_config
+
+window-save-state = always
