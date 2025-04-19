@@ -4,3 +4,12 @@ export XDG_CURRENT_DESKTOP="Hyprland"
 
 export HYPRCURSOR_THEME=$XCURSOR_THEME
 export HYPRCURSOR_SIZE=$XCURSOR_SIZE
+
+# check if a default was provided, otherwise default to master
+export HYPRLAND_LAYOUT="${HYPRLAND_LAYOUT:-master}"
+case "$HYPRLAND_LAYOUT" in
+  dwindle|master) ;;
+  *)
+    export HYPRLAND_LAYOUT="master"
+    ;;
+esac
