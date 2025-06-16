@@ -1,7 +1,7 @@
 CompileFlags:
   Add: [
       -xc++, # Treat code as C++
-      -std=c++23,
+      -std=c++20,
       -D__cpp_concepts=202002L, # libc++ does not have this defined but it's implemented.
       -Wall,
       -Wextra,

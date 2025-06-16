@@ -54,7 +54,7 @@ alias virtoff="sudo systemctl stop libvirtd.service;sudo systemctl stop virtlogd
 alias wifioff="sudo ip link set wlo1 down"
 alias wifion="sudo ip link set wlo1 up"
 alias copy="kitten clipboard"
-alias udevrestart="sudo udevadm control --reload-rules && sudo udevadm trigger"
+alias udevreload="sudo udevadm control --reload-rules && sudo udevadm trigger"
 
 alias grabwav='yt-dlp --no-playlist -x --audio-format wav -o "$HOME/Nextcloud/Samples/DropZone/grabwav/%(title)s_%(id)s.%(ext)s"'
 

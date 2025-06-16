@@ -1,0 +1,29 @@
+[[plugin.deps]]
+use = "lpnh/fr"
+rev = "92edf0b"
+hash = "b0edc5e9b7f44b2d3303e74f785d0bc9"
+
+[[plugin.deps]]
+use = "Reledia/hexyl"
+rev = "016a09b"
+hash = "50da29476e744dba37d77fb209328fd1"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "436cb5f"
+hash = "144c0ac7a449fcab4e78e942eb41702c"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "2496cd9"
+hash = "5b9dea47776a30946cfbf83232d18fb1"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "31167ed"
+hash = "a04e157148549bacbb2831aab0e6e8cb"
+
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "3d5f847"
+hash = "9b4190e2447f2c843fee23ea5f068f6"

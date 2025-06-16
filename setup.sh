@@ -8,7 +8,8 @@ echo "Running CMD: yay -Syu --needed ${packages}"
 yay -Syu --needed ${packages}
 
 system_services=(
-    docker.socket
+    reflector.service
+    docker.service
     bluetooth.service
     ananicy-cpp
     irqbalance
