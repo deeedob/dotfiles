@@ -1,6 +1,18 @@
 #!/usr/bin/env zsh
 
-source /usr/share/fzf/key-bindings.zsh
+fzf_base=""
+if [[ "$OSTYPE" == darwin* ]]; then
+  if command -v brew >/dev/null 2>&1; then
+    fzf_base="$(brew --prefix)/opt/fzf/shell"
+  else
+    echo "brew is not installed!"
+    return
+  fi
+else
+  fzf_base="/usr/share/fzf"
+fi
+
+source $fzf_base/key-bindings.zsh
 
 # Rebind ALT-c to CTRL-e
 bindkey -rM emacs '\ec'
@@ -12,7 +24,7 @@ bindkey -M emacs '\C-e' fzf-cd-widget
 bindkey -M vicmd '\C-e' fzf-cd-widget
 bindkey -M viins '\C-e' fzf-cd-widget
 
-source /usr/share/fzf/completion.zsh
+source $fzf_base/completion.zsh
 
 source $ZDOTDIR/scripts_fzf.zsh # fzf Scripts
 _fzf_comprun() {

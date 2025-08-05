@@ -1,18 +1,47 @@
+#!/usr/bin/env zsh
+
+function get_cores() {
+  local cores
+
+  if command -v nproc >/dev/null; then
+    cores=$(nproc)
+  elif command -v sysctl >/dev/null; then
+    cores=$(sysctl -n hw.logicalcpu)
+  else
+    cores=$(grep -c '^processor' /proc/cpuinfo 2>/dev/null || echo 4)
+  fi
+
+  echo "$cores"
+}
+
+total_cores="$(get_cores)"
+compile_cores=$(( total_cores > 2 ? total_cores - 2 : 1 ))
+export COMPILE_CORES="$compile_cores"
+
+export ZDOTDIR="$HOME/.config/zsh"
+export ZCACHEDIR="${ZDOTDIR}/.cache"
+[ -d "$ZCACHEDIR" ] || mkdir -p "$ZCACHEDIR"
+export ZSH_COMPDUMP="$ZCACHEDIR/zcompdump"
+
 # PATH
-export PATH="/usr/lib/ccache/bin:$PATH" # always use ccache
+if [[ "$OSTYPE" == darwin* ]]; then
+    # Disable "Save/Restore Shell State" i.e. ".zsh_sessions"
+    export SHELL_SESSIONS_DISABLE=1
+else
+    export PATH="/usr/lib/ccache/bin:$PATH"
+    export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
+    export RESTIC_REPOSITORY="/mnt/backups/restic"
+    export RESTIC_PASSWORD_COMMAND="secret-tool lookup restic desktop-backup"
+fi
+
 export PATH="$HOME/Bin/:$PATH"
 export PATH="$HOME/Scripts/:$PATH"
-
-# zsh
-export HISTFILE="$ZDOTDIR/.zhistory"
-export HISTSIZE=10000
-export SAVEHIST=10000
 
 # Man pages
 export MANPAGER='nvim +Man!'
 
 # Utility
-export MAKEFLAGS="-j $(nproc --ignore=2)"
+export MAKEFLAGS="-j ${COMPILE_CORES}"
 export CPPFLAGS="${CPPFLAGS} -fdiagnostics-color=always"
 export CMAKE_GENERATOR="Ninja"
 export QDOC_SHOW_INTERNAL="1"
@@ -21,9 +50,6 @@ export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-export RESTIC_REPOSITORY="/mnt/backups/restic"
-export RESTIC_PASSWORD_COMMAND="secret-tool lookup restic desktop-backup"
 
 FZF_COLORS="bg+:-1,\
 fg:gray,\

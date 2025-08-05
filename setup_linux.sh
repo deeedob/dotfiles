@@ -2,7 +2,7 @@
 
 set -e
 
-packages=$(grep -v '^\s*$' pkgs | tr '\n' ' ')
+packages=$(grep -v '^\s*$' setup_linux_pkgs | tr '\n' ' ')
 
 echo "Running CMD: yay -Syu --needed ${packages}"
 yay -Syu --needed ${packages}

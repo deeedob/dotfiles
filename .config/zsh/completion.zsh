@@ -18,7 +18,8 @@ bindkey -M menuselect '^xh' accept-and-hold                # Hold
 bindkey -M menuselect '^xn' accept-and-infer-next-history  # Next
 bindkey -M menuselect '^xu' undo                           # Undo
 
-autoload -U compinit; compinit -u
+autoload -U compinit;
+compinit -u -d "$ZSH_COMPDUMP"
 _comp_options+=(globdots) # With hidden files
 
 # Only work with the Zsh function vman
@@ -46,7 +47,7 @@ zstyle ':completion:*' completer _extensions _complete _approximate
 
 # Use cache for commands using cache
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$ZDOTDIR/.zcompcache"
+zstyle ':completion:*' cache-path "$ZCACHEDIR/zcompcache"
 # Complete the alias when _expand_alias is used as a function
 zstyle ':completion:*' complete true
 

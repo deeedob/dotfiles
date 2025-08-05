@@ -1,27 +1,63 @@
 #!/bin/bash
 
-# TODO: switch to STOW? make sure folder exist at least...
-# https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+set -euo pipefail
 
-set -e
+OS="$(uname -s)"
+echo "Detected OS: $OS"
 
-ln -svrf ./Qt/CMakeMasterPresets.json ~/Qt/qt6/CMakePresets.json
-ln -svrf ./Qt/.gitconfig ~/Qt/
-ln -svrf ./Qt/setup.sh ~/Qt/
+# Function to link a file or directory
+link_item() {
+  local source="$1"
+  local target="$2"
 
-ln -svrf ./Libs/grpc/CMakePresets.json ~/Libs/src/grpc/
-ln -svrf ./Libs/llvm-project/llvm/CMakePresets.json ~/Libs/src/llvm-project/llvm/
+  if [[ -e "$target" || -L "$target" ]]; then
+    echo "Removing existing: $target"
+    rm -rf "$target"
+  fi
 
-ln -svrf ./Wallpaper/ ~/
-ln -svrf ./Scripts/ ~/
-ln -svrf ./Bin/ ~/
+  echo "Linking $source -> $target"
+  ln -sv "$source" "$target"
+}
 
-ln -svrf .zshenv ~/
-ln -svrf .ssh/config ~/.ssh/
-ln -svrf .config/* ~/.config/
+# Function to recursively link all contents of a directory
+link_structure() {
+  local source_dir="$1"
+  local target_dir="$2"
+  mkdir -p "$target_dir"
+  shopt -s dotglob
+  for item in "$source_dir"/*; do
+    local name="$(basename "$item")"
+    link_item "$item" "$target_dir/$name"
+  done
+  shopt -u dotglob
+}
 
-ln -svrf ./.local/share/dbus-1/ ~/.local/share/
+# Base path of this script
+BASE_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-sudo cp -r ./usr/share/icons/* /usr/share/icons/
-sudo cp -r ./usr/share/themes/* /usr/share/themes/
-sudo cp -r ./etc/restic/* /etc/restic/
+# Link individu0al files and directories preserving structure
+link_structure "$BASE_DIR/Qt" "$HOME/Qt"
+link_structure "$BASE_DIR/Libs" "$HOME/Libs"
+link_structure "$BASE_DIR/Wallpaper" "$HOME/Wallpaper"
+link_structure "$BASE_DIR/.config" "$HOME/.config"
+link_structure "$BASE_DIR/.ssh" "$HOME/.ssh"
+link_item "$BASE_DIR/.zshenv" "$HOME/.zshenv"
+link_item "$BASE_DIR/.zprofile" "$HOME/.zprofile"
+
+case "$(uname)" in
+Linux)
+  link_item "$BASE_DIR/.local/share/dbus-1" "$HOME/.local/share/dbus-1"
+
+    echo "Running Linux-only root-level copies..."
+    if [[ $EUID -ne 0 ]]; then
+      echo "Root permissions required to copy icons/themes/restic. Re-run with sudo if needed."
+    else
+      cp -vr "$BASE_DIR/usr/share/icons/"* /usr/share/icons/
+      cp -vr "$BASE_DIR/usr/share/themes/"* /usr/share/themes/
+      cp -vr "$BASE_DIR/etc/restic/"* /etc/restic/
+    fi
+    ;;
+Darwin)
+    ;;
+esac
+
