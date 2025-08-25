@@ -47,6 +47,14 @@ export CMAKE_GENERATOR="Ninja"
 export QDOC_SHOW_INTERNAL="1"
 export ANDROID_AVD_HOME="$HOME/.config/.android/avd"
 
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR="nvim -u NONE"
+export BROWSER="firefox"
+export TERMINAL="kitty"
+export USER_TERMINAL="kitty"
+export USER_FILEMANAGER="nautilus"
+
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f -L'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

@@ -1,7 +1,6 @@
 # Dotfiles
 
-My [arch](https://archlinux.org/) based dotfiles for the
-[Hyprland](https://wiki.hyprland.org) window-manager.
+The dotfiles I use for all my machines!
 
 ```bash
 git clone -b hyprland https://github.com/deeedob/dotfiles.git $HOME/Dotfiles --depth 1
