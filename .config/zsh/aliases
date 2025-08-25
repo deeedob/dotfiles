@@ -42,8 +42,6 @@ alias s='kitten ssh'
 alias untar='tar -zxvf'
 alias getpass='openssl rand -base64 20'
 alias fsize='find . -type f -exec du -ah {} + | sort -n -r | less'
-alias fmake="make -j$(nproc --ignore=1)"
-alias fninja="ninja -j$(nproc --ignore=1)"
 alias flush="printf '\033[2J\033[3J\033[1;1H'"
 alias logout="loginctl terminate-user $USER"
 alias empty='echo -n Taking out teh trash | pv -qL 10 && rm -rf  ~/.local/share/Trash/files'
